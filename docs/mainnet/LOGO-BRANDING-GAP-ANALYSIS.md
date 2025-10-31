@@ -205,7 +205,7 @@ Colors:
 
 Contact:
 Email: akassectakc@gmail.com
-GitHub: github.com/akassectakc-a11y/AKC-COIN
+GitHub: https://github.com/akassectakc-a11y/AKC-COIN
 
 © 2025 AKASSECT LLC. All rights reserved.
 EOF
@@ -405,7 +405,7 @@ Colors:
 
 Contact:
 Email: akassectakc@gmail.com
-GitHub: github.com/akassectakc-a11y/AKC-COIN
+GitHub: https://github.com/akassectakc-a11y/AKC-COIN
 
 © 2025 AKASSECT LLC. All rights reserved.
 EOF

@@ -498,7 +498,7 @@ find docs/logo/png -name "*.png" -size +500k
 **프로젝트**: AKASSECT (AKC) Token  
 **이메일**: akassectakc@gmail.com  
 **웹사이트**: https://akc.ainovas.org  
-**GitHub**: github.com/akassectakc-a11y/AKC-COIN
+**GitHub**: https://github.com/akassectakc-a11y/AKC-COIN
 
 ---
 

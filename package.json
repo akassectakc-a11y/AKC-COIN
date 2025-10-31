@@ -1,0 +1,27 @@
+{
+  "name": "akc-token",
+  "version": "1.0.0",
+  "description": "AKC (AKASSECT) BEP-20 Token",
+  "main": "index.js",
+  "scripts": {
+    "test": "hardhat test",
+    "compile": "hardhat compile",
+    "deploy:testnet": "hardhat run scripts/deploy.js --network bscTestnet",
+    "deploy:mainnet": "hardhat run scripts/deploy.js --network bscMainnet",
+    "check": "node scripts/pre-deployment-check.js"
+  },
+  "keywords": ["bep20", "token", "binance", "akc"],
+  "author": "AKASSECT Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@nomicfoundation/hardhat-ethers": "^3.0.0",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@nomicfoundation/hardhat-verify": "^1.0.0",
+    "hardhat": "^2.19.0"
+  },
+  "dependencies": {
+    "@openzeppelin/contracts": "^4.9.0",
+    "ethers": "^6.9.0",
+    "dotenv": "^16.0.0"
+  }
+}

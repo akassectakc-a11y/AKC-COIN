@@ -23,7 +23,7 @@ module.exports = {
       url: "https://data-seed-prebsc-1-s1.binance.org:8545",
       chainId: 97,
       gasPrice: 10000000000, // 10 gwei
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
+      accounts: process.env.PRIVATE_KEY && process.env.PRIVATE_KEY.length === 66 ? [process.env.PRIVATE_KEY] : []
     },
     
     // BSC Mainnet
@@ -31,7 +31,7 @@ module.exports = {
       url: "https://bsc-dataseed1.binance.org",
       chainId: 56,
       gasPrice: 3000000000, // 3 gwei
-      accounts: process.env.PRIVATE_KEY ? [process.env.PRIVATE_KEY] : []
+      accounts: process.env.PRIVATE_KEY && process.env.PRIVATE_KEY.length === 66 ? [process.env.PRIVATE_KEY] : []
     }
   },
   etherscan: {

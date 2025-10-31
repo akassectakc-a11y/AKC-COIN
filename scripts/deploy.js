@@ -10,9 +10,37 @@ async function main() {
   const balance = await ethers.provider.getBalance(deployer.address);
   console.log("💰 Account balance:", ethers.formatEther(balance), "BNB\n");
   
-  // Treasury address (use deployer if not set)
-  const treasury = process.env.TREASURY_ADDRESS || deployer.address;
-  console.log("🏦 Treasury address:", treasury);
+  // 🚨 CRITICAL: Treasury address MUST be set in .env
+  const treasury = process.env.TREASURY_ADDRESS;
+  
+  // Validate treasury address exists
+  if (!treasury) {
+    throw new Error("❌ CRITICAL: TREASURY_ADDRESS not set in .env file!\n   300,000,000 AKC will be lost if not set!");
+  }
+  
+  // Validate treasury address format
+  if (!ethers.isAddress(treasury)) {
+    throw new Error("❌ CRITICAL: Invalid TREASURY_ADDRESS format!");
+  }
+  
+  // Warning if treasury is same as deployer
+  if (treasury.toLowerCase() === deployer.address.toLowerCase()) {
+    console.log("\n⚠️  WARNING: Treasury is same as deployer address!");
+    console.log("   Is this intentional?");
+  }
+  
+  // Triple verification display
+  console.log("\n🔐 CRITICAL: Treasury Address Verification");
+  console.log("=" .repeat(70));
+  console.log("Treasury: ", treasury);
+  console.log("=" .repeat(70));
+  console.log("\n⚠️  This address will receive 300,000,000 AKC!");
+  console.log("⚠️  This CANNOT be changed after deployment!");
+  console.log("\n✅ Confirm this address is CORRECT!");
+  console.log("   Press Ctrl+C to cancel within 15 seconds...\n");
+  
+  // 15 second pause for verification
+  await new Promise(resolve => setTimeout(resolve, 15000));
   
   // Deploy AKC Token
   console.log("\n⏳ Deploying AKC Token Contract...");

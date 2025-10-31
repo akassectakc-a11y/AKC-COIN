@@ -6,7 +6,7 @@
 
 ## 🎯 Executive Summary
 
-**AKASSECT (AKC)** is a **BEP-20 standard** utility token built on Binance Smart Chain (BSC), designed to power the AINOVA ecosystem. With a fixed supply of 300 million tokens and full compliance with industry standards, AKC provides a secure and reliable digital asset for the DeFi community.
+**AKASSECT (AKC)** is a **BEP-20 standard** utility token built on Binance Smart Chain (BSC), designed to power the AKASSECT ecosystem. With a fixed supply of 300 million tokens and full compliance with industry standards, AKC provides a secure and reliable digital asset for the DeFi community.
 
 ---
 

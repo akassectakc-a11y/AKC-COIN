@@ -1,0 +1,121 @@
+{
+  "total": 19,
+  "passed": 19,
+  "failed": 0,
+  "categories": {
+    "잔액부족-0잔액": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "잔액부족-1wei초과": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "잔액부족-정확한금액": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "잔액부족-연속전송": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "정상전송-최소단위": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "정상전송-소수점정밀도": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "정상전송-대량금액": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "정상전송-연속동일주소": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "정상전송-다중분배": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "가스-일반전송": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "가스-Approve": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "가스-TransferFrom": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "가스-Burn": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "가스-Pause": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "엣지-자기자신전송": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "엣지-0금액전송": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "엣지-Allowance재설정": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "엣지-즉시잔액확인": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    },
+    "엣지-Burn후TotalSupply": {
+      "total": 1,
+      "passed": 1,
+      "failed": 0,
+      "details": []
+    }
+  }
+}

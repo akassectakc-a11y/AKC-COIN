@@ -147,7 +147,7 @@ pnpm hardhat run scripts/create-pancakeswap-pool.js --network bscMainnet
 ```
 
 **체크포인트:**
-- [ ] 유동성 풀 생성 완료
+- [ ] 유동성 풀 생성 완료 
 - [ ] PancakeSwap에서 AKC 거래 가능
 - [ ] 거래 링크 확보
 

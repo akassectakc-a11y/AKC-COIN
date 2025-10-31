@@ -1,0 +1,61 @@
+{
+  "summary": {
+    "total": 20000,
+    "passed": 15219,
+    "failed": 4781,
+    "successRate": "76.09%",
+    "duration": "21.34s",
+    "startTime": "2025-10-31T16:52:13.706Z",
+    "endTime": "2025-10-31T16:52:35.044Z"
+  },
+  "categories": {
+    "다양한금액": {
+      "total": 5000,
+      "passed": 4719,
+      "failed": 281,
+      "patterns": []
+    },
+    "P2P전송": {
+      "total": 3000,
+      "passed": 3000,
+      "failed": 0,
+      "patterns": []
+    },
+    "Burn": {
+      "total": 2000,
+      "passed": 2000,
+      "failed": 0,
+      "patterns": []
+    },
+    "Approve": {
+      "total": 1500,
+      "passed": 1500,
+      "failed": 0,
+      "patterns": []
+    },
+    "TransferFrom": {
+      "total": 1500,
+      "passed": 0,
+      "failed": 1500,
+      "patterns": []
+    },
+    "Pause": {
+      "total": 2000,
+      "passed": 2000,
+      "failed": 0,
+      "patterns": []
+    },
+    "순환전송": {
+      "total": 2000,
+      "passed": 2000,
+      "failed": 0,
+      "patterns": []
+    },
+    "복합시나리오": {
+      "total": 3000,
+      "passed": 0,
+      "failed": 3000,
+      "patterns": []
+    }
+  }
+}

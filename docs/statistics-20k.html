@@ -1,0 +1,1112 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AKC Token 20,000개 테스트 통계</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 20px;
+      min-height: 100vh;
+    }
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+      overflow: hidden;
+    }
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 40px;
+      text-align: center;
+    }
+    .header h1 {
+      font-size: 2.5em;
+      margin-bottom: 10px;
+    }
+    .header p {
+      font-size: 1.2em;
+      opacity: 0.9;
+    }
+    .summary {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 20px;
+      padding: 40px;
+      background: #f8f9fa;
+    }
+    .stat-card {
+      background: white;
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: transform 0.3s;
+    }
+    .stat-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 12px rgba(0,0,0,0.15);
+    }
+    .stat-number {
+      font-size: 3em;
+      font-weight: bold;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      margin-bottom: 10px;
+    }
+    .stat-label {
+      font-size: 1.1em;
+      color: #666;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    .categories {
+      padding: 40px;
+    }
+    .category {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .category-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+    .category-title {
+      font-size: 1.8em;
+      color: #333;
+    }
+    .category-stats {
+      font-size: 1.2em;
+      color: #666;
+    }
+    .progress-bar {
+      height: 30px;
+      background: #e0e0e0;
+      border-radius: 15px;
+      overflow: hidden;
+      position: relative;
+    }
+    .progress-fill {
+      height: 100%;
+      background: linear-gradient(90deg, #667eea 0%, #764ba2 100%);
+      transition: width 1s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: bold;
+    }
+    .detail-table {
+      width: 100%;
+      margin-top: 20px;
+      border-collapse: collapse;
+    }
+    .detail-table th {
+      background: #f8f9fa;
+      padding: 15px;
+      text-align: left;
+      border-bottom: 2px solid #dee2e6;
+    }
+    .detail-table td {
+      padding: 12px 15px;
+      border-bottom: 1px solid #dee2e6;
+    }
+    .detail-table tr:hover {
+      background: #f8f9fa;
+    }
+    .status-success {
+      color: #28a745;
+      font-weight: bold;
+    }
+    .status-failed {
+      color: #dc3545;
+      font-weight: bold;
+    }
+    .chart-container {
+      padding: 40px;
+      background: #f8f9fa;
+    }
+    .chart {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    }
+    .footer {
+      text-align: center;
+      padding: 30px;
+      background: #333;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>📊 AKC Token 20,000개 테스트 통계</h1>
+      <p>다양한 패턴 종합 테스트 결과</p>
+    </div>
+
+    <div class="summary">
+      <div class="stat-card">
+        <div class="stat-number">20,000</div>
+        <div class="stat-label">총 테스트</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">15,219</div>
+        <div class="stat-label">성공</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">4,781</div>
+        <div class="stat-label">실패</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">76.09%</div>
+        <div class="stat-label">성공률</div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-number">21.34s</div>
+        <div class="stat-label">소요 시간</div>
+      </div>
+    </div>
+
+    <div class="categories">
+      <h2 style="margin-bottom: 30px; font-size: 2em; color: #333;">📈 카테고리별 결과</h2>
+      
+        <div class="category">
+          <div class="category-header">
+            <div class="category-title">다양한금액</div>
+            <div class="category-stats">4719/5000 (94.38%)</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 94.38%">
+              94.4%
+            </div>
+          </div>
+        </div>
+      
+        <div class="category">
+          <div class="category-header">
+            <div class="category-title">P2P전송</div>
+            <div class="category-stats">3000/3000 (100.00%)</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%">
+              100.0%
+            </div>
+          </div>
+        </div>
+      
+        <div class="category">
+          <div class="category-header">
+            <div class="category-title">Burn</div>
+            <div class="category-stats">2000/2000 (100.00%)</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%">
+              100.0%
+            </div>
+          </div>
+        </div>
+      
+        <div class="category">
+          <div class="category-header">
+            <div class="category-title">Approve</div>
+            <div class="category-stats">1500/1500 (100.00%)</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%">
+              100.0%
+            </div>
+          </div>
+        </div>
+      
+        <div class="category">
+          <div class="category-header">
+            <div class="category-title">TransferFrom</div>
+            <div class="category-stats">0/1500 (0.00%)</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%">
+              0.0%
+            </div>
+          </div>
+        </div>
+      
+        <div class="category">
+          <div class="category-header">
+            <div class="category-title">Pause</div>
+            <div class="category-stats">2000/2000 (100.00%)</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%">
+              100.0%
+            </div>
+          </div>
+        </div>
+      
+        <div class="category">
+          <div class="category-header">
+            <div class="category-title">순환전송</div>
+            <div class="category-stats">2000/2000 (100.00%)</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 100%">
+              100.0%
+            </div>
+          </div>
+        </div>
+      
+        <div class="category">
+          <div class="category-header">
+            <div class="category-title">복합시나리오</div>
+            <div class="category-stats">0/3000 (0.00%)</div>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-fill" style="width: 0%">
+              0.0%
+            </div>
+          </div>
+        </div>
+      
+    </div>
+
+    <div class="chart-container">
+      <div class="chart">
+        <h2 style="margin-bottom: 20px; font-size: 1.8em; color: #333;">📋 최근 100개 상세 로그</h2>
+        <table class="detail-table">
+          <thead>
+            <tr>
+              <th>시간</th>
+              <th>카테고리</th>
+              <th>금액 (AKC)</th>
+              <th>상태</th>
+              <th>가스</th>
+            </tr>
+          </thead>
+          <tbody>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:35</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+              <tr>
+                <td>2025. 11. 1. 오전 1:52:34</td>
+                <td>복합시나리오</td>
+                <td>-</td>
+                <td class="status-failed">FAILED</td>
+                <td>-</td>
+              </tr>
+            
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>Generated: 2025. 11. 1. 오전 1:53:23</p>
+      <p>AKC Token Comprehensive Test Suite</p>
+    </div>
+  </div>
+</body>
+</html>

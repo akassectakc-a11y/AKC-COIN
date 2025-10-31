@@ -5,6 +5,7 @@
 <img src="https://img.shields.io/badge/Token-BEP--20-F0B90B?style=for-the-badge&logo=binance&logoColor=white" alt="BEP-20"/>
 <img src="https://img.shields.io/badge/Network-BSC-F0B90B?style=for-the-badge&logo=binance&logoColor=white" alt="BSC"/>
 <img src="https://img.shields.io/badge/Supply-300M-00D395?style=for-the-badge" alt="Supply"/>
+<img src="https://img.shields.io/badge/LBank-Application%20Submitted-00D9FF?style=for-the-badge&logo=ethereum&logoColor=white" alt="LBank"/>
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=flat-square)](https://opensource.org/licenses/MIT)
 [![Solidity](https://img.shields.io/badge/Solidity-0.8.4-blue?style=flat-square&logo=solidity)](https://soliditylang.org/)
@@ -260,8 +261,19 @@ https://pancakeswap.finance/swap?outputCurrency=0x...
 
 ### CEX (중앙화 거래소)
 
+#### 🎉 상장 신청 현황
+
+| 거래소 | 등급 | 상태 | 신청일 | 예상 완료 |
+|--------|------|------|--------|----------|
+| **LBank** | Tier 2-3 | ✅ 신청 완료 | 2025-10-31 | 2025-12월 중순 |
+
+📄 상세 현황: [docs/LBANK-APPLICATION-STATUS.md](./docs/LBANK-APPLICATION-STATUS.md)
+
+#### 📋 기타 거래소 정보
+
 | 거래소 | 등급 | 상장 비용 | 시간 |
 |--------|------|-----------|------|
+| **LBank** | Tier 2-3 | $90,000 - $180,000 | 4-8주 |
 | **MEXC** | Tier 3 | $10,000 - $30,000 | 1-2주 |
 | **Gate.io** | Tier 2 | $50,000 - $100,000 | 2-4주 |
 | **Binance** | Tier 1 | $200,000+ | 2-6개월 |

@@ -323,6 +323,178 @@ Distribution:
 
 ---
 
+## 🌐 Global Exchange Listing Guide
+
+### LBank Exchange
+
+#### 📊 Exchange Overview
+- **Tier**: Tier 2-3 CEX
+- **Daily Volume**: $500M - $1B+
+- **Supported Countries**: Worldwide (including Korea)
+- **Founded**: 2016
+- **Users**: 6M+ registered users
+- **Listed Tokens**: 400+ tokens
+
+#### 🎯 Listing Requirements
+
+**Mandatory Conditions**:
+- ✅ Verified smart contract (BEP-20)
+- ✅ Minimum 3,000+ holders
+- ✅ Daily trading volume $10,000+
+- ✅ CoinGecko or CoinMarketCap listing
+- ✅ Active community (Telegram 5,000+)
+- ✅ Audit report (optional but recommended)
+
+**Technical Requirements**:
+- API documentation provided
+- Test environment support
+- Integration testing completed
+- 24/7 technical support team
+
+**Legal Requirements**:
+- Team KYC (mandatory)
+- Project legal opinion letter
+- Token sale documents (if applicable)
+- Company registration certificate
+
+#### 💰 Listing Costs
+
+**Fee Structure**:
+
+| Item | Cost (Estimated) | Notes |
+|------|-----------------|-------|
+| **Base Listing Fee** | $30,000 - $50,000 | Negotiable |
+| **Market Making Deposit** | $50,000 - $100,000 | Refundable |
+| **Marketing Package** | $10,000 - $30,000 | Optional |
+| **IEO (Option)** | $50,000+ | Separate negotiation |
+
+**Total Estimated Cost**: $90,000 - $180,000
+
+#### 📅 Listing Process (Average 4-8 weeks)
+
+**Week 1-2: Initial Application**
+- [ ] Submit application form (online)
+- [ ] Initial review and NDA signing
+- [ ] Project evaluation begins
+- [ ] Listing fee discussion
+
+**Week 3-4: Due Diligence**
+- [ ] Team KYC submission and verification
+- [ ] Smart contract review
+- [ ] Legal document review
+- [ ] Community verification
+- [ ] Tokenomics analysis
+
+**Week 5-6: Technical Integration**
+- [ ] API integration starts
+- [ ] Wallet setup (deposit/withdrawal)
+- [ ] Testnet testing
+- [ ] Mainnet integration
+- [ ] Security testing
+
+**Week 7-8: Marketing & Launch**
+- [ ] Listing announcement preparation
+- [ ] Marketing campaign coordination
+- [ ] Trading event planning
+- [ ] Official listing (Go-Live)
+- [ ] Monitoring and support
+
+#### 📋 Document Submission Checklist
+
+**Project Documents**:
+- [ ] Whitepaper (English required)
+- [ ] Token information sheet
+- [ ] Roadmap and milestones
+- [ ] Team introduction and background
+- [ ] Partnership proof
+
+**Technical Documents**:
+- [ ] Smart contract source code
+- [ ] Contract verification link (BscScan)
+- [ ] Audit report (if available)
+- [ ] API documentation
+- [ ] Technical specifications
+
+**Legal Documents**:
+- [ ] Company registration certificate
+- [ ] Team identification (KYC)
+- [ ] Legal opinion letter
+- [ ] Token sale documents (if applicable)
+- [ ] Compliance confirmation
+
+**Marketing Materials**:
+- [ ] Logo (SVG, PNG)
+- [ ] Brand guidelines
+- [ ] Social media links
+- [ ] Community statistics
+- [ ] Promotional materials
+
+#### 🎁 Marketing Support Options
+
+**Basic Package** ($10,000):
+- Homepage banner (1 week)
+- Official Telegram announcement
+- Twitter announcement (1 time)
+- Email newsletter inclusion
+
+**Premium Package** ($20,000):
+- All Basic benefits
+- Homepage banner (2 weeks)
+- Twitter campaign (3 times)
+- AMA session 1 time
+- Trading event support
+
+**VIP Package** ($30,000):
+- All Premium benefits
+- Main homepage banner (4 weeks)
+- IEO launchpad option
+- Dedicated marketing manager
+- Continuous marketing support
+
+#### 🔗 LBank Contact Information
+
+**Official Channels**:
+- Website: https://www.lbank.com
+- Listing Application: https://www.lbank.com/en-US/listing
+- Email: listing@lbank.info
+- Telegram: @LBank_en
+
+**Application Form**: https://www.lbank.com/en-US/listing-application
+
+#### 📊 Post-Listing Management
+
+**Required**:
+- 24/7 monitoring
+- Maintain sufficient liquidity
+- Regular communication
+- Quick issue response
+- Active market making
+
+**Recommended**:
+- Trading events
+- Regular announcements
+- Community AMAs
+- Partnership announcements
+- Project updates
+
+#### 💡 Listing Success Tips
+
+1. **Community Preparation**: Build sufficient community before listing
+2. **Liquidity Assurance**: Secure adequate market making funds
+3. **Marketing Readiness**: Prepare marketing campaigns pre/post listing
+4. **Technical Support**: Provide quick technical support during integration
+5. **Transparency**: Provide all information transparently
+
+#### ⚠️ Important Notes
+
+- Listing fees are negotiable and vary by project
+- Process takes 4-12 weeks (depending on project complexity)
+- KYC and legal review are mandatory and cannot be refused
+- Market making deposit is refundable per contract terms
+- Minimum 6-month liquidity maintenance commitment required post-listing
+
+---
+
 ## 🔗 Official Links
 
 ### Project Links

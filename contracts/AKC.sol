@@ -9,7 +9,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 /**
  * @title AKC - AKASSECT Token
  * @dev BEP-20 Token on Binance Smart Chain
- * @notice Utility token for INFINIBIT ecosystem
+ * @notice AI-powered payment gateway token for AKASSECT ecosystem
  * 
  * Token Details:
  * - Name: AKASSECT

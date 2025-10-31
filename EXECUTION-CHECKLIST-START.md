@@ -73,7 +73,7 @@ cat > package.json << 'EOF'
 {
   "name": "akc-token",
   "version": "1.0.0",
-  "description": "AINOVA Key Coin (AKC) BEP-20 Token",
+  "description": "AKASSECT (AKC) BEP-20 Token",
   "scripts": {
     "compile": "hardhat compile",
     "test": "hardhat test",
@@ -132,7 +132,7 @@ contract AKC is ERC20, ERC20Burnable, Pausable, Ownable {
     event TokensPaused(address indexed by);
     event TokensUnpaused(address indexed by);
     
-    constructor(address treasury) ERC20("AINOVA Key Coin", "AKC") {
+    constructor(address treasury) ERC20("AKASSECT", "AKC") {
         require(treasury != address(0), "AKC: treasury is zero address");
         _mint(treasury, TOTAL_SUPPLY);
         emit Minted(treasury, TOTAL_SUPPLY);

@@ -45,7 +45,7 @@ describe("AKC Token", function () {
   
   describe("배포", function () {
     it("정확한 이름과 심볼", async function () {
-      expect(await akc.name()).to.equal("AINOVA Key Coin");
+      expect(await akc.name()).to.equal("AKASSECT");
       expect(await akc.symbol()).to.equal("AKC");
     });
     

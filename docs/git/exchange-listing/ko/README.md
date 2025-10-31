@@ -7,7 +7,7 @@
 ## 🎯 토큰 기본 정보
 
 ### 토큰 개요
-- **토큰명**: AINOVA Key Coin (아이노바 키 코인)
+- **토큰명**: AKASSECT (아이노바 키 코인)
 - **토큰 심볼**: AKC
 - **토큰 표준**: **BEP-20** (바이낸스 스마트 체인)
 - **네트워크**: Binance Smart Chain (BSC)
@@ -41,7 +41,7 @@
 
 | 항목 | 내용 |
 |------|------|
-| **토큰명** | AINOVA Key Coin (아이노바 키 코인) |
+| **토큰명** | AKASSECT (아이노바 키 코인) |
 | **심볼** | AKC |
 | **표준** | **BEP-20 (BSC)** |
 | **총 발행량** | 300,000,000 AKC |
@@ -407,19 +407,19 @@ function unpause() public onlyOwner
 
 ### 거래소 상장 문의
 
-- **이메일**: listing@ainova.io
+- **이메일**: akassectakc@gmail.com
 - **텔레그램**: @ainova_listing
 - **전화**: [번호]
 - **카카오톡**: [ID]
 
 ### 기술 문의
 
-- **이메일**: tech@ainova.io
+- **이메일**: akassectakc@gmail.com
 - **GitHub Issues**: https://github.com/akassectakc-a11y/AKC-COIN/issues
 
 ### 법률 문의
 
-- **이메일**: legal@ainova.io
+- **이메일**: akassectakc@gmail.com
 - **주소**: [전체 법적 주소]
 
 ---
@@ -520,7 +520,7 @@ function unpause() public onlyOwner
 
 **최종 업데이트**: 2025-10-31  
 **문서 버전**: 1.0  
-**연락처**: listing@ainova.io
+**연락처**: akassectakc@gmail.com
 
 ---
 

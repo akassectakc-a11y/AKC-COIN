@@ -435,7 +435,7 @@ BNB 수량: 10 BNB
 ```markdown
 # Twitter 발표문
 
-🎉 AINOVA Key Coin (AKC) Mainnet Launch! 🚀
+🎉 AKASSECT (AKC) Mainnet Launch! 🚀
 
 We're excited to announce that AKC is now LIVE on BSC Mainnet!
 
@@ -456,7 +456,7 @@ We're excited to announce that AKC is now LIVE on BSC Mainnet!
 
 Dear AINOVA Community,
 
-We are thrilled to announce the official launch of AINOVA Key Coin (AKC) on Binance Smart Chain Mainnet!
+We are thrilled to announce the official launch of AKASSECT (AKC) on Binance Smart Chain Mainnet!
 
 📍 Contract Address: 0x987...
 ✅ BscScan Verified

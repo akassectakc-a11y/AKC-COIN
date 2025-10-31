@@ -44,12 +44,12 @@ CONTRACT_ADDRESS=$(cat deployments/bscTestnet-deployment.json | grep contractAdd
 # info.json 템플릿
 cat > token-info.json << EOF
 {
-  "name": "AINOVA Key Coin",
+  "name": "AKASSECT",
   "type": "BEP20",
   "symbol": "AKC",
   "decimals": 18,
   "website": "https://ainova.io",
-  "description": "AINOVA Key Coin (AKC) is a BEP-20 token on Binance Smart Chain",
+  "description": "AKASSECT (AKC) is a BEP-20 token on Binance Smart Chain",
   "explorer": "https://testnet.bscscan.com/token/${CONTRACT_ADDRESS}",
   "status": "active",
   "id": "${CONTRACT_ADDRESS}",
@@ -99,7 +99,7 @@ echo "   https://testnet.bscscan.com/address/${CONTRACT_ADDRESS}#code"
 - [ ] ✅ Contract 탭: 소스코드 검증 완료 (초록색 체크)
 - [ ] ✅ Read Contract: name(), symbol(), totalSupply() 조회 가능
 - [ ] ✅ Write Contract: mint(), pause() 함수 표시
-- [ ] ✅ Token Tracker: AKC (AINOVA Key Coin) 표시
+- [ ] ✅ Token Tracker: AKC (AKASSECT) 표시
 - [ ] ✅ Decimals: 18
 - [ ] ✅ Total Supply: 300,000,000 AKC
 
@@ -208,7 +208,7 @@ cat >> DEPLOYMENT-REPORT.md << EOF
 - **배포 트랜잭션**: \`${TX_HASH}\`
 
 ### 토큰 스펙
-- **이름**: AINOVA Key Coin
+- **이름**: AKASSECT
 - **심볼**: AKC
 - **Decimals**: 18
 - **총 발행량**: 300,000,000 AKC

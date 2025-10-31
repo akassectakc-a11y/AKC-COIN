@@ -6,7 +6,7 @@
 
 ## 🎯 요약
 
-**AINOVA Key Coin (AKC)**은 **BEP-20 표준** 유틸리티 토큰으로, Binance Smart Chain (BSC)에 구축되어 AINOVA 생태계를 구동하도록 설계되었습니다. 3억 개의 고정 공급량과 업계 표준의 완전한 준수로, AKC는 DeFi 커뮤니티에 안전하고 신뢰할 수 있는 디지털 자산을 제공합니다.
+**AKASSECT (AKC)**은 **BEP-20 표준** 유틸리티 토큰으로, Binance Smart Chain (BSC)에 구축되어 AINOVA 생태계를 구동하도록 설계되었습니다. 3억 개의 고정 공급량과 업계 표준의 완전한 준수로, AKC는 DeFi 커뮤니티에 안전하고 신뢰할 수 있는 디지털 자산을 제공합니다.
 
 ---
 
@@ -16,7 +16,7 @@
 
 ```json
 {
-  "name": "AINOVA Key Coin",
+  "name": "AKASSECT",
   "symbol": "AKC",
   "standard": "BEP-20",
   "network": "Binance Smart Chain (BSC)",
@@ -303,7 +303,7 @@ curl https://api.bscscan.com/api \
 
 ### 거래소 통합 문의
 
-- **이메일**: tech@ainova.io
+- **이메일**: akassectakc@gmail.com
 - **텔레그램**: @ainova_tech
 - **디스코드**: https://discord.gg/ainova
 - **응답 시간**: 24시간 이내
@@ -466,4 +466,4 @@ curl https://api.bscscan.com/api \
 **최종 업데이트**: 2025-10-31  
 **다음 검토**: 2026-01-31
 
-**연락처**: tech@ainova.io
+**연락처**: akassectakc@gmail.com

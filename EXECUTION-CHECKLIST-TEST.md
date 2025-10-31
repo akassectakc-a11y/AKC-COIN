@@ -25,7 +25,7 @@ describe("AKC Token", function () {
   
   describe("배포", function () {
     it("정확한 이름과 심볼", async function () {
-      expect(await akc.name()).to.equal("AINOVA Key Coin");
+      expect(await akc.name()).to.equal("AKASSECT");
       expect(await akc.symbol()).to.equal("AKC");
     });
     
@@ -225,11 +225,11 @@ convert assets/logo/akc-logo.svg -resize 128x128 assets/logo/akc-logo-128.png
 ```bash
 cat > assets/logo/token-metadata.json << 'EOF'
 {
-  "name": "AINOVA Key Coin",
+  "name": "AKASSECT",
   "symbol": "AKC",
   "decimals": 18,
   "totalSupply": "300000000",
-  "description": "AINOVA Key Coin (AKC) is a BEP-20 token on BSC",
+  "description": "AKASSECT (AKC) is a BEP-20 token on BSC",
   "website": "https://ainova.io",
   "logo": {
     "svg": "akc-logo.svg",

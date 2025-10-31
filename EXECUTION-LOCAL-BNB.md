@@ -297,7 +297,7 @@ const deployment = require("./deployments/localhost-deployment.json");
 const akc = AKC.attach(deployment.contractAddress);
 
 // 토큰 정보 확인
-await akc.name();        // "AINOVA Key Coin"
+await akc.name();        // "AKASSECT"
 await akc.symbol();      // "AKC"
 await akc.totalSupply(); // 300000000000000000000000000 (300M * 10^18)
 

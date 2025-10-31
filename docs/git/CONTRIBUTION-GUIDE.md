@@ -1,6 +1,6 @@
 # 🤝 Contributing to AKC Token
 
-> **Thank you for your interest in contributing to AINOVA Key Coin!**
+> **Thank you for your interest in contributing to AKASSECT!**
 
 ---
 
@@ -311,7 +311,7 @@ async function deployAKC(network, treasuryAddress) {
 ```javascript
 describe("AKC Token", function () {
   it("should have correct name and symbol", async function () {
-    expect(await akc.name()).to.equal("AINOVA Key Coin");
+    expect(await akc.name()).to.equal("AKASSECT");
     expect(await akc.symbol()).to.equal("AKC");
   });
   
@@ -434,7 +434,7 @@ All contributors are recognized in:
 ### Get Help
 
 - 💬 GitHub Discussions: [Ask a question](https://github.com/akassectakc-a11y/AKC-COIN/discussions)
-- 📧 Email: dev@ainova.io
+- 📧 Email: akassectakc@gmail.com
 - 💬 Telegram: https://t.me/ainova_dev
 - 📖 Documentation: https://docs.ainova.io
 

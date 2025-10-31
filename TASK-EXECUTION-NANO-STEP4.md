@@ -9,7 +9,7 @@
 ```bash
 # 시작: 01:29:00.000
 cat > README.md << 'EOF'
-# 🪙 AINOVA Key Coin (AKC)
+# 🪙 AKASSECT (AKC)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![BSC](https://img.shields.io/badge/BSC-BEP--20-yellow)](https://www.binance.org/en/smartChain)
@@ -20,7 +20,7 @@ cat > README.md << 'EOF'
 
 ## 🎯 Overview
 
-AINOVA Key Coin (AKC) is a BEP-20 utility token on Binance Smart Chain.
+AKASSECT (AKC) is a BEP-20 utility token on Binance Smart Chain.
 
 ### Key Features
 
@@ -34,7 +34,7 @@ AINOVA Key Coin (AKC) is a BEP-20 utility token on Binance Smart Chain.
 
 | Parameter | Value |
 |-----------|-------|
-| **Name** | AINOVA Key Coin |
+| **Name** | AKASSECT |
 | **Symbol** | AKC |
 | **Network** | Binance Smart Chain (BSC) |
 | **Standard** | BEP-20 |
@@ -133,7 +133,7 @@ MIT License - see [LICENSE](LICENSE) file for details.
 ## 📞 Contact
 
 - Website: https://ainova.io
-- Email: contact@ainova.io
+- Email: akassectakc@gmail.com
 - Telegram: [@ainova](https://t.me/ainova)
 
 ---
@@ -375,7 +375,7 @@ cat > DEPLOYMENT-REPORT.md << 'EOF'
 
 ## 📅 프로젝트 정보
 
-- **프로젝트명**: AINOVA Key Coin (AKC)
+- **프로젝트명**: AKASSECT (AKC)
 - **표준**: BEP-20
 - **네트워크**: Binance Smart Chain
 - **생성일**: $(date '+%Y-%m-%d %H:%M:%S')

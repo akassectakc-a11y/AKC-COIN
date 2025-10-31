@@ -6,7 +6,7 @@
 
 ## 🎯 Executive Summary
 
-**AINOVA Key Coin (AKC)** is a **BEP-20 standard** utility token built on Binance Smart Chain (BSC), designed to power the AINOVA ecosystem. With a fixed supply of 300 million tokens and full compliance with industry standards, AKC provides a secure and reliable digital asset for the DeFi community.
+**AKASSECT (AKC)** is a **BEP-20 standard** utility token built on Binance Smart Chain (BSC), designed to power the AINOVA ecosystem. With a fixed supply of 300 million tokens and full compliance with industry standards, AKC provides a secure and reliable digital asset for the DeFi community.
 
 ---
 
@@ -16,7 +16,7 @@
 
 ```json
 {
-  "name": "AINOVA Key Coin",
+  "name": "AKASSECT",
   "symbol": "AKC",
   "standard": "BEP-20",
   "network": "Binance Smart Chain (BSC)",
@@ -303,7 +303,7 @@ curl https://api.bscscan.com/api \
 
 ### For Exchange Integration
 
-- **Email**: tech@ainova.io
+- **Email**: akassectakc@gmail.com
 - **Telegram**: @ainova_tech
 - **Discord**: https://discord.gg/ainova
 - **Response Time**: Within 24 hours
@@ -367,4 +367,4 @@ curl https://api.bscscan.com/api \
 **Last Updated**: 2025-10-31  
 **Next Review**: 2026-01-31
 
-**Contact**: tech@ainova.io
+**Contact**: akassectakc@gmail.com

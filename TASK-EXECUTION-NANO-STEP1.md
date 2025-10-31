@@ -20,7 +20,7 @@ mkdir -p ~/akc-token-project && cd ~/akc-token-project
 # 시작: 00:00:15.000
 git init
 git config user.name "AINOVA"
-git config user.email "dev@ainova.io"
+git config user.email "akassectakc@gmail.com"
 # 종료: 00:00:30.000
 ```
 - [ ] ✅ 완료 (30초)
@@ -54,7 +54,7 @@ cat > package.json << 'EOF'
 {
   "name": "akc-token",
   "version": "1.0.0",
-  "description": "AINOVA Key Coin - BEP-20",
+  "description": "AKASSECT - BEP-20",
   "scripts": {
     "test": "hardhat test",
     "compile": "hardhat compile",
@@ -104,7 +104,7 @@ contract AKC is ERC20, ERC20Burnable, Pausable, Ownable {
     event TokensPaused(address indexed by);
     event TokensUnpaused(address indexed by);
     
-    constructor(address treasury) ERC20("AINOVA Key Coin", "AKC") {
+    constructor(address treasury) ERC20("AKASSECT", "AKC") {
         require(treasury != address(0), "Invalid treasury");
         _mint(treasury, TOTAL_SUPPLY);
         emit Minted(treasury, TOTAL_SUPPLY);

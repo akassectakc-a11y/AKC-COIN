@@ -124,7 +124,7 @@ pnpm --version  # >=9 확인
 {
   "name": "akc-contract",
   "version": "1.0.0",
-  "description": "AINOVA Key Coin (AKC) BEP-20 Token",
+  "description": "AKASSECT (AKC) BEP-20 Token",
   "main": "index.js",
   "scripts": {
     "compile": "hardhat compile",

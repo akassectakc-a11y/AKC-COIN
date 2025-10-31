@@ -31,7 +31,7 @@
 ```json
 {
   "tokenInfo": {
-    "name": "AINOVA Key Coin",
+    "name": "AKASSECT",
     "symbol": "AKC",
     "decimals": 18,
     "totalSupply": "300,000,000",
@@ -196,14 +196,14 @@ pnpm hardhat run scripts/create-pancakeswap-pool.js --network bscMainnet
 # AKC Token Listing Application
 
 ## Project Information
-- **Token Name**: AINOVA Key Coin
+- **Token Name**: AKASSECT
 - **Token Symbol**: AKC
 - **Total Supply**: 300,000,000 AKC
 - **Contract Address**: 0x... (BSC Mainnet)
 - **Decimals**: 18
 
 ## Project Description
-AINOVA Key Coin (AKC) is a utility token designed for...
+AKASSECT (AKC) is a utility token designed for...
 [프로젝트 상세 설명 500자 이상]
 
 ## Official Links
@@ -280,7 +280,7 @@ Binance 상장 준비:
 https://www.coingecko.com/en/coins/new
 
 # 필수 정보
-- Token Name: AINOVA Key Coin
+- Token Name: AKASSECT
 - Symbol: AKC
 - Contract Address: 0x... (BSC)
 - Logo URL: https://raw.githubusercontent.com/ainova/akc-token/main/assets/logo/akc-logo-256.png
@@ -296,7 +296,7 @@ https://support.coinmarketcap.com/hc/en-us/requests/new?ticket_form_id=360000523
 
 # 제출 양식
 {
-  "project_name": "AINOVA Key Coin",
+  "project_name": "AKASSECT",
   "ticker_symbol": "AKC",
   "contract_address": "0x...",
   "blockchain": "Binance Smart Chain",
@@ -335,12 +335,12 @@ mkdir -p blockchains/smartchain/assets/0x[YOUR_CONTRACT_ADDRESS]
 # info.json
 cat > blockchains/smartchain/assets/0x[YOUR_CONTRACT_ADDRESS]/info.json << 'EOF'
 {
-  "name": "AINOVA Key Coin",
+  "name": "AKASSECT",
   "type": "BEP20",
   "symbol": "AKC",
   "decimals": 18,
   "website": "https://ainova.io",
-  "description": "AINOVA Key Coin (AKC) is a utility token for the AINOVA ecosystem",
+  "description": "AKASSECT (AKC) is a utility token for the AINOVA ecosystem",
   "explorer": "https://bscscan.com/token/0x...",
   "status": "active",
   "id": "0x...",
@@ -373,7 +373,7 @@ npm run check
 
 # 7. 커밋 및 푸시
 git add .
-git commit -m "Add AINOVA Key Coin (AKC)"
+git commit -m "Add AKASSECT (AKC)"
 git push origin add-akc-token
 
 # 8. Pull Request 생성

@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🪙 AINOVA Key Coin (AKC)
+# 🪙 AKASSECT (AKC)
 
 <img src="https://img.shields.io/badge/Token-BEP--20-F0B90B?style=for-the-badge&logo=binance&logoColor=white" alt="BEP-20"/>
 <img src="https://img.shields.io/badge/Network-BSC-F0B90B?style=for-the-badge&logo=binance&logoColor=white" alt="BSC"/>
@@ -52,7 +52,7 @@
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│        🌐 AINOVA Key Coin (AKC)                            │
+│        🌐 AKASSECT (AKC)                            │
 │                                                             │
 │   Binance Smart Chain 기반 BEP-20 유틸리티 토큰             │
 │                                                             │
@@ -111,7 +111,7 @@ BscScan<br/>검증 완료
 
 | 항목 | 내용 |
 |------|------|
-| **토큰명** | AINOVA Key Coin |
+| **토큰명** | AKASSECT |
 | **심볼** | AKC |
 | **네트워크** | Binance Smart Chain (BSC) |
 | **표준** | BEP-20 (ERC-20 호환) |
@@ -624,9 +624,9 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 <table>
 <tr>
 <td align="center" width="33%">
-<img src="https://img.shields.io/badge/📧_Email-contact@ainova.io-EA4335?style=for-the-badge" /><br/>
+<img src="https://img.shields.io/badge/📧_Email-akassectakc@gmail.com-EA4335?style=for-the-badge" /><br/>
 <b>일반 문의</b><br/>
-<a href="mailto:contact@ainova.io">contact@ainova.io</a>
+<a href="mailto:akassectakc@gmail.com">akassectakc@gmail.com</a>
 </td>
 <td align="center" width="33%">
 <img src="https://img.shields.io/badge/💬_Telegram-@ainova__official-26A5E4?style=for-the-badge" /><br/>
@@ -708,7 +708,7 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 ```
 ┌─────────────────────────────────────────────────────────────┐
 │                                                             │
-│  🪙 AINOVA Key Coin (AKC)                                   │
+│  🪙 AKASSECT (AKC)                                   │
 │                                                             │
 │  "Building the Future of Decentralized Finance"            │
 │                                                             │

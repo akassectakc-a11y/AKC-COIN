@@ -47,7 +47,7 @@ import "@openzeppelin/contracts/access/Ownable.sol";
 ```solidity
 // 실행 시간: 420초
 /**
- * @title AINOVA Key Coin (AKC)
+ * @title AKASSECT (AKC)
  * @dev BEP-20 토큰 (ERC-20 호환)
  * @notice 총 발행량: 300,000,000 AKC
  */
@@ -75,7 +75,7 @@ contract AKC is ERC20, ERC20Burnable, Pausable, Ownable {
  * @dev 생성자
  * @param treasury 초기 토큰을 받을 Treasury 주소
  */
-constructor(address treasury) ERC20("AINOVA Key Coin", "AKC") {
+constructor(address treasury) ERC20("AKASSECT", "AKC") {
     require(treasury != address(0), "AKC: treasury is zero address");
     
     // 전체 토큰을 Treasury로 발행
@@ -87,7 +87,7 @@ constructor(address treasury) ERC20("AINOVA Key Coin", "AKC") {
 
 **체크포인트:**
 - ✅ 생성자 파라미터 `treasury` 정의
-- ✅ ERC20 생성자 호출 (이름: "AINOVA Key Coin", 심볼: "AKC")
+- ✅ ERC20 생성자 호출 (이름: "AKASSECT", 심볼: "AKC")
 - ✅ treasury 주소 0x0 검증
 - ✅ TOTAL_SUPPLY만큼 treasury로 발행
 - ✅ Minted 이벤트 발생
@@ -381,7 +381,7 @@ describe("AKC Token", function () {
 // 실행 시간: 420초
 describe("배포", function () {
   it("정확한 이름과 심볼을 가져야 함", async function () {
-    expect(await akc.name()).to.equal("AINOVA Key Coin");
+    expect(await akc.name()).to.equal("AKASSECT");
     expect(await akc.symbol()).to.equal("AKC");
   });
   

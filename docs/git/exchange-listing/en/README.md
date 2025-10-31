@@ -7,7 +7,7 @@
 ## 🎯 Quick Information
 
 ### Token Overview
-- **Token Name**: AINOVA Key Coin
+- **Token Name**: AKASSECT
 - **Token Symbol**: AKC
 - **Token Standard**: **BEP-20** (Binance Smart Chain)
 - **Network**: Binance Smart Chain (BSC)
@@ -41,7 +41,7 @@
 
 | Item | Details |
 |------|---------|
-| **Token Name** | AINOVA Key Coin |
+| **Token Name** | AKASSECT |
 | **Symbol** | AKC |
 | **Standard** | **BEP-20 (BSC)** |
 | **Total Supply** | 300,000,000 AKC |
@@ -351,18 +351,18 @@ Distribution:
 
 ### For Exchange Listing Inquiries
 
-- **Email**: listing@ainova.io
+- **Email**: akassectakc@gmail.com
 - **Telegram**: @ainova_listing
 - **Phone**: [Number]
 
 ### For Technical Questions
 
-- **Email**: tech@ainova.io
+- **Email**: akassectakc@gmail.com
 - **GitHub Issues**: https://github.com/akassectakc-a11y/AKC-COIN/issues
 
 ### For Legal Matters
 
-- **Email**: legal@ainova.io
+- **Email**: akassectakc@gmail.com
 - **Address**: [Full Legal Address]
 
 ---
@@ -444,7 +444,7 @@ We provide full technical support for exchange integration:
 
 **Last Updated**: 2025-10-31  
 **Document Version**: 1.0  
-**Contact**: listing@ainova.io
+**Contact**: akassectakc@gmail.com
 
 ---
 

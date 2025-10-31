@@ -1,6 +1,6 @@
 # 📁 AKC Token GitHub Repository Information
 
-> **Official Repository for AINOVA Key Coin (AKC)**
+> **Official Repository for AKASSECT (AKC)**
 
 ---
 
@@ -160,7 +160,7 @@ git push origin v1.0.0
 ### Reporting Security Issues
 **DO NOT** create public issues for security vulnerabilities.
 
-Contact: security@ainova.io
+Contact: akassectakc@gmail.com
 
 See [SECURITY.md](../../SECURITY.md) for details.
 
@@ -176,7 +176,7 @@ See [SECURITY.md](../../SECURITY.md) for details.
 ### Communication Channels
 - 🐛 Issues: https://github.com/akassectakc-a11y/AKC-COIN/issues
 - 💬 Discussions: https://github.com/akassectakc-a11y/AKC-COIN/discussions
-- 📧 Email: dev@ainova.io
+- 📧 Email: akassectakc@gmail.com
 - 💬 Telegram: https://t.me/ainova_dev
 
 ---

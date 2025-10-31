@@ -142,7 +142,7 @@ const akc = AKC.attach(process.env.AKC_CONTRACT_ADDRESS);
 
 // 1. 이름 확인
 const name = await akc.name();
-console.log(`이름: ${name}`); // "AINOVA Key Coin"
+console.log(`이름: ${name}`); // "AKASSECT"
 
 // 2. 심볼 확인
 const symbol = await akc.symbol();
@@ -159,7 +159,7 @@ console.log(`총 발행량: ${ethers.utils.formatEther(totalSupply)} AKC`);
 ```
 
 **체크포인트:**
-- ✅ name = "AINOVA Key Coin"
+- ✅ name = "AKASSECT"
 - ✅ symbol = "AKC"
 - ✅ decimals = 18
 - ✅ totalSupply = 300,000,000 * 10^18
@@ -346,7 +346,7 @@ open "http://localhost:4000/address/${testAccount1}"
 
 ## 토큰 스펙
 
-- **이름**: AINOVA Key Coin
+- **이름**: AKASSECT
 - **심볼**: AKC
 - **Decimals**: 18
 - **총 발행량**: 300,000,000 AKC

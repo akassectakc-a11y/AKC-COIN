@@ -11,22 +11,20 @@
 docs/logo/
 ├── README.md                        (본 파일)
 ├── AKC-LOGO-SPECIFICATION.md        (로고 상세 스펙)
-├── AKC_Premium_BlackGold.png        (기본 로고 - 추가 예정)
-├── AKC_Whitepaper_LBank.pdf         (백서 - 추가 예정)
+├── AKC-Logo.svg                     ✅ (전체 로고 - SVG)
+├── AKC-Icon.svg                     ✅ (아이콘 버전 - SVG)
+├── logo-preview.html                ✅ (로고 미리보기 페이지)
+├── PNG-GENERATION-GUIDE.md          ✅ (PNG 생성 가이드)
 │
-├── variations/                      (로고 변형 버전)
-│   ├── AKC_WhiteBG.png
-│   ├── AKC_Transparent.png
-│   └── AKC_Monochrome.png
+├── png/                             (PNG 버전 - 생성 예정)
+│   ├── AKC-Logo-1024.png
+│   ├── AKC-Logo-512.png
+│   ├── AKC-Logo-256.png
+│   ├── AKC-Icon-256.png
+│   ├── AKC-Icon-128.png
+│   └── AKC-Icon-64.png
 │
-├── sizes/                          (다양한 크기)
-│   ├── 32x32/
-│   ├── 128x128/
-│   ├── 256x256/
-│   ├── 512x512/
-│   └── 1024x1024/
-│
-└── press-kit/                      (미디어 키트)
+└── press-kit/                       (미디어 키트 - 추가 예정)
     ├── AKC_Banner_1920x1080.png
     ├── AKC_Social_512x512.png
     └── AKC_Brand_Guidelines.pdf
@@ -36,11 +34,27 @@ docs/logo/
 
 ## 🎯 주요 파일
 
+### 🎨 로고 미리보기
+```
+파일: logo-preview.html
+브라우저에서 열기:
+  1. docs/logo/logo-preview.html 더블클릭
+  2. 또는 브라우저에 드래그 앤 드롭
+
+기능:
+  ✅ 다양한 배경에서 로고 테스트
+  ✅ 여러 크기로 미리보기
+  ✅ 기술 사양 확인
+  ✅ 사용 가이드라인
+  ✅ SVG 파일 다운로드
+```
+
 ### 1️⃣ 로고 파일
 ```
-파일명: AKC_Premium_BlackGold.png
-크기: 1024×1024 px
-형식: PNG
+파일명: AKC-Logo.svg (전체 버전)
+       AKC-Icon.svg (아이콘 버전)
+크기: 512×512 px (SVG - 확대 가능)
+형식: SVG, PNG (생성 예정)
 용도: LBank 제출, 공식 문서, 웹사이트
 ```
 

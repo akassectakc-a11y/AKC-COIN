@@ -1,0 +1,101 @@
+{
+  "total": 18003,
+  "passed": 9325,
+  "failed": 8678,
+  "skipped": 0,
+  "startTime": "2025-10-31T15:36:29.672Z",
+  "endTime": "2025-10-31T15:36:39.641Z",
+  "duration": 9.969,
+  "categories": {
+    "기본전송-소액": {
+      "total": 1000,
+      "passed": 1000,
+      "failed": 0
+    },
+    "기본전송-중액": {
+      "total": 1000,
+      "passed": 1000,
+      "failed": 0
+    },
+    "기본전송-대액": {
+      "total": 1000,
+      "passed": 1000,
+      "failed": 0
+    },
+    "기본전송-최대액": {
+      "total": 1000,
+      "passed": 450,
+      "failed": 550
+    },
+    "기본전송-연속2회": {
+      "total": 1000,
+      "passed": 872,
+      "failed": 128
+    },
+    "기본전송-연속5회": {
+      "total": 1001,
+      "passed": 1,
+      "failed": 1000
+    },
+    "기본전송-다중2명": {
+      "total": 500,
+      "passed": 0,
+      "failed": 500
+    },
+    "기본전송-다중5명": {
+      "total": 500,
+      "passed": 0,
+      "failed": 500
+    },
+    "에러-잔액부족": {
+      "total": 1000,
+      "passed": 1000,
+      "failed": 0
+    },
+    "에러-0주소": {
+      "total": 1000,
+      "passed": 1000,
+      "failed": 0
+    },
+    "에러-일시정지": {
+      "total": 1000,
+      "passed": 0,
+      "failed": 1000
+    },
+    "에러-승인없음": {
+      "total": 1000,
+      "passed": 1000,
+      "failed": 0
+    },
+    "에러-권한없음": {
+      "total": 1000,
+      "passed": 1000,
+      "failed": 0
+    },
+    "보안-소각": {
+      "total": 1000,
+      "passed": 1000,
+      "failed": 0
+    },
+    "보안-승인전송": {
+      "total": 1000,
+      "passed": 0,
+      "failed": 1000
+    },
+    "성능-대량전송": {
+      "total": 500,
+      "passed": 0,
+      "failed": 500
+    },
+    "성능-빠른연속": {
+      "total": 1002,
+      "passed": 2,
+      "failed": 1000
+    },
+    "통합-전체플로우": {
+      "total": 2500,
+      "passed": 0,
+      "failed": 2500
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "tests": [
+    {
+      "function": "Transfer",
+      "gasUsed": "53613",
+      "gasPrice": "1772712719",
+      "costBNB": "0.000095040447003747",
+      "costUSD_600": "0.0570"
+    },
+    {
+      "function": "Approve",
+      "gasUsed": "46296",
+      "gasPrice": "1592116084",
+      "costBNB": "0.000073708606224864",
+      "costUSD_600": "0.0442"
+    },
+    {
+      "function": "TransferFrom",
+      "gasUsed": "56711",
+      "gasPrice": "1518330012",
+      "costBNB": "0.000086106013310532",
+      "costUSD_600": "0.0517"
+    },
+    {
+      "function": "Burn",
+      "gasUsed": "35868",
+      "gasPrice": "1453783719",
+      "costBNB": "0.000052144314433092",
+      "costUSD_600": "0.0313"
+    },
+    {
+      "function": "Pause",
+      "gasUsed": "29185",
+      "gasPrice": "1397196391",
+      "costBNB": "0.000040777176671335",
+      "costUSD_600": "0.0245"
+    }
+  ],
+  "summary": {
+    "minBNBRequired": "0.0003",
+    "minUSDRequired": "0.1800",
+    "recommendedBNB": "0.003",
+    "recommendedUSD": "1.80",
+    "deployGas": "1500000",
+    "deployCostBNB": "0.0045",
+    "deployCostUSD": "2.70",
+    "initialOperationBNB": "0.00830283",
+    "initialOperationUSD": "4.98",
+    "test100TransfersBNB": "0.003728060357782197",
+    "test100TransfersUSD": "2.24"
+  }
+}

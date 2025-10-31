@@ -326,7 +326,7 @@ describe("👥 AKC Token P2P 사용자 간 전송 테스트", function () {
       log('\n=== 거의 모든 잔액 전송 ===');
       
       const aliceBalance = await akc.balanceOf(alice.address);
-      const almostAll = aliceBalance - ethers.parseEther("1"); // 1 AKC만 남기고
+      const almostAll = aliceBalance - ethers.parseEther("100"); // 100 AKC만 남기고 (이후 테스트용)
       
       log(`Alice 잔액: ${ethers.formatEther(aliceBalance)} AKC`);
       log(`전송 금액: ${ethers.formatEther(almostAll)} AKC`);
@@ -336,7 +336,7 @@ describe("👥 AKC Token P2P 사용자 간 전송 테스트", function () {
       const aliceAfter = await akc.balanceOf(alice.address);
       log(`Alice 남은 잔액: ${ethers.formatEther(aliceAfter)} AKC`);
       
-      expect(aliceAfter).to.equal(ethers.parseEther("1"));
+      expect(aliceAfter).to.equal(ethers.parseEther("100"));
       log('✅ 거의 모든 잔액 전송 성공');
       updateStats('거의 모든 잔액', true);
     });

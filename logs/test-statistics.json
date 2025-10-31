@@ -1,11 +1,11 @@
 {
   "total": 18003,
-  "passed": 9325,
-  "failed": 8678,
+  "passed": 9118,
+  "failed": 8885,
   "skipped": 0,
-  "startTime": "2025-10-31T15:36:29.672Z",
-  "endTime": "2025-10-31T15:36:39.641Z",
-  "duration": 9.969,
+  "startTime": "2025-10-31T16:13:26.279Z",
+  "endTime": "2025-10-31T16:13:35.986Z",
+  "duration": 9.707,
   "categories": {
     "기본전송-소액": {
       "total": 1000,
@@ -24,17 +24,17 @@
     },
     "기본전송-최대액": {
       "total": 1000,
-      "passed": 450,
-      "failed": 550
+      "passed": 455,
+      "failed": 545
     },
     "기본전송-연속2회": {
       "total": 1000,
-      "passed": 872,
-      "failed": 128
+      "passed": 660,
+      "failed": 340
     },
     "기본전송-연속5회": {
-      "total": 1001,
-      "passed": 1,
+      "total": 1000,
+      "passed": 0,
       "failed": 1000
     },
     "기본전송-다중2명": {
@@ -88,8 +88,8 @@
       "failed": 500
     },
     "성능-빠른연속": {
-      "total": 1002,
-      "passed": 2,
+      "total": 1003,
+      "passed": 3,
       "failed": 1000
     },
     "통합-전체플로우": {

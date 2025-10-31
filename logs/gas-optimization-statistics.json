@@ -1,0 +1,91 @@
+{
+  "tests": [
+    {
+      "function": "Transfer",
+      "ackGas": "53613",
+      "standardGas": "65000",
+      "savedGas": "11387",
+      "savingPercent": "17.52%",
+      "status": "OPTIMIZED ✅"
+    },
+    {
+      "function": "Approve Reset to 0",
+      "gas": "24312",
+      "analysis": "✅ 효율적"
+    },
+    {
+      "function": "balanceOf (view)",
+      "gas": "0",
+      "analysis": "✅ View 함수 - 가스 무료"
+    },
+    {
+      "function": "allowance (view)",
+      "gas": "0",
+      "analysis": "✅ View 함수 - 가스 무료"
+    },
+    {
+      "function": "가스 효율성",
+      "gasUsed": "36513",
+      "gasLimit": "30000000",
+      "efficiency": "0.12%",
+      "analysis": "⚠️ 과다 설정"
+    }
+  ],
+  "comparisons": [
+    {
+      "test": "금액별 가스",
+      "small": "36441",
+      "large": "36513",
+      "difference": "72",
+      "analysis": "✅ 금액과 무관하게 일정"
+    },
+    {
+      "test": "첫 vs 반복",
+      "firstTransfer": "53613",
+      "repeatTransfer": "36513",
+      "saved": "17100",
+      "analysis": "✅ 반복 전송 시 가스 절약"
+    },
+    {
+      "test": "Approve 패턴",
+      "zeroToN": "46296",
+      "nToM": "29196",
+      "difference": "17100",
+      "analysis": "⚠️ 개선 필요"
+    },
+    {
+      "test": "배치 효율성",
+      "individual10": "365010",
+      "expectedBatch": "382230",
+      "potentialSaving": "-17220",
+      "analysis": "현재 개별 전송만 지원"
+    }
+  ],
+  "recommendations": [
+    {
+      "name": "상속 구조 최적화",
+      "status": "✅",
+      "detail": "ERC20 + Ownable + Pausable 효율적 조합"
+    },
+    {
+      "name": "Storage 패킹",
+      "status": "✅",
+      "detail": "OpenZeppelin 최적화 구조 사용"
+    },
+    {
+      "name": "View 함수 활용",
+      "status": "✅",
+      "detail": "읽기 전용 함수 가스 무료"
+    },
+    {
+      "name": "불필요한 연산 제거",
+      "status": "✅",
+      "detail": "최소한의 필수 연산만 수행"
+    },
+    {
+      "name": "Event 효율적 사용",
+      "status": "✅",
+      "detail": "Transfer, Approval 이벤트 자동 발생"
+    }
+  ]
+}

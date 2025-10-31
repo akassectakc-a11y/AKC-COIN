@@ -1,0 +1,77 @@
+{
+  "total": 14,
+  "passed": 14,
+  "failed": 0,
+  "tests": [
+    {
+      "test": "초기 잔액 분배",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.448Z"
+    },
+    {
+      "test": "Alice → Bob",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.456Z"
+    },
+    {
+      "test": "Bob → Charlie",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.458Z"
+    },
+    {
+      "test": "4단계 체인",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.463Z"
+    },
+    {
+      "test": "잔액 무결성",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.466Z"
+    },
+    {
+      "test": "원형 순환",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.473Z"
+    },
+    {
+      "test": "5명 순환",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.477Z"
+    },
+    {
+      "test": "동시 전송",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.482Z"
+    },
+    {
+      "test": "크로스 전송",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.485Z"
+    },
+    {
+      "test": "100회 P2P",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.542Z"
+    },
+    {
+      "test": "최종 검증",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.546Z"
+    },
+    {
+      "test": "거의 모든 잔액",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.548Z"
+    },
+    {
+      "test": "50회 소액",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.577Z"
+    },
+    {
+      "test": "가스 효율",
+      "passed": true,
+      "timestamp": "2025-10-31T16:48:08.590Z"
+    }
+  ]
+}

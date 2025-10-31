@@ -1,0 +1,57 @@
+{
+  "total": 2000,
+  "passed": 2000,
+  "failed": 0,
+  "categories": {
+    "다양한금액": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0
+    },
+    "왕복전송": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0
+    },
+    "승인전송": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0
+    },
+    "소각": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0
+    },
+    "일시정지": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0
+    },
+    "잔액부족": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0
+    },
+    "0주소": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0
+    },
+    "승인초과": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0
+    },
+    "권한없음": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0
+    },
+    "복합": {
+      "total": 200,
+      "passed": 200,
+      "failed": 0
+    }
+  }
+}

@@ -127,7 +127,7 @@ nano blockchains/smartchain/assets/[CONTRACT_ADDRESS]/info.json
   "links": [
     {
       "name": "github",
-      "url": "https://github.com/your-repo"
+      "url": "https://github.com/akassectakc-a11y/AKC-COIN"
     },
     {
       "name": "twitter",
@@ -293,7 +293,7 @@ bsc/0x1234567890123456789012345678901234567890.json
     "discord": "",
     "facebook": "",
     "forum": "",
-    "github": "https://github.com/your-repo",
+    "github": "https://github.com/akassectakc-a11y/AKC-COIN",
     "gitter": "",
     "instagram": "",
     "linkedin": "",

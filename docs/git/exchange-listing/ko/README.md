@@ -510,7 +510,7 @@ function unpause() public onlyOwner
 
 **공식 채널**:
 - 웹사이트: https://www.lbank.com
-- 상장 신청: https://www.lbank.com/en-US/listing
+- 상장 신청: https://www.lbank.com/listing
 - 이메일: listing@lbank.info
 - 텔레그램: @LBank_en
 
@@ -518,7 +518,7 @@ function unpause() public onlyOwner
 - 텔레그램 한국 커뮤니티: @LBank_Korea
 - 카카오톡: [LBank 한국 공식]
 
-**신청 폼**: https://www.lbank.com/en-US/listing-application
+**신청 폼**: https://www.lbank.com/listing
 
 #### 📊 상장 후 관리
 

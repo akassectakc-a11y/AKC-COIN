@@ -455,11 +455,11 @@ Distribution:
 
 **Official Channels**:
 - Website: https://www.lbank.com
-- Listing Application: https://www.lbank.com/en-US/listing
+- Listing Application: https://www.lbank.com/listing
 - Email: listing@lbank.info
 - Telegram: @LBank_en
 
-**Application Form**: https://www.lbank.com/en-US/listing-application
+**Application Form**: https://www.lbank.com/listing
 
 #### 📊 Post-Listing Management
 

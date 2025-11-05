@@ -1,0 +1,17 @@
+{
+  "name": "AKASSECT",
+  "type": "BEP20",
+  "symbol": "AKC",
+  "decimals": 18,
+  "website": "https://akassect.com",
+  "description": "AKASSECT (AKC) is a BEP-20 utility token on Binance Smart Chain",
+  "explorer": "https://bscscan.com/token/0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
+  "status": "active",
+  "id": "0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
+  "links": [
+    {
+      "name": "github",
+      "url": "https://github.com/akassectakc-a11y/AKC-COIN"
+    }
+  ]
+}

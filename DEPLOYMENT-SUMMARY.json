@@ -1,0 +1,38 @@
+{
+  "deployment": {
+    "status": "SUCCESS",
+    "timestamp": "2025-11-05T16:52:00+09:00",
+    "network": "BSC Mainnet",
+    "chainId": 56
+  },
+  "contract": {
+    "address": "0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
+    "name": "AKASSECT",
+    "symbol": "AKC",
+    "decimals": 18,
+    "totalSupply": "300000000000000000000000000",
+    "totalSupplyFormatted": "300,000,000 AKC"
+  },
+  "owner": {
+    "deployer": "0xb6fbdb9af4c956ca953c4536fec5b28361cadac1",
+    "treasury": "0xb6fbdb9af4c956ca953c4536fec5b28361cadac1"
+  },
+  "deployment_costs": {
+    "gasUsed": "972030",
+    "gasPrice": "5000000000",
+    "totalCostBNB": "0.00486015",
+    "totalCostUSD": "2.92"
+  },
+  "links": {
+    "bscscan_token": "https://bscscan.com/token/0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
+    "bscscan_contract": "https://bscscan.com/address/0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
+    "pancakeswap": "https://pancakeswap.finance/info/token/0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
+    "dextools": "https://www.dextools.io/app/bsc/pair-explorer/0x02D8b729885290a3CA724F3Df5793b74Ff226A17"
+  },
+  "next_steps": [
+    "BscScan 컨트랙트 검증",
+    "거래소 상장 신청서 업데이트", 
+    "CoinGecko/CoinMarketCap 등록",
+    "커뮤니티 공지"
+  ]
+}

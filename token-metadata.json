@@ -1,0 +1,21 @@
+{
+  "name": "AKASSECT",
+  "symbol": "AKC",
+  "description": "AKASSECT (AKC) - BSC 기반 유틸리티 토큰",
+  "image": "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/AKC-Logo-1024.png",
+  "external_link": "https://akassect.com",
+  "attributes": [
+    {
+      "trait_type": "Network",
+      "value": "Binance Smart Chain"
+    },
+    {
+      "trait_type": "Total Supply",
+      "value": "300,000,000"
+    },
+    {
+      "trait_type": "Decimals",
+      "value": "18"
+    }
+  ]
+}

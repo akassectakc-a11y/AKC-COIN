@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AKC Token Test</title>
+    <style>
+        body { 
+            font-family: Arial; 
+            text-align: center; 
+            padding: 50px;
+            background: #1e1e1e;
+            color: white;
+        }
+        .logo { 
+            width: 100px; 
+            height: 100px; 
+            border-radius: 50%;
+            margin: 20px auto;
+            display: block;
+        }
+        .button {
+            background: #ff6b35;
+            color: white;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            font-size: 18px;
+            cursor: pointer;
+            margin: 10px;
+        }
+        .button:hover {
+            background: #e55a2b;
+        }
+    </style>
+</head>
+<body>
+    <h1>🚀 AKC Token</h1>
+    <img src="docs/logo/png/AKC-Icon-256.png" alt="AKC Logo" class="logo" onerror="this.style.display='none'">
+    
+    <div>
+        <h3>AKASSECT (AKC)</h3>
+        <p><strong>컨트랙트:</strong> 0x02D8b729885290a3CA724F3Df5793b74Ff226A17</p>
+        <p><strong>네트워크:</strong> BSC 메인넷</p>
+    </div>
+    
+    <button class="button" onclick="testFunction()">🦊 MetaMask에 추가</button>
+    <button class="button" onclick="copyAddress()">📋 주소 복사</button>
+    
+    <script>
+        function testFunction() {
+            alert('HTML이 정상적으로 작동합니다! 🎉');
+        }
+        
+        function copyAddress() {
+            const address = '0x02D8b729885290a3CA724F3Df5793b74Ff226A17';
+            navigator.clipboard.writeText(address).then(() => {
+                alert('주소가 복사되었습니다: ' + address);
+            });
+        }
+        
+        // 페이지 로드 시 확인
+        window.onload = function() {
+            console.log('HTML 페이지가 정상적으로 로드되었습니다!');
+        }
+    </script>
+</body>
+</html>

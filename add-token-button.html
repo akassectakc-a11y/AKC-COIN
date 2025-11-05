@@ -37,6 +37,15 @@
         .add-token-btn:hover {
             transform: scale(1.05);
         }
+        .logo-container {
+            margin-bottom: 20px;
+        }
+        .token-logo {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
         .token-info {
             margin: 20px 0;
             padding: 20px;
@@ -47,6 +56,9 @@
 </head>
 <body>
     <div class="container">
+        <div class="logo-container">
+            <img src="docs/logo/png/AKC-Icon-256.png" alt="AKC Logo" class="token-logo" onerror="this.style.display='none'">
+        </div>
         <h1>🚀 AKC Token</h1>
         <div class="token-info">
             <h3>AKASSECT (AKC)</h3>
@@ -72,7 +84,13 @@
         const tokenAddress = '0x02D8b729885290a3CA724F3Df5793b74Ff226A17';
         const tokenSymbol = 'AKC';
         const tokenDecimals = 18;
-        const tokenImage = 'https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png';
+        // 여러 로고 URL 시도
+        const tokenImages = [
+            'https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png',
+            'https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png',
+            'https://avatars.githubusercontent.com/u/placeholder' // 백업용
+        ];
+        const tokenImage = tokenImages[0]; // 첫 번째 URL 사용
 
         async function addToMetaMask() {
             try {

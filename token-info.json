@@ -1,0 +1,14 @@
+{
+  "name": "AKASSECT",
+  "symbol": "AKC",
+  "address": "0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
+  "decimals": 18,
+  "logoURI": "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png",
+  "tags": ["defi", "token"],
+  "chainId": 56,
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  }
+}

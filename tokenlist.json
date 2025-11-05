@@ -1,0 +1,31 @@
+{
+  "name": "AKASSECT Token List",
+  "logoURI": "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png",
+  "keywords": ["audited", "verified", "bsc", "defi"],
+  "version": {
+    "major": 1,
+    "minor": 0,
+    "patch": 0
+  },
+  "tags": {
+    "stablecoin": {
+      "name": "Stablecoin",
+      "description": "Tokens that are fixed to an external asset, e.g. the US dollar"
+    },
+    "defi": {
+      "name": "DeFi",
+      "description": "Tokens that enable decentralized finance"
+    }
+  },
+  "tokens": [
+    {
+      "chainId": 56,
+      "address": "0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
+      "symbol": "AKC",
+      "name": "AKASSECT",
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png",
+      "tags": ["defi"]
+    }
+  ]
+}

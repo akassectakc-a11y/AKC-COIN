@@ -2,7 +2,7 @@
   "name": "AKASSECT",
   "symbol": "AKC",
   "description": "AKASSECT (AKC) - BSC 기반 유틸리티 토큰",
-  "image": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Logo-1024.png",
+  "image": "https://cdn.jsdelivr.net/gh/akassectakc-a11y/AKC-COIN@main/docs/logo/png/AKC-Icon-256.png",
   "external_link": "https://akassect.com",
   "attributes": [
     {
@@ -26,6 +26,22 @@
     "icon_256": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png",
     "icon_200": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-200.png",
     "logo_1024": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Logo-1024.png",
-    "logo_512": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Logo-512.png"
+    "logo_512": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Logo-512.png",
+    "cdn_primary": "https://cdn.jsdelivr.net/gh/akassectakc-a11y/AKC-COIN@main/docs/logo/png/AKC-Icon-256.png",
+    "cdn_backup": [
+      "https://cdn.jsdelivr.net/gh/akassectakc-a11y/AKC-COIN/docs/logo/png/AKC-Icon-256.png",
+      "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png",
+      "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png",
+      "https://akassectakc-a11y.github.io/AKC-COIN/docs/logo/png/AKC-Icon-256.png"
+    ],
+    "cdn_all": [
+      "https://cdn.jsdelivr.net/gh/akassectakc-a11y/AKC-COIN@main/docs/logo/png/AKC-Icon-256.png",
+      "https://cdn.jsdelivr.net/gh/akassectakc-a11y/AKC-COIN/docs/logo/png/AKC-Icon-256.png",
+      "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png",
+      "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png",
+      "https://akassectakc-a11y.github.io/AKC-COIN/docs/logo/png/AKC-Icon-256.png",
+      "https://cdn.statically.io/gh/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png",
+      "https://gitcdn.xyz/repo/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png"
+    ]
   }
 }

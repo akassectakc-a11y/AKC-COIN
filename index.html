@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT (AKC) Token - BSC 메인넷</title>
+    <meta name="description" content="AKASSECT (AKC) - BSC 메인넷에 배포된 유틸리티 토큰. MetaMask에 쉽게 추가하고 사용하세요.">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+            max-width: 600px;
+            margin: 20px;
+        }
+        .logo-container {
+            margin-bottom: 30px;
+        }
+        .token-logo {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+            margin-bottom: 20px;
+        }
+        h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .token-info {
+            margin: 30px 0;
+            padding: 25px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .info-item {
+            margin: 15px 0;
+            font-size: 1.1em;
+        }
+        .contract-address {
+            font-family: 'Courier New', monospace;
+            background: rgba(0, 0, 0, 0.3);
+            padding: 10px;
+            border-radius: 8px;
+            word-break: break-all;
+            margin: 10px 0;
+        }
+        .add-token-btn {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            transition: all 0.3s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .add-token-btn:hover {
+            transform: scale(1.05);
+            box-shadow: 0 5px 15px rgba(255, 107, 53, 0.4);
+        }
+        .links-section {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        .link-btn {
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 12px 25px;
+            border-radius: 8px;
+            text-decoration: none;
+            margin: 5px;
+            display: inline-block;
+            transition: all 0.3s;
+        }
+        .link-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: translateY(-2px);
+        }
+        .status-badge {
+            background: #4CAF50;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo-container">
+            <img src="docs/logo/png/AKC-Icon-256.png" alt="AKC Token Logo" class="token-logo" onerror="this.style.display='none'">
+        </div>
+        
+        <h1>🚀 AKASSECT</h1>
+        <p style="font-size: 1.3em; margin-bottom: 20px;">AKC Token <span class="status-badge">✅ 메인넷 배포됨</span></p>
+        
+        <div class="token-info">
+            <div class="info-item">
+                <strong>토큰명:</strong> AKASSECT (AKC)
+            </div>
+            <div class="info-item">
+                <strong>네트워크:</strong> BSC 메인넷 (Chain ID: 56)
+            </div>
+            <div class="info-item">
+                <strong>총 발행량:</strong> 300,000,000 AKC
+            </div>
+            <div class="info-item">
+                <strong>소수점:</strong> 18
+            </div>
+            <div class="info-item">
+                <strong>컨트랙트 주소:</strong>
+                <div class="contract-address" id="contractAddress">
+                    0x02D8b729885290a3CA724F3Df5793b74Ff226A17
+                </div>
+            </div>
+        </div>
+        
+        <button class="add-token-btn" onclick="addToMetaMask()">
+            🦊 MetaMask에 추가
+        </button>
+        
+        <button class="add-token-btn" onclick="copyAddress()">
+            📋 주소 복사
+        </button>
+        
+        <div class="links-section">
+            <h3 style="margin-bottom: 15px;">🔗 유용한 링크</h3>
+            
+            <a href="https://bscscan.com/token/0x02D8b729885290a3CA724F3Df5793b74Ff226A17" 
+               target="_blank" class="link-btn">
+                🔍 BscScan에서 보기
+            </a>
+            
+            <a href="https://github.com/akassectakc-a11y/AKC-COIN" 
+               target="_blank" class="link-btn">
+                📁 GitHub 소스코드
+            </a>
+            
+            <a href="https://pancakeswap.finance/info/token/0x02D8b729885290a3CA724F3Df5793b74Ff226A17" 
+               target="_blank" class="link-btn">
+                🥞 PancakeSwap 정보
+            </a>
+        </div>
+    </div>
+
+    <script>
+        const tokenAddress = '0x02D8b729885290a3CA724F3Df5793b74Ff226A17';
+        const tokenSymbol = 'AKC';
+        const tokenDecimals = 18;
+        
+        // 다중 로고 URL (백업 시스템)
+        const tokenImages = [
+            'https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png',
+            'https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png',
+            './docs/logo/png/AKC-Icon-256.png'
+        ];
+
+        async function addToMetaMask() {
+            try {
+                if (typeof window.ethereum !== 'undefined') {
+                    // 여러 로고 URL 시도
+                    for (let i = 0; i < tokenImages.length; i++) {
+                        try {
+                            const wasAdded = await window.ethereum.request({
+                                method: 'wallet_watchAsset',
+                                params: {
+                                    type: 'ERC20',
+                                    options: {
+                                        address: tokenAddress,
+                                        symbol: tokenSymbol,
+                                        decimals: tokenDecimals,
+                                        image: tokenImages[i],
+                                    },
+                                },
+                            });
+
+                            if (wasAdded) {
+                                alert('✅ AKC 토큰이 MetaMask에 추가되었습니다!');
+                                return;
+                            }
+                        } catch (error) {
+                            console.log(`로고 URL ${i + 1} 실패, 다음 시도...`);
+                            continue;
+                        }
+                    }
+                    alert('❌ 토큰 추가가 취소되었습니다.');
+                } else {
+                    alert('MetaMask가 설치되지 않았습니다. MetaMask를 설치해주세요.');
+                    window.open('https://metamask.io/', '_blank');
+                }
+            } catch (error) {
+                console.error('Error adding token:', error);
+                alert('토큰 추가 중 오류가 발생했습니다.');
+            }
+        }
+
+        function copyAddress() {
+            navigator.clipboard.writeText(tokenAddress).then(() => {
+                alert('📋 컨트랙트 주소가 복사되었습니다!\n' + tokenAddress);
+            }).catch(() => {
+                // 백업 복사 방법
+                const textArea = document.createElement('textarea');
+                textArea.value = tokenAddress;
+                document.body.appendChild(textArea);
+                textArea.select();
+                document.execCommand('copy');
+                document.body.removeChild(textArea);
+                alert('📋 컨트랙트 주소가 복사되었습니다!');
+            });
+        }
+
+        // 페이지 로드 시 로고 백업 시스템 테스트
+        window.onload = function() {
+            const logoImg = document.querySelector('.token-logo');
+            let currentImageIndex = 0;
+            
+            logoImg.onerror = function() {
+                currentImageIndex++;
+                if (currentImageIndex < tokenImages.length) {
+                    this.src = tokenImages[currentImageIndex];
+                } else {
+                    this.style.display = 'none';
+                }
+            };
+        };
+    </script>
+</body>
+</html>

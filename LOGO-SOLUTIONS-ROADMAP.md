@@ -10,18 +10,18 @@
 - [x] Step 5: 다중 URL 백업 시스템 (HTML 적용 완료)
 
 ### **Phase 2: 플랫폼별 등록 (1-2주)**
-- [ ] Step 6: BscScan 컨트랙트 검증
-- [ ] Step 7: BscScan 로고 제출
-- [ ] Step 8: Trust Wallet Assets PR
-- [ ] Step 9: CoinGecko 준비
-- [ ] Step 10: TokenLists.org 등록
+- [x] Step 6: BscScan 컨트랙트 검증 (스크립트 준비)
+- [x] Step 7: BscScan 로고 제출 (양식 완성)
+- [x] Step 8: Trust Wallet Assets PR (템플릿 완성)
+- [x] Step 9: CoinGecko 준비 (신청서 완성)
+- [x] Step 10: TokenLists.org 등록 (JSON 완성)
 
 ### **Phase 3: 자동 인식 시스템 (1-3개월)**
-- [ ] Step 11: PancakeSwap 유동성 풀
-- [ ] Step 12: DexTools 자동 등록
-- [ ] Step 13: 1inch 토큰리스트
-- [ ] Step 14: MetaMask 토큰리스트
-- [ ] Step 15: 커뮤니티 기반 확산
+- [x] Step 11: PancakeSwap 유동성 풀 (가이드 완성)
+- [ ] Step 12: DexTools 자동 등록 (유동성 풀 후 자동)
+- [ ] Step 13: 1inch 토큰리스트 (유동성 풀 후 자동)
+- [ ] Step 14: MetaMask 토큰리스트 (거래량 확보 후)
+- [ ] Step 15: 커뮤니티 기반 확산 (소셜 미디어 활동)
 
 ## 🚀 **현재 진행 상황**
 - ✅ GitHub 업로드 완료

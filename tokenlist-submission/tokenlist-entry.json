@@ -1,0 +1,23 @@
+{
+  "chainId": 56,
+  "address": "0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
+  "name": "AKASSECT",
+  "symbol": "AKC",
+  "decimals": 18,
+  "logoURI": "https://cdn.jsdelivr.net/gh/akassectakc-a11y/AKC-COIN@main/docs/logo/png/AKC-Icon-256.png",
+  "tags": [
+    "utility",
+    "bsc",
+    "bep20"
+  ],
+  "extensions": {
+    "website": "https://akassect.com",
+    "github": "https://github.com/akassectakc-a11y/AKC-COIN",
+    "explorer": "https://bscscan.com/token/0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
+    "twitter": "",
+    "telegram": "",
+    "discord": "",
+    "medium": "",
+    "description": "AKASSECT (AKC) is a utility token on Binance Smart Chain designed for decentralized applications and services."
+  }
+}

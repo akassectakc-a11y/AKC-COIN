@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKC Token을 MetaMask에 추가</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            background: linear-gradient(135deg, #1e1e1e 0%, #2d2d2d 100%);
+            color: white;
+        }
+        .container {
+            text-align: center;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 20px;
+            -webkit-backdrop-filter: blur(10px);
+            backdrop-filter: blur(10px);
+        }
+        .add-token-btn {
+            background: linear-gradient(45deg, #ff6b35, #f7931e);
+            color: white;
+            border: none;
+            padding: 15px 30px;
+            font-size: 18px;
+            border-radius: 10px;
+            cursor: pointer;
+            margin: 10px;
+            transition: transform 0.3s;
+        }
+        .add-token-btn:hover {
+            transform: scale(1.05);
+        }
+        .token-info {
+            margin: 20px 0;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🚀 AKC Token</h1>
+        <div class="token-info">
+            <h3>AKASSECT (AKC)</h3>
+            <p><strong>컨트랙트:</strong> 0x02D8b729885290a3CA724F3Df5793b74Ff226A17</p>
+            <p><strong>네트워크:</strong> BSC 메인넷</p>
+            <p><strong>총 발행량:</strong> 300,000,000 AKC</p>
+        </div>
+        
+        <button class="add-token-btn" onclick="addToMetaMask()">
+            🦊 MetaMask에 추가
+        </button>
+        
+        <button class="add-token-btn" onclick="copyAddress()">
+            📋 주소 복사
+        </button>
+        
+        <button class="add-token-btn" onclick="openBscScan()">
+            🔍 BscScan에서 보기
+        </button>
+    </div>
+
+    <script>
+        const tokenAddress = '0x02D8b729885290a3CA724F3Df5793b74Ff226A17';
+        const tokenSymbol = 'AKC';
+        const tokenDecimals = 18;
+        const tokenImage = 'https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png';
+
+        async function addToMetaMask() {
+            try {
+                if (typeof window.ethereum !== 'undefined') {
+                    const wasAdded = await window.ethereum.request({
+                        method: 'wallet_watchAsset',
+                        params: {
+                            type: 'ERC20',
+                            options: {
+                                address: tokenAddress,
+                                symbol: tokenSymbol,
+                                decimals: tokenDecimals,
+                                image: tokenImage,
+                            },
+                        },
+                    });
+
+                    if (wasAdded) {
+                        alert('✅ AKC 토큰이 MetaMask에 추가되었습니다!');
+                    } else {
+                        alert('❌ 토큰 추가가 취소되었습니다.');
+                    }
+                } else {
+                    alert('MetaMask가 설치되지 않았습니다. MetaMask를 설치해주세요.');
+                    window.open('https://metamask.io/', '_blank');
+                }
+            } catch (error) {
+                console.error('Error adding token:', error);
+                alert('토큰 추가 중 오류가 발생했습니다.');
+            }
+        }
+
+        function copyAddress() {
+            navigator.clipboard.writeText(tokenAddress).then(() => {
+                alert('📋 컨트랙트 주소가 복사되었습니다!');
+            });
+        }
+
+        function openBscScan() {
+            window.open(`https://bscscan.com/token/${tokenAddress}`, '_blank');
+        }
+    </script>
+</body>
+</html>

@@ -41,7 +41,7 @@
   "address": "0x02D8b729885290a3CA724F3Df5793b74Ff226A17",
   "decimals": 18,
   "chainId": 56,
-  "logoURI": "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png",
+  "logoURI": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png",
   "tags": ["defi", "utility"]
 }
 ```
@@ -80,7 +80,7 @@
 
 ### **MetaMask 원클릭 추가**
 ```
-https://metamask.github.io/Add-Token/?address=0x02D8b729885290a3CA724F3Df5793b74Ff226A17&symbol=AKC&decimals=18&image=https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png
+https://metamask.github.io/Add-Token/?address=0x02D8b729885290a3CA724F3Df5793b74Ff226A17&symbol=AKC&decimals=18&image=https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png
 ```
 
 ### **BscScan 토큰 페이지**

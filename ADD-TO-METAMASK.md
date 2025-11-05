@@ -5,7 +5,7 @@
 아래 링크를 클릭하면 MetaMask에 AKC 토큰이 자동으로 추가됩니다:
 
 ```
-https://metamask.github.io/Add-Token/?address=0x02D8b729885290a3CA724F3Df5793b74Ff226A17&symbol=AKC&decimals=18&image=https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png
+https://metamask.github.io/Add-Token/?address=0x02D8b729885290a3CA724F3Df5793b74Ff226A17&symbol=AKC&decimals=18&image=https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png
 ```
 
 ## 📱 **수동 추가 방법**
@@ -28,7 +28,7 @@ https://metamask.github.io/Add-Token/?address=0x02D8b729885290a3CA724F3Df5793b74
 - MetaMask가 자동으로 로고를 가져옵니다
 - 또는 수동으로 이미지 URL 추가:
 ```
-https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png
+https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png
 ```
 
 ## 🌐 **다른 지갑들**

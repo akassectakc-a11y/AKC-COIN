@@ -2,7 +2,7 @@
   "name": "AKASSECT",
   "symbol": "AKC",
   "description": "AKASSECT (AKC) - BSC 기반 유틸리티 토큰",
-  "image": "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Logo-1024.png",
+  "image": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Logo-1024.png",
   "external_link": "https://akassect.com",
   "attributes": [
     {
@@ -23,9 +23,9 @@
     }
   ],
   "logos": {
-    "icon_256": "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-256.png",
-    "icon_200": "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Icon-200.png",
-    "logo_1024": "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Logo-1024.png",
-    "logo_512": "https://raw.githubusercontent.com/akassectakc-a11y/AKC-COIN/main/docs/logo/png/AKC-Logo-512.png"
+    "icon_256": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-256.png",
+    "icon_200": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Icon-200.png",
+    "logo_1024": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Logo-1024.png",
+    "logo_512": "https://github.com/akassectakc-a11y/AKC-COIN/raw/main/docs/logo/png/AKC-Logo-512.png"
   }
 }

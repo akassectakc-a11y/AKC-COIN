@@ -1,0 +1,22 @@
+{
+  "name": "swap-contract-tester",
+  "version": "1.0.0",
+  "description": "스왑 컨트랙트 정밀 테스트 시스템",
+  "main": "test-swap-contract.js",
+  "scripts": {
+    "test": "node test-swap-contract.js",
+    "server": "node server.js",
+    "start": "node test-swap-contract.js && node server.js"
+  },
+  "keywords": [
+    "swap",
+    "dex",
+    "1inch",
+    "uniswap",
+    "pancakeswap",
+    "bsc",
+    "contract-analysis"
+  ],
+  "author": "AKASSECT Team",
+  "license": "MIT"
+}

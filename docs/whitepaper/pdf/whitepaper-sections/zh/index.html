@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT官方白皮书 - 专业版（中文 - 正式版）</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 专业白皮书字体系统 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="assets/include.js"></script>
+</head>
+<body>
+    <!-- 网络部署横幅 -->
+    <div class="web-banner">
+        <div class="banner-left">
+            <span class="language-badge">中文</span>
+            <span class="version-badge">正式版</span>
+        </div>
+        <div class="banner-center">
+            AKASSECT官方白皮书 - 技术白皮书 v1.0
+        </div>
+        <div class="banner-right">
+            <button class="pdf-download-btn" onclick="downloadPDF()">
+                📄 下载PDF
+            </button>
+        </div>
+    </div>
+    
+    <!-- 动态章节加载 -->
+    <div id="whitepaper-content">
+        <!-- 封面页 -->
+        <div data-include="sections/00-cover.html"></div>
+        
+        <!-- 目录 -->
+        <div data-include="sections/01-table-of-contents.html"></div>
+        
+        <!-- 引言 -->
+        <div data-include="sections/02-introduction.html"></div>
+        
+        <!-- 市场分析 -->
+        <div data-include="sections/03-market-analysis.html"></div>
+        
+        <!-- 系统概述 -->
+        <div data-include="sections/04-system-overview.html"></div>
+        
+        <!-- 技术架构 -->
+        <div data-include="sections/05-technical-architecture.html"></div>
+        
+        <!-- 代币结构 -->
+        <div data-include="sections/06-token-structure.html"></div>
+        
+        <!-- 安全支付 -->
+        <div data-include="sections/07-secure-payment.html"></div>
+        
+        <!-- AI风险分析 -->
+        <div data-include="sections/08-ai-risk-analysis.html"></div>
+        
+        <!-- 商业模式 -->
+        <div data-include="sections/09-business-model.html"></div>
+        
+        <!-- 路线图 -->
+        <div data-include="sections/10-roadmap.html"></div>
+        
+        <!-- 团队与合作伙伴 -->
+        <div data-include="sections/11-team-partners.html"></div>
+        
+        <!-- 法律免责声明 -->
+        <div data-include="sections/12-legal-disclaimer.html"></div>
+        
+        <!-- 结论 -->
+        <div data-include="sections/13-conclusion.html"></div>
+        
+        <!-- 附录 -->
+        <div data-include="sections/14-appendix.html"></div>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            window.print();
+        }
+        
+        // 页面加载时加载所有章节
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllSections();
+        });
+        
+        function loadAllSections() {
+            const sections = document.querySelectorAll('[data-include]');
+            sections.forEach(section => {
+                const file = section.getAttribute('data-include');
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => {
+                        section.innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('章节加载错误:', error);
+                        section.innerHTML = '<p>章节加载错误</p>';
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

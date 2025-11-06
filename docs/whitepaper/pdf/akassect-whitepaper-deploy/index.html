@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="alternate icon" href="favicon.ico">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- 전문적 백서용 고급 글꼴 시스템 -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="assets/include.js"></script>
+</head>
+<body>
+    <!-- 웹 배포용 상단 배너 -->
+    <div class="web-banner">
+        <div class="banner-left">
+            <span class="language-badge">한국어</span>
+            <span class="version-badge">임시버전</span>
+        </div>
+        <div class="banner-center">
+            AKASSECT 공식 백서 - Technical Whitepaper v1.0
+        </div>
+        <div class="banner-right">
+            <button class="pdf-download-btn" onclick="downloadPDF()">
+                📄 PDF 다운로드
+            </button>
+        </div>
+    </div>
+    
+    <!-- 동적 섹션 로딩 -->
+    <div id="whitepaper-content">
+        <!-- 커버 페이지 -->
+        <div data-include="00-cover.html"></div>
+        
+        <!-- 목차 -->
+        <div data-include="01-table-of-contents.html"></div>
+        
+        <!-- 서론 -->
+        <div data-include="02-introduction.html"></div>
+        
+        <!-- 시장 분석 -->
+        <div data-include="03-market-analysis.html"></div>
+        
+        <!-- 시스템 개요 -->
+        <div data-include="04-system-overview.html"></div>
+        
+        <!-- 기술 구조 -->
+        <div data-include="05-technical-architecture.html"></div>
+        
+        <!-- 토큰 구조 -->
+        <div data-include="06-token-structure.html"></div>
+        
+        <!-- 안전결제 -->
+        <div data-include="07-secure-payment.html"></div>
+        
+        <!-- AI 위험분석 -->
+        <div data-include="08-ai-risk-analysis.html"></div>
+        
+        <!-- 비즈니스 모델 -->
+        <div data-include="09-business-model.html"></div>
+        
+        <!-- 로드맵 -->
+        <div data-include="10-roadmap.html"></div>
+        
+        <!-- 팀 및 파트너 -->
+        <div data-include="11-team-partners.html"></div>
+        
+        <!-- 법률 및 면책 -->
+        <div data-include="12-legal-disclaimer.html"></div>
+        
+        <!-- 결론 -->
+        <div data-include="13-conclusion.html"></div>
+        
+        <!-- 부록 -->
+        <div data-include="14-appendix.html"></div>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            window.print();
+        }
+        
+        // 페이지 로드 시 모든 섹션 로드
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllSections();
+        });
+        
+        function loadAllSections() {
+            const includes = document.querySelectorAll('[data-include]');
+            let loadedCount = 0;
+            
+            includes.forEach(function(element) {
+                const file = element.getAttribute('data-include');
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => {
+                        element.innerHTML = data;
+                        loadedCount++;
+                        if (loadedCount === includes.length) {
+                            console.log('모든 섹션 로드 완료');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('섹션 로드 실패:', file, error);
+                        element.innerHTML = `<div class="error">섹션 로드 실패: ${file}</div>`;
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

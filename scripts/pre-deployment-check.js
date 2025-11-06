@@ -63,12 +63,8 @@ if (!fs.existsSync(envPath)) {
       error('TREASURY_ADDRESS 형식이 잘못되었습니다!');
     } else {
       const treasury = treasuryMatch[1];
-      if (treasury === '0x6CE8903FD7dA2ec919450544f305708BB8A19a1f') {
-        success(`TREASURY_ADDRESS 올바름: ${treasury}`);
-      } else {
-        warning(`TREASURY_ADDRESS가 예상과 다릅니다: ${treasury}`);
-        console.log('   예상: 0x6CE8903FD7dA2ec919450544f305708BB8A19a1f\n');
-      }
+      // 주소 형식만 검증, 특정 주소를 강제하지 않음
+      success(`TREASURY_ADDRESS 형식 올바름: ${treasury}`);
     }
   }
 }

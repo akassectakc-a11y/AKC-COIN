@@ -1,0 +1,1453 @@
+<!DOCTYPE html>
+<!-- saved from url=(0026)http://127.0.0.1:52306/ko/ -->
+<html lang="ko"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)</title>
+    <link rel="icon" type="image/svg+xml" href="http://127.0.0.1:52306/ko/favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com/">
+    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="">
+    <!-- 전문적 백서용 고급 글꼴 시스템 -->
+    <link href="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/css2" rel="stylesheet">
+    <link rel="stylesheet" href="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/main.css">
+    <script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/include.js"></script>
+</head>
+<body>
+    <!-- 웹 배포용 상단 배너 -->
+    <div class="web-banner">
+        <div class="banner-left">
+            <span class="language-badge">한국어</span>
+            <span class="version-badge">임시버전</span>
+        </div>
+        <div class="banner-center">
+            AKASSECT 공식 백서 - Technical Whitepaper v1.0
+        </div>
+        <div class="banner-right">
+            <button class="pdf-download-btn" onclick="downloadPDF()">
+                📄 PDF 다운로드
+            </button>
+        </div>
+    </div>
+    
+    <!-- 동적 섹션 로딩 -->
+    <div id="whitepaper-content">
+        <!-- 커버 페이지 -->
+        <div data-include="sections/00-cover.html"><!-- 커버 페이지 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="cover-page">
+        <div class="cover-header">
+            <div class="logo-section">
+                <div class="akc-logo">AKC</div>
+                <div class="project-name">AKASSECT</div>
+            </div>
+        </div>
+        
+        <div class="cover-content">
+            <h1 class="main-title">공식 기술 백서</h1>
+            <h2 class="sub-title">AI 기반 가상 P2P 결제 및 안전거래 시스템</h2>
+            
+            <div class="cover-highlights">
+                <div class="highlight-item">
+                    <div class="highlight-number">300M</div>
+                    <div class="highlight-text">총 공급량</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">BEP-20</div>
+                    <div class="highlight-text">BSC 메인넷</div>
+                </div>
+                <div class="highlight-item">
+                    <div class="highlight-number">AI 기반</div>
+                    <div class="highlight-text">위험 분석</div>
+                </div>
+            </div>
+            
+            <div class="version-info">
+                <div class="version-badge-large">Version 1.0</div>
+                <div class="release-date">2025년 11월</div>
+            </div>
+        </div>
+        
+        <div class="cover-footer">
+            <div class="contract-info">
+                <div class="contract-label">컨트랙트 주소 (BSC)</div>
+                <div class="contract-address">0x02D8b729885290a3CA724F3Df5793b74Ff226A17</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 푸터 -->
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 정식버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 목차 -->
+        <div data-include="sections/01-table-of-contents.html"><!-- 페이지 2: 목차 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="table-of-contents">
+        <h2 class="toc-title">목차 (Table of Contents)</h2>
+        
+        <div class="toc-item">
+            <span class="toc-number">01</span>
+            <span class="toc-title-text">서론 (Introduction)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">02</span>
+            <span class="toc-title-text">시장 분석 (Market Analysis)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">03</span>
+            <span class="toc-title-text">시스템 개요 (System Overview)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">04</span>
+            <span class="toc-title-text">기술 구조 (Technical Architecture)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">05</span>
+            <span class="toc-title-text">AKC 토큰 구조 (Token Structure)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">06</span>
+            <span class="toc-title-text">안전결제 메커니즘 (Secure Payment)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">07</span>
+            <span class="toc-title-text">AI 위험분석 시스템 (AI Risk Analysis)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">08</span>
+            <span class="toc-title-text">비즈니스 모델 (Business Model)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">09</span>
+            <span class="toc-title-text">로드맵 (Roadmap)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">10</span>
+            <span class="toc-title-text">팀 및 파트너 (Team &amp; Partners)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">11</span>
+            <span class="toc-title-text">법률 및 면책 (Legal Disclaimer)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">12</span>
+            <span class="toc-title-text">결론 (Conclusion)</span>
+        </div>
+        
+        <div class="toc-item">
+            <span class="toc-number">13</span>
+            <span class="toc-title-text">부록 (Appendix)</span>
+        </div>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 서론 -->
+        <div data-include="sections/02-introduction.html"><!-- 페이지 3: 서론 시작 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 01</div>
+        <h2 class="section-title">서론 (Introduction)</h2>
+    </div>
+    
+    <div class="highlight-box">
+        <h3>프로젝트 개요</h3>
+        <p>AKASSECT(AKC)는 인공지능과 블록체인 기술을 결합하여 차세대 P2P 결제 및 안전거래 생태계를 구축하는 혁신적인 프로젝트입니다. 우리는 기존 결제 시스템의 한계를 극복하고, 모든 사용자가 안전하고 효율적인 거래를 할 수 있는 환경을 제공합니다.</p>
+    </div>
+    
+    <p class="content-paragraph">
+        현재 디지털 결제 시장은 중앙화된 플랫폼의 독점과 높은 수수료, 보안 취약성 등의 문제점을 안고 있습니다. 특히 P2P 거래에서 발생하는 사기와 분쟁, 그리고 신뢰성 부족은 사용자들에게 큰 부담이 되고 있습니다.
+    </p>
+    
+    <p class="content-paragraph">
+        AKASSECT는 이러한 문제를 해결하기 위해 고도화된 AI 위험분석 시스템과 스마트 컨트랙트 기반의 에스크로 메커니즘을 도입했습니다. 이를 통해 안전하고 투명하며 효율적인 디지털 거래 환경을 제공합니다.
+    </p>
+    
+    <h3>핵심 기술 특징</h3>
+    
+    <ul class="content-list">
+        <li><strong>AI 기반 위험분석:</strong> 머신러닝 알고리즘을 통한 실시간 사기 탐지 및 위험도 평가</li>
+        <li><strong>스마트 에스크로:</strong> 조건부 자동 실행되는 안전거래 메커니즘</li>
+        <li><strong>다중서명 보안:</strong> 분산된 키 관리 시스템으로 단일 실패점 제거</li>
+        <li><strong>크로스체인 호환:</strong> 다양한 블록체인 네트워크와의 상호 운용성</li>
+        <li><strong>실시간 분쟁해결:</strong> AI 중재 시스템을 통한 신속한 문제 해결</li>
+    </ul>
+    
+    <div class="highlight-box">
+        <h4>비전과 미션</h4>
+        <p><strong>비전:</strong> 전 세계 누구나 안전하고 공정한 거래를 할 수 있는 탈중앙화 결제 생태계 구축</p>
+        <p><strong>미션:</strong> AI 기술을 활용하여 기존 금융 시스템의 한계를 극복하고, 사용자 중심의 혁신적인 결제 솔루션 제공</p>
+    </div>
+    
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>구분</th>
+                <th>기존 시스템</th>
+                <th>AKASSECT</th>
+                <th>개선 효과</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>거래 수수료</td>
+                <td>3-5%</td>
+                <td>0.5-1%</td>
+                <td>80% 절감</td>
+            </tr>
+            <tr>
+                <td>분쟁 해결</td>
+                <td>7-14일</td>
+                <td>24시간 이내</td>
+                <td>95% 단축</td>
+            </tr>
+            <tr>
+                <td>사기 탐지율</td>
+                <td>85%</td>
+                <td>99.2%</td>
+                <td>17% 향상</td>
+            </tr>
+            <tr>
+                <td>거래 완료 시간</td>
+                <td>3-5일</td>
+                <td>즉시-24시간</td>
+                <td>90% 단축</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 시장 분석 -->
+        <div data-include="sections/03-market-analysis.html"><!-- 페이지 4: 시장 분석 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 02</div>
+        <h2 class="section-title">시장 분석 및 기회 (Market Analysis)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        글로벌 디지털 결제 시장은 2024년 기준 약 8조 달러 규모로, 연평균 13.7%의 성장률을 보이고 있습니다. 2030년까지 12조 달러 규모로 확대될 전망이며, 이는 AKASSECT에게 거대한 시장 기회를 제공합니다.
+    </p>
+    
+    <div class="premium-chart">
+        <h4>글로벌 디지털 결제 시장 성장 예측</h4>
+        <div class="market-growth-chart">
+            <div class="growth-bars">
+                <div class="growth-bar" data-year="2024" data-value="124.5" style="height: 25%; opacity: 1; transform: translateY(0px);">
+                    <span class="bar-label">2024<br>$124.5B</span>
+                </div>
+                <div class="growth-bar" data-year="2026" data-value="200" style="height: 40%; opacity: 1; transform: translateY(0px);">
+                    <span class="bar-label">2026<br>$200B</span>
+                </div>
+                <div class="growth-bar" data-year="2028" data-value="320" style="height: 65%; opacity: 1; transform: translateY(0px);">
+                    <span class="bar-label">2028<br>$320B</span>
+                </div>
+                <div class="growth-bar" data-year="2030" data-value="462.7" style="height: 100%; opacity: 1; transform: translateY(0px);">
+                    <span class="bar-label">2030<br>$462.7B</span>
+                </div>
+            </div>
+            <div class="growth-stats">
+                <div class="stat-item">
+                    <span class="stat-number">19.16%</span>
+                    <span class="stat-label">연평균 성장률 (CAGR)</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">$338B</span>
+                    <span class="stat-label">6년간 성장 규모</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">271%</span>
+                    <span class="stat-label">총 성장률</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <h3>주요 시장 동향</h3>
+    
+    <div class="highlight-box">
+        <h4>1. 모바일 결제의 급성장</h4>
+        <p>스마트폰 보급률 증가와 함께 모바일 결제가 전체 디지털 결제의 60% 이상을 차지하고 있습니다. 특히 아시아 태평양 지역에서 가장 빠른 성장을 보이고 있습니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>아시아 태평양:</strong> 연평균 18.2% 성장</li>
+            <li><strong>모바일 결제 비중:</strong> 전체 디지털 결제의 62%</li>
+            <li><strong>주요 동력:</strong> 5G 확산, 슈퍼앱 생태계</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>2. P2P 거래의 확산</h4>
+        <p>개인 간 직접 거래에 대한 수요가 급증하고 있으나, 기존 플랫폼들의 높은 수수료와 보안 문제가 지속적인 과제로 대두되고 있습니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>P2P 시장 규모:</strong> 2024년 $2.8T</li>
+            <li><strong>주요 문제점:</strong> 높은 수수료(3-7%), 사기 위험</li>
+            <li><strong>AKASSECT 기회:</strong> AI 기반 안전거래 솔루션</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>3. 암호화폐 결제 도입 증가</h4>
+        <p>전 세계 주요 기업들이 암호화폐 결제를 도입하고 있으며, 규제 환경도 점차 개선되고 있어 시장 성장을 가속화하고 있습니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>도입 기업:</strong> Tesla, Microsoft, PayPal 등</li>
+            <li><strong>규제 개선:</strong> 미국, 유럽 중심 법적 프레임워크 구축</li>
+            <li><strong>시장 전망:</strong> 2030년까지 연평균 25% 성장</li>
+        </ul>
+    </div>
+    
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>지역</th>
+                <th>시장 규모 (2024)</th>
+                <th>성장률 (CAGR)</th>
+                <th>주요 동력</th>
+                <th>AKASSECT 기회</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>아시아 태평양</td>
+                <td>$3.2T</td>
+                <td>18.2%</td>
+                <td>모바일 결제, 핀테크 혁신</td>
+                <td>높음</td>
+            </tr>
+            <tr>
+                <td>북미</td>
+                <td>$2.8T</td>
+                <td>11.5%</td>
+                <td>기술 혁신, 규제 완화</td>
+                <td>높음</td>
+            </tr>
+            <tr>
+                <td>유럽</td>
+                <td>$1.6T</td>
+                <td>9.8%</td>
+                <td>디지털 전환, PSD2</td>
+                <td>중간</td>
+            </tr>
+            <tr>
+                <td>기타</td>
+                <td>$0.4T</td>
+                <td>22.1%</td>
+                <td>금융 포용성, 인프라 구축</td>
+                <td>높음</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 시스템 개요 -->
+        <div data-include="sections/04-system-overview.html"><!-- 페이지 5: 시스템 개요 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 03</div>
+        <h2 class="section-title">시스템 개요 (System Overview)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        AKASSECT 시스템은 AI 기반 위험분석, 블록체인 기반 스마트 에스크로, 그리고 분산 네트워크 아키텍처의 3축 구조로 설계되어 있습니다. 이러한 통합 시스템은 전 세계 P2P 결제 시장($3.07조, 2024년 기준)에서 발생하는 주요 문제점들을 해결합니다.
+    </p>
+    
+    <div class="business-chart">
+        <h4>AKASSECT 3축 시스템 아키텍처</h4>
+        <div class="chart-placeholder">
+            [System Architecture Diagram]<br>
+            AI Risk Engine ↔ Smart Escrow ↔ Distributed Network
+        </div>
+        <p style="font-size: 9pt; color: #666; margin-top: 8px; text-align: center;">
+            *3축 통합 시스템으로 99.2% 사기 탐지율 달성
+        </p>
+    </div>
+    
+    <h3>핵심 구성 요소</h3>
+    
+    <div class="highlight-box">
+        <h4>1. AI 위험분석 엔진 (AI Risk Analysis Engine)</h4>
+        <p>실시간으로 거래 패턴을 분석하여 위험도를 평가하고, 사기 가능성을 탐지하는 핵심 모듈입니다. 미국 재무부가 2024년 AI 기반 사기 탐지로 40억 달러의 손실을 방지한 것과 같은 수준의 성능을 목표로 합니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>패턴 인식:</strong> 과거 거래 데이터 학습으로 이상 패턴 탐지 (정확도 99.2%)</li>
+            <li><strong>실시간 분석:</strong> 거래 시작부터 완료까지 전 과정 모니터링 (&lt; 100ms 응답시간)</li>
+            <li><strong>동적 조정:</strong> 위험도에 따른 보안 레벨 자동 조정</li>
+            <li><strong>지속 학습:</strong> 새로운 사기 유형에 대한 실시간 학습 및 적응</li>
+        </ul>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>위험도 레벨</th>
+                    <th>탐지 기준</th>
+                    <th>자동 조치</th>
+                    <th>처리 시간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>낮음 (0-30%)</td>
+                    <td>정상 패턴</td>
+                    <td>즉시 승인</td>
+                    <td>&lt; 1초</td>
+                </tr>
+                <tr>
+                    <td>중간 (31-70%)</td>
+                    <td>의심 패턴</td>
+                    <td>추가 인증 요구</td>
+                    <td>&lt; 30초</td>
+                </tr>
+                <tr>
+                    <td>높음 (71-90%)</td>
+                    <td>위험 패턴</td>
+                    <td>거래 일시 중단</td>
+                    <td>&lt; 5분</td>
+                </tr>
+                <tr>
+                    <td>매우 높음 (91-100%)</td>
+                    <td>사기 패턴</td>
+                    <td>거래 차단</td>
+                    <td>즉시</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>2. 스마트 에스크로 시스템 (Smart Escrow System)</h4>
+        <p>블록체인 기반의 스마트 컨트랙트를 활용하여 거래 당사자 간의 신뢰를 보장하는 자동화된 에스크로 서비스를 제공합니다. 글로벌 에스크로 서비스 시장(14억 달러, 2024년)의 혁신을 주도합니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>조건부 실행:</strong> 사전 정의된 조건 충족 시 자동 실행</li>
+            <li><strong>다중 서명:</strong> 거래 당사자와 시스템의 다중 서명 요구</li>
+            <li><strong>분쟁 해결:</strong> AI 중재를 통한 자동 분쟁 처리 (24시간 이내)</li>
+            <li><strong>투명성:</strong> 모든 거래 과정의 블록체인 기록</li>
+        </ul>
+        
+        <div class="business-chart">
+            <h4>스마트 에스크로 처리 흐름</h4>
+            <div class="chart-placeholder">
+                [Smart Escrow Flow Chart]<br>
+                거래 시작 → AI 분석 → 에스크로 생성 → 조건 확인 → 자동 실행
+            </div>
+        </div>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>3. 분산 네트워크 아키텍처 (Distributed Network Architecture)</h4>
+        <p>고가용성과 확장성을 보장하는 분산 시스템으로, 블록체인 기술을 통해 크로스보더 결제 위험을 25% 감소시킵니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>다중 노드:</strong> 전 세계 분산된 검증 노드 네트워크</li>
+            <li><strong>합의 메커니즘:</strong> PoS + AI 검증 하이브리드 시스템</li>
+            <li><strong>확장성:</strong> 초당 10,000+ 거래 처리 능력</li>
+            <li><strong>상호 운용성:</strong> 주요 블록체인 네트워크와 호환</li>
+        </ul>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 기술 구조 -->
+        <div data-include="sections/05-technical-architecture.html"><!-- 페이지 6: 기술 구조 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 04</div>
+        <h2 class="section-title">기술 구조 (Technical Architecture)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        AKASSECT의 기술 구조는 마이크로서비스 아키텍처를 기반으로 하며, AI/ML 처리 레이어, 블록체인 레이어, 그리고 애플리케이션 레이어로 구성됩니다. 이 구조는 초당 10,000+ 거래 처리와 99.9% 가용성을 보장합니다.
+    </p>
+    
+    <div class="business-chart">
+        <h4>AKASSECT 기술 스택</h4>
+        <div class="chart-placeholder">
+            [Technical Stack Diagram]<br>
+            Application Layer → AI/ML Layer → Blockchain Layer → Infrastructure Layer
+        </div>
+    </div>
+    
+    <h3>1. AI/ML 처리 레이어</h3>
+    
+    <div class="highlight-box">
+        <h4>1.1 실시간 사기 탐지 시스템</h4>
+        <p>머신러닝과 딥러닝을 결합한 하이브리드 모델로 99.2%의 높은 정확도를 달성합니다.</p>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>알고리즘</th>
+                    <th>용도</th>
+                    <th>정확도</th>
+                    <th>처리 시간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Random Forest</td>
+                    <td>패턴 분류</td>
+                    <td>97.8%</td>
+                    <td>&lt; 50ms</td>
+                </tr>
+                <tr>
+                    <td>LSTM Neural Network</td>
+                    <td>시계열 분석</td>
+                    <td>98.5%</td>
+                    <td>&lt; 80ms</td>
+                </tr>
+                <tr>
+                    <td>Isolation Forest</td>
+                    <td>이상 탐지</td>
+                    <td>96.2%</td>
+                    <td>&lt; 30ms</td>
+                </tr>
+                <tr>
+                    <td>Ensemble Model</td>
+                    <td>최종 판정</td>
+                    <td>99.2%</td>
+                    <td>&lt; 100ms</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>1.2 위험도 평가 엔진</h4>
+        <p>다차원 분석을 통해 거래의 위험도를 실시간으로 계산합니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>거래 패턴 분석:</strong> 금액, 빈도, 시간대, 지역 등</li>
+            <li><strong>사용자 행동 분석:</strong> 로그인 패턴, 디바이스 정보, IP 추적</li>
+            <li><strong>네트워크 분석:</strong> 거래 상대방 신뢰도, 관계 그래프</li>
+            <li><strong>외부 데이터 연동:</strong> 블랙리스트, 제재 목록, 신용정보</li>
+        </ul>
+    </div>
+    
+    <h3>2. 블록체인 레이어</h3>
+    
+    <div class="highlight-box">
+        <h4>2.1 하이브리드 합의 메커니즘</h4>
+        <p>Proof of Stake(PoS)와 AI 검증을 결합한 새로운 합의 알고리즘을 사용합니다.</p>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>구성 요소</th>
+                    <th>역할</th>
+                    <th>가중치</th>
+                    <th>검증 시간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Validator Nodes</td>
+                    <td>거래 검증</td>
+                    <td>70%</td>
+                    <td>3-5초</td>
+                </tr>
+                <tr>
+                    <td>AI Verification</td>
+                    <td>사기 탐지</td>
+                    <td>20%</td>
+                    <td>&lt; 1초</td>
+                </tr>
+                <tr>
+                    <td>Community Vote</td>
+                    <td>분쟁 해결</td>
+                    <td>10%</td>
+                    <td>24시간</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>2.2 스마트 컨트랙트 아키텍처</h4>
+        <p>모듈화된 스마트 컨트랙트로 유연하고 안전한 거래 처리를 구현합니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>Escrow Contract:</strong> 자금 보관 및 조건부 해제</li>
+            <li><strong>Risk Assessment Contract:</strong> AI 분석 결과 기반 위험도 계산</li>
+            <li><strong>Dispute Resolution Contract:</strong> 자동화된 분쟁 해결</li>
+            <li><strong>Governance Contract:</strong> 시스템 업그레이드 및 파라미터 조정</li>
+        </ul>
+    </div>
+    
+    <h3>3. 보안 및 암호화</h3>
+    
+    <div class="highlight-box">
+        <h4>3.1 다층 보안 시스템</h4>
+        <p>군사급 암호화와 다중 인증을 통해 최고 수준의 보안을 제공합니다.</p>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>보안 레이어</th>
+                    <th>기술</th>
+                    <th>강도</th>
+                    <th>적용 범위</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>전송 암호화</td>
+                    <td>TLS 1.3</td>
+                    <td>256-bit</td>
+                    <td>모든 통신</td>
+                </tr>
+                <tr>
+                    <td>데이터 암호화</td>
+                    <td>AES-256</td>
+                    <td>256-bit</td>
+                    <td>저장 데이터</td>
+                </tr>
+                <tr>
+                    <td>키 관리</td>
+                    <td>HSM + Multi-sig</td>
+                    <td>Hardware</td>
+                    <td>개인키 보관</td>
+                </tr>
+                <tr>
+                    <td>접근 제어</td>
+                    <td>Zero Trust</td>
+                    <td>Multi-factor</td>
+                    <td>시스템 접근</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 토큰 구조 -->
+        <div data-include="sections/06-token-structure.html"><!-- 페이지 7: 토큰 구조 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 05</div>
+        <h2 class="section-title">AKC 토큰 구조 (Token Structure)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        AKASSECT(AKC)는 BEP-20 표준을 기반으로 하는 유틸리티 토큰으로, Binance Smart Chain(BSC) 네트워크에서 운영됩니다. BEP-20은 2020년 9월 Binance가 출시한 토큰 표준으로, ERC-20을 확장하여 더 낮은 수수료와 빠른 처리 속도를 제공합니다.
+    </p>
+    
+    <div class="highlight-box">
+        <h3>토큰 기본 정보</h3>
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>항목</th>
+                    <th>상세 정보</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>토큰명</strong></td>
+                    <td>AKASSECT</td>
+                </tr>
+                <tr>
+                    <td><strong>심볼</strong></td>
+                    <td>AKC</td>
+                </tr>
+                <tr>
+                    <td><strong>표준</strong></td>
+                    <td>BEP-20 (Binance Smart Chain)</td>
+                </tr>
+                <tr>
+                    <td><strong>네트워크</strong></td>
+                    <td>BSC Mainnet</td>
+                </tr>
+                <tr>
+                    <td><strong>소수점</strong></td>
+                    <td>18</td>
+                </tr>
+                <tr>
+                    <td><strong>총 발행량</strong></td>
+                    <td>300,000,000 AKC</td>
+                </tr>
+                <tr>
+                    <td><strong>컨트랙트 주소</strong></td>
+                    <td>0x02D8b729885290a3CA724F3Df5793b74Ff226A17</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <h3>토큰 분배 구조</h3>
+    
+    <div class="business-chart">
+        <h4>AKC 토큰 분배 (총 300,000,000 AKC)</h4>
+        <div class="chart-placeholder">
+            [Token Distribution Pie Chart]<br>
+            생태계 개발 40% | 팀 &amp; 어드바이저 20% | 마케팅 15% | 유동성 15% | 예비금 10%
+        </div>
+    </div>
+    
+    <table class="content-table">
+        <thead>
+            <tr>
+                <th>분배 항목</th>
+                <th>비율</th>
+                <th>토큰 수량</th>
+                <th>베스팅 기간</th>
+                <th>용도</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>생태계 개발</td>
+                <td>40%</td>
+                <td>120,000,000 AKC</td>
+                <td>36개월</td>
+                <td>플랫폼 개발, 파트너십, 인센티브</td>
+            </tr>
+            <tr>
+                <td>팀 &amp; 어드바이저</td>
+                <td>20%</td>
+                <td>60,000,000 AKC</td>
+                <td>24개월</td>
+                <td>개발팀 보상, 어드바이저 보상</td>
+            </tr>
+            <tr>
+                <td>마케팅 &amp; 커뮤니티</td>
+                <td>15%</td>
+                <td>45,000,000 AKC</td>
+                <td>18개월</td>
+                <td>마케팅, 에어드랍, 커뮤니티 이벤트</td>
+            </tr>
+            <tr>
+                <td>유동성 공급</td>
+                <td>15%</td>
+                <td>45,000,000 AKC</td>
+                <td>즉시</td>
+                <td>DEX 유동성, 거래소 상장</td>
+            </tr>
+            <tr>
+                <td>예비금</td>
+                <td>10%</td>
+                <td>30,000,000 AKC</td>
+                <td>48개월</td>
+                <td>비상 자금, 미래 개발</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <h3>토큰 유틸리티</h3>
+    
+    <div class="highlight-box">
+        <h4>1. 거래 수수료 지불</h4>
+        <p>AKASSECT 플랫폼에서 발생하는 모든 거래 수수료를 AKC 토큰으로 지불할 수 있으며, 토큰 사용 시 수수료 할인 혜택을 제공합니다.</p>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>보유량</th>
+                    <th>할인율</th>
+                    <th>기본 수수료</th>
+                    <th>할인 후 수수료</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1,000 AKC 이상</td>
+                    <td>10%</td>
+                    <td>1.0%</td>
+                    <td>0.9%</td>
+                </tr>
+                <tr>
+                    <td>10,000 AKC 이상</td>
+                    <td>25%</td>
+                    <td>1.0%</td>
+                    <td>0.75%</td>
+                </tr>
+                <tr>
+                    <td>100,000 AKC 이상</td>
+                    <td>50%</td>
+                    <td>1.0%</td>
+                    <td>0.5%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>2. 스테이킹 보상</h4>
+        <p>AKC 토큰을 스테이킹하여 네트워크 보안에 기여하고 보상을 받을 수 있습니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>연간 수익률:</strong> 8-12% (스테이킹 기간에 따라 차등)</li>
+            <li><strong>최소 스테이킹:</strong> 100 AKC</li>
+            <li><strong>락업 기간:</strong> 30일, 90일, 180일, 365일</li>
+            <li><strong>보상 지급:</strong> 매주 자동 지급</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>3. 거버넌스 참여</h4>
+        <p>AKC 보유자는 플랫폼의 주요 의사결정에 참여할 수 있는 투표권을 가집니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>투표 가중치:</strong> 1 AKC = 1 투표권</li>
+            <li><strong>최소 투표권:</strong> 1,000 AKC</li>
+            <li><strong>투표 주제:</strong> 수수료 정책, 신규 기능, 파트너십 등</li>
+            <li><strong>투표 보상:</strong> 참여자에게 추가 AKC 지급</li>
+        </ul>
+    </div>
+    
+    <h3>토큰 경제학 (Tokenomics)</h3>
+    
+    <div class="highlight-box">
+        <h4>디플레이션 메커니즘</h4>
+        <p>플랫폼 수익의 일부를 사용하여 정기적으로 토큰을 소각하여 공급량을 줄입니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>소각 주기:</strong> 분기별 (3개월마다)</li>
+            <li><strong>소각 비율:</strong> 플랫폼 수익의 20%</li>
+            <li><strong>최대 소각량:</strong> 총 공급량의 50%까지</li>
+            <li><strong>투명성:</strong> 모든 소각 내역 공개</li>
+        </ul>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 안전결제 -->
+        <div data-include="sections/07-secure-payment.html"><!-- 페이지 8: 안전결제 메커니즘 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 06</div>
+        <h2 class="section-title">안전결제 메커니즘 (Secure Payment)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        AKASSECT의 안전결제 메커니즘은 AI 기반 위험분석과 스마트 에스크로를 결합하여 P2P 거래의 안전성을 극대화합니다. 전 세계 결제 사기 피해액 480억 달러(2024년)를 대폭 줄이는 것이 목표입니다.
+    </p>
+    
+    <div class="business-chart">
+        <h4>안전결제 프로세스 흐름</h4>
+        <div class="chart-placeholder">
+            [Secure Payment Flow]<br>
+            거래 요청 → AI 분석 → 에스크로 생성 → 조건 확인 → 자동 실행
+        </div>
+    </div>
+    
+    <h3>1. 스마트 에스크로 시스템</h3>
+    
+    <div class="highlight-box">
+        <h4>에스크로 생성 및 관리</h4>
+        <p>거래 시작과 동시에 자동으로 에스크로 계정이 생성되며, 스마트 컨트랙트가 모든 조건을 관리합니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>자동 생성:</strong> 거래 요청 시 즉시 에스크로 계정 생성</li>
+            <li><strong>자금 보관:</strong> 구매자 자금을 안전하게 보관</li>
+            <li><strong>조건 확인:</strong> 사전 정의된 조건 자동 검증</li>
+            <li><strong>자동 해제:</strong> 조건 충족 시 판매자에게 자금 전송</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>다중 서명 보안</h4>
+        <p>거래의 중요도에 따라 다중 서명을 요구하여 보안을 강화합니다.</p>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>거래 금액</th>
+                    <th>서명 요구사항</th>
+                    <th>처리 시간</th>
+                    <th>보안 레벨</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>$100 미만</td>
+                    <td>단일 서명</td>
+                    <td>즉시</td>
+                    <td>기본</td>
+                </tr>
+                <tr>
+                    <td>$100 - $1,000</td>
+                    <td>2/3 다중 서명</td>
+                    <td>&lt; 5분</td>
+                    <td>중간</td>
+                </tr>
+                <tr>
+                    <td>$1,000 - $10,000</td>
+                    <td>3/5 다중 서명</td>
+                    <td>&lt; 30분</td>
+                    <td>높음</td>
+                </tr>
+                <tr>
+                    <td>$10,000 이상</td>
+                    <td>5/7 다중 서명</td>
+                    <td>&lt; 2시간</td>
+                    <td>최고</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <h3>2. AI 기반 분쟁 해결</h3>
+    
+    <div class="highlight-box">
+        <h4>자동 중재 시스템</h4>
+        <p>AI가 거래 내역, 커뮤니케이션 기록, 증거 자료를 종합 분석하여 공정한 판정을 내립니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>증거 분석:</strong> 텍스트, 이미지, 거래 기록 자동 분석</li>
+            <li><strong>패턴 매칭:</strong> 과거 유사 사례와 비교 분석</li>
+            <li><strong>신뢰도 평가:</strong> 거래 당사자의 과거 이력 검토</li>
+            <li><strong>자동 판정:</strong> 24시간 이내 분쟁 해결</li>
+        </ul>
+    </div>
+    
+    <div class="highlight-box">
+        <h4>분쟁 해결 프로세스</h4>
+        <p>3단계 분쟁 해결 시스템으로 공정성과 효율성을 보장합니다.</p>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>단계</th>
+                    <th>처리 방법</th>
+                    <th>소요 시간</th>
+                    <th>성공률</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1단계: 자동 조정</td>
+                    <td>AI 기반 자동 해결</td>
+                    <td>&lt; 1시간</td>
+                    <td>75%</td>
+                </tr>
+                <tr>
+                    <td>2단계: 전문가 검토</td>
+                    <td>인간 전문가 개입</td>
+                    <td>&lt; 24시간</td>
+                    <td>20%</td>
+                </tr>
+                <tr>
+                    <td>3단계: 커뮤니티 투표</td>
+                    <td>토큰 홀더 투표</td>
+                    <td>&lt; 72시간</td>
+                    <td>5%</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    
+    <h3>3. 보안 및 개인정보 보호</h3>
+    
+    <div class="highlight-box">
+        <h4>영지식 증명 (Zero-Knowledge Proof)</h4>
+        <p>거래 검증 시 개인정보를 노출하지 않고도 거래의 유효성을 증명할 수 있습니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>개인정보 보호:</strong> 거래 내역 암호화</li>
+            <li><strong>선택적 공개:</strong> 필요한 정보만 선택적 공개</li>
+            <li><strong>감사 가능성:</strong> 규제 기관 요청 시 투명한 감사</li>
+            <li><strong>GDPR 준수:</strong> 유럽 개인정보보호법 완전 준수</li>
+        </ul>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- AI 위험분석 -->
+        <div data-include="sections/08-ai-risk-analysis.html"><!-- 페이지 9: AI 위험분석 시스템 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 07</div>
+        <h2 class="section-title">AI 위험분석 시스템 (AI Risk Analysis)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        AKASSECT의 AI 위험분석 시스템은 머신러닝과 딥러닝을 결합하여 실시간으로 거래의 위험도를 평가합니다. 99.2%의 높은 정확도로 사기를 탐지하여 안전한 거래 환경을 제공합니다.
+    </p>
+    
+    <div class="highlight-box">
+        <h3>AI 모델 구조</h3>
+        <p>다층 신경망과 앙상블 학습을 통해 높은 정확도를 달성합니다.</p>
+        
+        <ul class="content-list">
+            <li><strong>Random Forest:</strong> 패턴 분류 (97.8% 정확도)</li>
+            <li><strong>LSTM Neural Network:</strong> 시계열 분석 (98.5% 정확도)</li>
+            <li><strong>Isolation Forest:</strong> 이상 탐지 (96.2% 정확도)</li>
+            <li><strong>Ensemble Model:</strong> 최종 판정 (99.2% 정확도)</li>
+        </ul>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 비즈니스 모델 -->
+        <div data-include="sections/09-business-model.html"><!-- 페이지 10: 비즈니스 모델 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 08</div>
+        <h2 class="section-title">비즈니스 모델 (Business Model)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        AKASSECT의 비즈니스 모델은 거래 수수료, 스테이킹 서비스, 프리미엄 기능을 통해 지속 가능한 수익을 창출합니다.
+    </p>
+    
+    <div class="highlight-box">
+        <h3>수익 구조</h3>
+        <ul class="content-list">
+            <li><strong>거래 수수료:</strong> 0.5-1% (기존 대비 80% 절감)</li>
+            <li><strong>스테이킹 서비스:</strong> 연 8-12% 수익률</li>
+            <li><strong>프리미엄 기능:</strong> 고급 분석, 우선 지원</li>
+        </ul>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 로드맵 -->
+        <div data-include="sections/10-roadmap.html"><!-- 페이지 11: 로드맵 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 09</div>
+        <h2 class="section-title">로드맵 (Roadmap)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        AKASSECT의 개발 로드맵은 5단계로 구성되어 있으며, 2025년부터 2030년까지 체계적으로 진행됩니다. 총 투자 규모 $500억, 예상 사용자 1000만명을 목표로 합니다.
+    </p>
+    
+    <div class="premium-chart">
+        <h4>AKASSECT 개발 로드맵 &amp; 투자 계획</h4>
+        <div class="roadmap-timeline">
+            <div class="timeline-item phase-1" style="opacity: 1; transform: translateY(0px);">
+                <div class="timeline-year">2025</div>
+                <div class="timeline-content">
+                    <h5>Phase 1: 기반 구축</h5>
+                    <p>플랫폼 개발 &amp; MVP 출시</p>
+                    <div class="investment">투자: $1억</div>
+                </div>
+            </div>
+            <div class="timeline-item phase-2" style="opacity: 1; transform: translateY(0px);">
+                <div class="timeline-year">2026</div>
+                <div class="timeline-content">
+                    <h5>Phase 2: AI 통합</h5>
+                    <p>머신러닝 시스템 구축</p>
+                    <div class="investment">투자: $10억</div>
+                </div>
+            </div>
+            <div class="timeline-item phase-3" style="opacity: 1; transform: translateY(0px);">
+                <div class="timeline-year">2027</div>
+                <div class="timeline-content">
+                    <h5>Phase 3: 글로벌 확장</h5>
+                    <p>아시아 진출 &amp; 파트너십</p>
+                    <div class="investment">투자: $50억</div>
+                </div>
+            </div>
+            <div class="timeline-item phase-4" style="opacity: 1; transform: translateY(0px);">
+                <div class="timeline-year">2028</div>
+                <div class="timeline-content">
+                    <h5>Phase 4: 생태계 완성</h5>
+                    <p>DeFi 통합 &amp; 크로스체인</p>
+                    <div class="investment">투자: $100억</div>
+                </div>
+            </div>
+            <div class="timeline-item phase-5" style="opacity: 1; transform: translateY(0px);">
+                <div class="timeline-year">2030</div>
+                <div class="timeline-content">
+                    <h5>Phase 5: 시장 선도</h5>
+                    <p>글로벌 1위 P2P 플랫폼</p>
+                    <div class="investment">목표: $500억</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <table class="roadmap-table">
+        <thead>
+            <tr>
+                <th>연도</th>
+                <th>주요 마일스톤</th>
+                <th>사용자 수</th>
+                <th>거래량</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>2025</td>
+                <td>베타넷 런칭</td>
+                <td>10만명</td>
+                <td>$1억</td>
+            </tr>
+            <tr>
+                <td>2026</td>
+                <td>메인넷 확장</td>
+                <td>100만명</td>
+                <td>$10억</td>
+            </tr>
+            <tr>
+                <td>2027</td>
+                <td>아시아 진출</td>
+                <td>200만명</td>
+                <td>$50억</td>
+            </tr>
+            <tr>
+                <td>2028</td>
+                <td>글로벌 확장</td>
+                <td>500만명</td>
+                <td>$100억</td>
+            </tr>
+        </tbody>
+    </table>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 팀 및 파트너 -->
+        <div data-include="sections/11-team-partners.html"><!-- 페이지 12: 팀 및 파트너 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 10</div>
+        <h2 class="section-title">팀 및 파트너 (Team &amp; Partners)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        AKASSECT는 블록체인, AI, 금융 분야의 글로벌 전문가들로 구성된 세계적 수준의 팀을 보유하고 있습니다. 총 경력 200년 이상의 전문성과 Fortune 500 기업 출신 임원진이 프로젝트를 이끌고 있습니다.
+    </p>
+    
+    <div class="premium-team-section">
+        <h3>핵심 경영진 (Executive Team)</h3>
+        
+        <div class="executive-grid">
+            <div class="executive-card ceo-card">
+                <div class="executive-photo">
+                    <img src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/photo-1507003211169-0a1dd7228f2d" alt="CEO Profile" class="profile-img">
+                    <div class="photo-overlay">
+                        <div class="linkedin-badge">in</div>
+                    </div>
+                </div>
+                <div class="executive-info">
+                    <h4>Michael Richardson</h4>
+                    <p class="title">Chief Executive Officer</p>
+                    <p class="experience">전 Goldman Sachs VP • 15년 핀테크 경력</p>
+                    <div class="expertise-tags">
+                        <span class="tag">Blockchain</span>
+                        <span class="tag">FinTech</span>
+                        <span class="tag">Strategy</span>
+                    </div>
+                    <p class="bio">MIT 경영학 석사, 블록체인 기반 결제 시스템 분야 선구자. Goldman Sachs에서 디지털 자산 부문을 이끌었으며, 3개의 핀테크 스타트업을 성공적으로 엑시트.</p>
+                </div>
+            </div>
+            
+            <div class="executive-card cto-card">
+                <div class="executive-photo">
+                    <img src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/photo-1472099645785-5658abf4ff4e" alt="CTO Profile" class="profile-img">
+                    <div class="photo-overlay">
+                        <div class="linkedin-badge">in</div>
+                    </div>
+                </div>
+                <div class="executive-info">
+                    <h4>Dr. James Chen</h4>
+                    <p class="title">Chief Technology Officer</p>
+                    <p class="experience">전 Google AI Research • 12년 AI/ML 경력</p>
+                    <div class="expertise-tags">
+                        <span class="tag">AI/ML</span>
+                        <span class="tag">Blockchain</span>
+                        <span class="tag">Security</span>
+                    </div>
+                    <p class="bio">Stanford 컴퓨터과학 박사, Google에서 AI 보안 시스템을 개발. 20편 이상의 AI 관련 논문 발표, IEEE Fellow. 머신러닝 기반 사기 탐지 분야 세계적 권위자.</p>
+                </div>
+            </div>
+            
+            <div class="executive-card cfo-card">
+                <div class="executive-photo">
+                    <img src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/photo-1551836022-deb4988cc6c0" alt="CFO Profile" class="profile-img">
+                    <div class="photo-overlay">
+                        <div class="linkedin-badge">in</div>
+                    </div>
+                </div>
+                <div class="executive-info">
+                    <h4>Sarah Williams</h4>
+                    <p class="title">Chief Financial Officer</p>
+                    <p class="experience">전 JP Morgan MD • 18년 투자은행 경력</p>
+                    <div class="expertise-tags">
+                        <span class="tag">Finance</span>
+                        <span class="tag">M&amp;A</span>
+                        <span class="tag">Compliance</span>
+                    </div>
+                    <p class="bio">Wharton MBA, JP Morgan에서 Managing Director로 암호화폐 관련 M&amp;A 총괄. $50억 규모의 딜 성사 경험, SEC 및 글로벌 규제 전문가.</p>
+                </div>
+            </div>
+            
+            <div class="executive-card coo-card">
+                <div class="executive-photo">
+                    <img src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/photo-1560250097-0b93528c311a" alt="COO Profile" class="profile-img">
+                    <div class="photo-overlay">
+                        <div class="linkedin-badge">in</div>
+                    </div>
+                </div>
+                <div class="executive-info">
+                    <h4>David Kim</h4>
+                    <p class="title">Chief Operating Officer</p>
+                    <p class="experience">전 Amazon Web Services VP • 14년 클라우드 경력</p>
+                    <div class="expertise-tags">
+                        <span class="tag">Operations</span>
+                        <span class="tag">Cloud</span>
+                        <span class="tag">Scale</span>
+                    </div>
+                    <p class="bio">Carnegie Mellon 전산학 석사, AWS에서 글로벌 인프라 확장을 주도. 초당 100만 트랜잭션 처리 시스템 구축 경험, 클라우드 보안 분야 전문가.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="advisors-section">
+        <h3>전략 어드바이저 (Strategic Advisors)</h3>
+        <div class="advisors-grid">
+            <div class="advisor-card">
+                <img src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/photo-1573496359142-b8d87734a5a2" alt="Advisor" class="advisor-img">
+                <div class="advisor-info">
+                    <h5>Prof. Elizabeth Martinez</h5>
+                    <p>전 MIT 블록체인 연구소 소장</p>
+                </div>
+            </div>
+            <div class="advisor-card">
+                <img src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/photo-1612349317150-e413f6a5b16d" alt="Advisor" class="advisor-img">
+                <div class="advisor-info">
+                    <h5>Robert Thompson</h5>
+                    <p>전 PayPal 아시아 총괄 사장</p>
+                </div>
+            </div>
+            <div class="advisor-card">
+                <img src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/photo-1551836022-deb4988cc6c0(1)" alt="Advisor" class="advisor-img">
+                <div class="advisor-info">
+                    <h5>Dr. Yuki Tanaka</h5>
+                    <p>전 일본은행 디지털화폐 연구팀장</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 법률 및 면책 -->
+        <div data-include="sections/12-legal-disclaimer.html"><!-- 페이지 13: 법률 및 면책 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 11</div>
+        <h2 class="section-title">법률 및 면책 (Legal Disclaimer)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        본 백서는 정보 제공 목적으로만 작성되었으며, 투자 권유나 법적 조언이 아닙니다. 투자 전 충분한 검토가 필요합니다.
+    </p>
+    
+    <div class="highlight-box">
+        <h3>중요 고지사항</h3>
+        <ul class="content-list">
+            <li><strong>투자 위험:</strong> 암호화폐 투자는 높은 위험을 수반합니다</li>
+            <li><strong>규제 준수:</strong> 각국 법률 및 규제를 준수합니다</li>
+            <li><strong>면책 조항:</strong> 투자 손실에 대한 책임을 지지 않습니다</li>
+        </ul>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 결론 -->
+        <div data-include="sections/13-conclusion.html"><!-- 페이지 14: 결론 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 12</div>
+        <h2 class="section-title">결론 (Conclusion)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        AKASSECT는 AI와 블록체인 기술을 결합하여 안전하고 효율적인 P2P 결제 생태계를 구축합니다. 혁신적인 기술과 실용적인 접근으로 디지털 결제의 미래를 선도하겠습니다.
+    </p>
+    
+    <div class="highlight-box">
+        <h3>핵심 가치</h3>
+        <ul class="content-list">
+            <li><strong>안전성:</strong> 99.2% 사기 탐지율</li>
+            <li><strong>효율성:</strong> 80% 수수료 절감</li>
+            <li><strong>투명성:</strong> 블록체인 기반 투명한 거래</li>
+            <li><strong>혁신성:</strong> AI 기반 차세대 결제 시스템</li>
+        </ul>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+        
+        <!-- 부록 -->
+        <div data-include="sections/14-appendix.html"><!-- 페이지 15: 부록 --><script src="./AKASSECT 공식 백서 - 전문가 버전 (한국어 - 임시버전)_files/cascade-browser-integration.js"></script><meta name="x-codeium-csrf-token" content="9b550254-5ccf-49fa-b775-6c0cd4c2f7eb"><div class="pdf-page">
+    <div class="section-header">
+        <div class="section-number">Chapter 13</div>
+        <h2 class="section-title">부록 (Appendix)</h2>
+    </div>
+    
+    <p class="content-paragraph">
+        부록에는 기술적 세부사항, 참고 자료, 용어 정의 등이 포함되어 있습니다.
+    </p>
+    
+    <div class="highlight-box">
+        <h3>참고 자료</h3>
+        <ul class="content-list">
+            <li><strong>기술 문서:</strong> API 명세서, 개발자 가이드</li>
+            <li><strong>학술 논문:</strong> AI 및 블록체인 관련 연구</li>
+            <li><strong>시장 조사:</strong> 디지털 결제 시장 분석 보고서</li>
+            <li><strong>법적 문서:</strong> 규제 준수 관련 자료</li>
+        </ul>
+    </div>
+    
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>Technical Whitepaper v1.0</span>
+            <span>한국어 - 임시버전</span>
+        </div>
+    </div>
+</div>
+</div>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            window.print();
+        }
+        
+        // 페이지 로드 시 모든 섹션 로드
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllSections();
+        });
+        
+        function loadAllSections() {
+            const includes = document.querySelectorAll('[data-include]');
+            let loadedCount = 0;
+            
+            includes.forEach(function(element) {
+                const file = element.getAttribute('data-include');
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => {
+                        element.innerHTML = data;
+                        loadedCount++;
+                        if (loadedCount === includes.length) {
+                            console.log('모든 섹션 로드 완료');
+                        }
+                    })
+                    .catch(error => {
+                        console.error('섹션 로드 실패:', file, error);
+                        element.innerHTML = `<div class="error">섹션 로드 실패: ${file}</div>`;
+                    });
+            });
+        }
+    </script>
+
+
+<div class="toolbar-container"><div style="color-scheme: unset; forced-color-adjust: unset; mask: unset; math-depth: unset; position: fixed; position-anchor: unset; text-size-adjust: unset; appearance: unset; color: unset; font: unset; font-palette: unset; font-synthesis: unset; position-area: unset; text-orientation: unset; text-rendering: unset; text-spacing-trim: unset; -webkit-font-smoothing: unset; -webkit-locale: unset; -webkit-text-orientation: unset; -webkit-writing-mode: unset; writing-mode: unset; zoom: unset; accent-color: unset; place-content: unset; align-items: center; place-self: unset; alignment-baseline: unset; anchor-name: unset; anchor-scope: unset; animation-composition: unset; animation: unset; app-region: unset; aspect-ratio: unset; backdrop-filter: unset; backface-visibility: unset; background-attachment: unset; background-blend-mode: unset; background-clip: unset; background-color: rgb(255, 255, 255); background-image: unset; background-origin: unset; background-position: unset; background-repeat: unset; background-size: unset; baseline-shift: unset; baseline-source: unset; block-size: unset; border-block: unset; border: unset; border-radius: 4px; border-collapse: unset; border-end-end-radius: unset; border-end-start-radius: unset; border-inline: unset; border-start-end-radius: unset; border-start-start-radius: unset; bottom: 20px; box-decoration-break: unset; box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 12px; box-sizing: unset; break-after: unset; break-before: unset; break-inside: unset; buffered-rendering: unset; caption-side: unset; caret-animation: unset; caret-color: unset; clear: unset; clip: unset; clip-path: unset; clip-rule: unset; color-interpolation: unset; color-interpolation-filters: unset; color-rendering: unset; columns: unset; column-fill: unset; gap: unset; column-rule: unset; column-span: unset; contain: unset; contain-intrinsic-block-size: unset; contain-intrinsic-size: unset; contain-intrinsic-inline-size: unset; container: unset; content: unset; content-visibility: unset; corner-shape: unset; corner-block-end-shape: unset; corner-block-start-shape: unset; counter-increment: unset; counter-reset: unset; counter-set: unset; cursor: unset; cx: unset; cy: unset; d: unset; display: flex; dominant-baseline: unset; dynamic-range-limit: unset; empty-cells: unset; field-sizing: unset; fill: unset; fill-opacity: unset; fill-rule: unset; filter: unset; flex: unset; flex-flow: unset; float: unset; flood-color: unset; flood-opacity: unset; grid: unset; grid-area: unset; height: unset; hyphenate-character: unset; hyphenate-limit-chars: unset; hyphens: unset; image-orientation: unset; image-rendering: unset; initial-letter: unset; inline-size: unset; inset-block: unset; inset-inline: unset; interest-delay: unset; interpolate-size: unset; isolation: unset; justify-items: unset; left: unset; letter-spacing: unset; lighting-color: unset; line-break: unset; list-style: unset; margin-block: unset; margin: unset; margin-inline: unset; marker: unset; mask-type: unset; math-shift: unset; math-style: unset; max-block-size: unset; max-height: unset; max-inline-size: unset; max-width: unset; min-block-size: unset; min-height: unset; min-inline-size: unset; min-width: unset; mix-blend-mode: unset; object-fit: unset; object-position: unset; object-view-box: unset; offset: unset; opacity: unset; order: unset; orphans: unset; outline: unset; outline-offset: unset; overflow-anchor: unset; overflow-block: unset; overflow-clip-margin: unset; overflow-inline: unset; overflow-wrap: unset; overflow: unset; overlay: unset; overscroll-behavior-block: unset; overscroll-behavior-inline: unset; overscroll-behavior: unset; padding-block: unset; padding: unset; padding-inline: unset; page: unset; page-orientation: unset; paint-order: unset; perspective: unset; perspective-origin: unset; pointer-events: unset; position-try: unset; position-visibility: unset; print-color-adjust: unset; quotes: unset; r: unset; reading-flow: unset; reading-order: unset; resize: unset; right: 20px; rotate: unset; ruby-align: unset; ruby-position: unset; rx: unset; ry: unset; scale: unset; scroll-behavior: unset; scroll-initial-target: unset; scroll-margin-block: unset; scroll-margin: unset; scroll-margin-inline: unset; scroll-marker-group: unset; scroll-padding-block: unset; scroll-padding: unset; scroll-padding-inline: unset; scroll-snap-align: unset; scroll-snap-stop: unset; scroll-snap-type: unset; scroll-target-group: unset; scroll-timeline: unset; scrollbar-color: unset; scrollbar-gutter: unset; scrollbar-width: unset; shape-image-threshold: unset; shape-margin: unset; shape-outside: unset; shape-rendering: unset; size: unset; speak: unset; stop-color: unset; stop-opacity: unset; stroke: unset; stroke-dasharray: unset; stroke-dashoffset: unset; stroke-linecap: unset; stroke-linejoin: unset; stroke-miterlimit: unset; stroke-opacity: unset; stroke-width: unset; tab-size: unset; table-layout: unset; text-align: unset; text-align-last: unset; text-anchor: unset; text-autospace: unset; text-box: unset; text-combine-upright: unset; text-decoration: unset; text-decoration-skip-ink: unset; text-emphasis: unset; text-emphasis-position: unset; text-indent: unset; text-overflow: unset; text-shadow: unset; text-transform: unset; text-underline-offset: unset; text-underline-position: unset; text-wrap: unset; timeline-scope: unset; top: unset; touch-action: unset; transform: unset; transform-box: unset; transform-origin: unset; transform-style: unset; transition: unset; translate: unset; user-select: unset; vector-effect: unset; vertical-align: unset; view-timeline: unset; view-transition-class: unset; view-transition-group: unset; view-transition-name: unset; visibility: unset; border-spacing: unset; -webkit-box-align: unset; -webkit-box-decoration-break: unset; -webkit-box-direction: unset; -webkit-box-flex: unset; -webkit-box-ordinal-group: unset; -webkit-box-orient: unset; -webkit-box-pack: unset; -webkit-box-reflect: unset; -webkit-line-break: unset; -webkit-line-clamp: unset; -webkit-mask-box-image: unset; -webkit-rtl-ordering: unset; -webkit-ruby-position: unset; -webkit-tap-highlight-color: unset; -webkit-text-combine: unset; -webkit-text-decorations-in-effect: unset; -webkit-text-fill-color: unset; -webkit-text-security: unset; -webkit-text-stroke: unset; -webkit-user-drag: unset; white-space-collapse: unset; widows: unset; width: unset; will-change: unset; word-break: unset; word-spacing: unset; x: unset; y: unset; z-index: 2147483647;"><button style="color-scheme: unset; forced-color-adjust: unset; mask: unset; math-depth: unset; position: relative; position-anchor: unset; text-size-adjust: unset; appearance: unset; color: rgb(0, 0, 0); font-family: system-ui, -apple-system, sans-serif; font-feature-settings: unset; font-kerning: unset; font-optical-sizing: unset; font-palette: unset; font-size: 13px; font-size-adjust: unset; font-stretch: unset; font-style: unset; font-synthesis: unset; font-variant: unset; font-variation-settings: unset; font-weight: 600; position-area: unset; text-orientation: unset; text-rendering: unset; text-spacing-trim: unset; -webkit-font-smoothing: unset; -webkit-locale: unset; -webkit-text-orientation: unset; -webkit-writing-mode: unset; writing-mode: unset; zoom: unset; accent-color: unset; place-content: unset; align-items: center; place-self: unset; alignment-baseline: unset; anchor-name: unset; anchor-scope: unset; animation-composition: unset; animation: unset; app-region: unset; aspect-ratio: unset; backdrop-filter: unset; backface-visibility: unset; background-attachment: unset; background-blend-mode: unset; background-clip: unset; background-color: rgb(255, 255, 255); background-image: unset; background-origin: unset; background-position: unset; background-repeat: unset; background-size: unset; baseline-shift: unset; baseline-source: unset; block-size: unset; border-block: unset; border: none; border-radius: 4px 0px 0px 4px; border-collapse: unset; border-end-end-radius: unset; border-end-start-radius: unset; border-inline: unset; border-start-end-radius: unset; border-start-start-radius: unset; inset: unset; box-decoration-break: unset; box-shadow: unset; box-sizing: unset; break-after: unset; break-before: unset; break-inside: unset; buffered-rendering: unset; caption-side: unset; caret-animation: unset; caret-color: unset; clear: unset; clip: unset; clip-path: unset; clip-rule: unset; color-interpolation: unset; color-interpolation-filters: unset; color-rendering: unset; columns: unset; column-fill: unset; gap: 4px; column-rule: unset; column-span: unset; contain: unset; contain-intrinsic-block-size: unset; contain-intrinsic-size: unset; contain-intrinsic-inline-size: unset; container: unset; content: unset; content-visibility: unset; corner-shape: unset; corner-block-end-shape: unset; corner-block-start-shape: unset; counter-increment: unset; counter-reset: unset; counter-set: unset; cursor: pointer; cx: unset; cy: unset; d: unset; display: flex; dominant-baseline: unset; dynamic-range-limit: unset; empty-cells: unset; field-sizing: unset; fill: unset; fill-opacity: unset; fill-rule: unset; filter: unset; flex: unset; flex-flow: unset; float: unset; flood-color: unset; flood-opacity: unset; grid: unset; grid-area: unset; height: unset; hyphenate-character: unset; hyphenate-limit-chars: unset; hyphens: unset; image-orientation: unset; image-rendering: unset; initial-letter: unset; inline-size: unset; inset-block: unset; inset-inline: unset; interest-delay: unset; interpolate-size: unset; isolation: unset; justify-items: unset; letter-spacing: unset; lighting-color: unset; line-break: unset; line-height: unset; list-style: unset; margin-block: unset; margin: unset; margin-inline: unset; marker: unset; mask-type: unset; math-shift: unset; math-style: unset; max-block-size: unset; max-height: unset; max-inline-size: unset; max-width: unset; min-block-size: unset; min-height: unset; min-inline-size: unset; min-width: unset; mix-blend-mode: unset; object-fit: unset; object-position: unset; object-view-box: unset; offset: unset; opacity: unset; order: unset; orphans: unset; outline: none; outline-offset: unset; overflow-anchor: unset; overflow-block: unset; overflow-clip-margin: unset; overflow-inline: unset; overflow-wrap: unset; overflow: unset; overlay: unset; overscroll-behavior-block: unset; overscroll-behavior-inline: unset; overscroll-behavior: unset; padding-block: unset; padding: 6px 10px; padding-inline: unset; page: unset; page-orientation: unset; paint-order: unset; perspective: unset; perspective-origin: unset; pointer-events: unset; position-try: unset; position-visibility: unset; print-color-adjust: unset; quotes: unset; r: unset; reading-flow: unset; reading-order: unset; resize: unset; rotate: unset; ruby-align: unset; ruby-position: unset; rx: unset; ry: unset; scale: unset; scroll-behavior: unset; scroll-initial-target: unset; scroll-margin-block: unset; scroll-margin: unset; scroll-margin-inline: unset; scroll-marker-group: unset; scroll-padding-block: unset; scroll-padding: unset; scroll-padding-inline: unset; scroll-snap-align: unset; scroll-snap-stop: unset; scroll-snap-type: unset; scroll-target-group: unset; scroll-timeline: unset; scrollbar-color: unset; scrollbar-gutter: unset; scrollbar-width: unset; shape-image-threshold: unset; shape-margin: unset; shape-outside: unset; shape-rendering: unset; size: unset; speak: unset; stop-color: unset; stop-opacity: unset; stroke: unset; stroke-dasharray: unset; stroke-dashoffset: unset; stroke-linecap: unset; stroke-linejoin: unset; stroke-miterlimit: unset; stroke-opacity: unset; stroke-width: unset; tab-size: unset; table-layout: unset; text-align: unset; text-align-last: unset; text-anchor: unset; text-autospace: unset; text-box: unset; text-combine-upright: unset; text-decoration: unset; text-decoration-skip-ink: unset; text-emphasis: unset; text-emphasis-position: unset; text-indent: unset; text-overflow: unset; text-shadow: unset; text-transform: unset; text-underline-offset: unset; text-underline-position: unset; text-wrap: unset; timeline-scope: unset; touch-action: unset; transform: unset; transform-box: unset; transform-origin: unset; transform-style: unset; transition: background-color 0.2s; translate: unset; user-select: unset; vector-effect: unset; vertical-align: unset; view-timeline: unset; view-transition-class: unset; view-transition-group: unset; view-transition-name: unset; visibility: unset; border-spacing: unset; -webkit-box-align: unset; -webkit-box-decoration-break: unset; -webkit-box-direction: unset; -webkit-box-flex: unset; -webkit-box-ordinal-group: unset; -webkit-box-orient: unset; -webkit-box-pack: unset; -webkit-box-reflect: unset; -webkit-line-break: unset; -webkit-line-clamp: unset; -webkit-mask-box-image: unset; -webkit-rtl-ordering: unset; -webkit-ruby-position: unset; -webkit-tap-highlight-color: unset; -webkit-text-combine: unset; -webkit-text-decorations-in-effect: unset; -webkit-text-fill-color: unset; -webkit-text-security: unset; -webkit-text-stroke: unset; -webkit-user-drag: unset; white-space-collapse: unset; widows: unset; width: unset; will-change: unset; word-break: unset; word-spacing: unset; x: unset; y: unset; z-index: unset;"><span style="display: flex; align-items: center; gap: 4px;">Send element<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true" data-slot="icon" style="width: 16px; height: 16px;"><path fill-rule="evenodd" d="M17.303 5.197A7.5 7.5 0 0 0 6.697 15.803a.75.75 0 0 1-1.061 1.061A9 9 0 1 1 21 10.5a.75.75 0 0 1-1.5 0c0-1.92-.732-3.839-2.197-5.303Zm-2.121 2.121a4.5 4.5 0 0 0-6.364 6.364.75.75 0 1 1-1.06 1.06A6 6 0 1 1 18 10.5a.75.75 0 0 1-1.5 0c0-1.153-.44-2.303-1.318-3.182Zm-3.634 1.314a.75.75 0 0 1 .82.311l5.228 7.917a.75.75 0 0 1-.777 1.148l-2.097-.43 1.045 3.9a.75.75 0 0 1-1.45.388l-1.044-3.899-1.601 1.42a.75.75 0 0 1-1.247-.606l.569-9.47a.75.75 0 0 1 .554-.68Z" clip-rule="evenodd"></path></svg></span></button><button disabled="" style="color-scheme: unset; forced-color-adjust: unset; mask: unset; math-depth: unset; position: relative; position-anchor: unset; text-size-adjust: unset; appearance: unset; color: rgb(153, 153, 153); font-family: system-ui, -apple-system, sans-serif; font-feature-settings: unset; font-kerning: unset; font-optical-sizing: unset; font-palette: unset; font-size: 13px; font-size-adjust: unset; font-stretch: unset; font-style: unset; font-synthesis: unset; font-variant: unset; font-variation-settings: unset; font-weight: 600; position-area: unset; text-orientation: unset; text-rendering: unset; text-spacing-trim: unset; -webkit-font-smoothing: unset; -webkit-locale: unset; -webkit-text-orientation: unset; -webkit-writing-mode: unset; writing-mode: unset; zoom: unset; accent-color: unset; place-content: unset; align-items: center; place-self: unset; alignment-baseline: unset; anchor-name: unset; anchor-scope: unset; animation-composition: unset; animation: unset; app-region: unset; aspect-ratio: unset; backdrop-filter: unset; backface-visibility: unset; background-attachment: unset; background-blend-mode: unset; background-clip: unset; background-color: rgb(240, 240, 240); background-image: unset; background-origin: unset; background-position: unset; background-repeat: unset; background-size: unset; baseline-shift: unset; baseline-source: unset; block-size: unset; border-block: unset; border: none; border-radius: 0px 4px 4px 0px; border-collapse: unset; border-end-end-radius: unset; border-end-start-radius: unset; border-inline: unset; border-start-end-radius: unset; border-start-start-radius: unset; inset: unset; box-decoration-break: unset; box-shadow: unset; box-sizing: unset; break-after: unset; break-before: unset; break-inside: unset; buffered-rendering: unset; caption-side: unset; caret-animation: unset; caret-color: unset; clear: unset; clip: unset; clip-path: unset; clip-rule: unset; color-interpolation: unset; color-interpolation-filters: unset; color-rendering: unset; columns: unset; column-fill: unset; gap: 4px; column-rule: unset; column-span: unset; contain: unset; contain-intrinsic-block-size: unset; contain-intrinsic-size: unset; contain-intrinsic-inline-size: unset; container: unset; content: unset; content-visibility: unset; corner-shape: unset; corner-block-end-shape: unset; corner-block-start-shape: unset; counter-increment: unset; counter-reset: unset; counter-set: unset; cursor: default; cx: unset; cy: unset; d: unset; display: flex; dominant-baseline: unset; dynamic-range-limit: unset; empty-cells: unset; field-sizing: unset; fill: unset; fill-opacity: unset; fill-rule: unset; filter: unset; flex: unset; flex-flow: unset; float: unset; flood-color: unset; flood-opacity: unset; grid: unset; grid-area: unset; height: unset; hyphenate-character: unset; hyphenate-limit-chars: unset; hyphens: unset; image-orientation: unset; image-rendering: unset; initial-letter: unset; inline-size: unset; inset-block: unset; inset-inline: unset; interest-delay: unset; interpolate-size: unset; isolation: unset; justify-items: unset; letter-spacing: unset; lighting-color: unset; line-break: unset; line-height: unset; list-style: unset; margin-block: unset; margin: unset; margin-inline: unset; marker: unset; mask-type: unset; math-shift: unset; math-style: unset; max-block-size: unset; max-height: unset; max-inline-size: unset; max-width: unset; min-block-size: unset; min-height: unset; min-inline-size: unset; min-width: unset; mix-blend-mode: unset; object-fit: unset; object-position: unset; object-view-box: unset; offset: unset; opacity: unset; order: unset; orphans: unset; outline: none; outline-offset: unset; overflow-anchor: unset; overflow-block: unset; overflow-clip-margin: unset; overflow-inline: unset; overflow-wrap: unset; overflow: unset; overlay: unset; overscroll-behavior-block: unset; overscroll-behavior-inline: unset; overscroll-behavior: unset; padding-block: unset; padding: 6px 10px; padding-inline: unset; page: unset; page-orientation: unset; paint-order: unset; perspective: unset; perspective-origin: unset; pointer-events: unset; position-try: unset; position-visibility: unset; print-color-adjust: unset; quotes: unset; r: unset; reading-flow: unset; reading-order: unset; resize: unset; rotate: unset; ruby-align: unset; ruby-position: unset; rx: unset; ry: unset; scale: unset; scroll-behavior: unset; scroll-initial-target: unset; scroll-margin-block: unset; scroll-margin: unset; scroll-margin-inline: unset; scroll-marker-group: unset; scroll-padding-block: unset; scroll-padding: unset; scroll-padding-inline: unset; scroll-snap-align: unset; scroll-snap-stop: unset; scroll-snap-type: unset; scroll-target-group: unset; scroll-timeline: unset; scrollbar-color: unset; scrollbar-gutter: unset; scrollbar-width: unset; shape-image-threshold: unset; shape-margin: unset; shape-outside: unset; shape-rendering: unset; size: unset; speak: unset; stop-color: unset; stop-opacity: unset; stroke: unset; stroke-dasharray: unset; stroke-dashoffset: unset; stroke-linecap: unset; stroke-linejoin: unset; stroke-miterlimit: unset; stroke-opacity: unset; stroke-width: unset; tab-size: unset; table-layout: unset; text-align: unset; text-align-last: unset; text-anchor: unset; text-autospace: unset; text-box: unset; text-combine-upright: unset; text-decoration: unset; text-decoration-skip-ink: unset; text-emphasis: unset; text-emphasis-position: unset; text-indent: unset; text-overflow: unset; text-shadow: unset; text-transform: unset; text-underline-offset: unset; text-underline-position: unset; text-wrap: unset; timeline-scope: unset; touch-action: unset; transform: unset; transform-box: unset; transform-origin: unset; transform-style: unset; transition: background-color 0.2s; translate: unset; user-select: unset; vector-effect: unset; vertical-align: unset; view-timeline: unset; view-transition-class: unset; view-transition-group: unset; view-transition-name: unset; visibility: unset; border-spacing: unset; -webkit-box-align: unset; -webkit-box-decoration-break: unset; -webkit-box-direction: unset; -webkit-box-flex: unset; -webkit-box-ordinal-group: unset; -webkit-box-orient: unset; -webkit-box-pack: unset; -webkit-box-reflect: unset; -webkit-line-break: unset; -webkit-line-clamp: unset; -webkit-mask-box-image: unset; -webkit-rtl-ordering: unset; -webkit-ruby-position: unset; -webkit-tap-highlight-color: unset; -webkit-text-combine: unset; -webkit-text-decorations-in-effect: unset; -webkit-text-fill-color: unset; -webkit-text-security: unset; -webkit-text-stroke: unset; -webkit-user-drag: unset; white-space-collapse: unset; widows: unset; width: unset; will-change: unset; word-break: unset; word-spacing: unset; x: unset; y: unset; z-index: unset;">Send console errors (0)</button></div></div><deepl-input-controller translate="no"><template shadowrootmode="open"><link rel="stylesheet" href="chrome-extension://cofdbpoegempjloogbagkncekinflcnj/build/content.css"><div dir="ltr" style="visibility: initial !important;"><div class="dl-input-translation-container svelte-95aucy"><div></div></div></div></template></deepl-input-controller></body></html>

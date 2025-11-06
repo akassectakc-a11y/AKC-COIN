@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT公式ホワイトペーパー - プロフェッショナル版（日本語 - 正式版）</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- プロフェッショナルホワイトペーパー用フォントシステム -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Noto+Sans+JP:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="assets/include.js"></script>
+</head>
+<body>
+    <!-- ウェブ配布用バナー -->
+    <div class="web-banner">
+        <div class="banner-left">
+            <span class="language-badge">日本語</span>
+            <span class="version-badge">正式版</span>
+        </div>
+        <div class="banner-center">
+            AKASSECT公式ホワイトペーパー - テクニカルホワイトペーパー v1.0
+        </div>
+        <div class="banner-right">
+            <button class="pdf-download-btn" onclick="downloadPDF()">
+                📄 PDFダウンロード
+            </button>
+        </div>
+    </div>
+    
+    <!-- 動的セクション読み込み -->
+    <div id="whitepaper-content">
+        <!-- カバーページ -->
+        <div data-include="sections/00-cover.html"></div>
+        
+        <!-- 目次 -->
+        <div data-include="sections/01-table-of-contents.html"></div>
+        
+        <!-- 序論 -->
+        <div data-include="sections/02-introduction.html"></div>
+        
+        <!-- 市場分析 -->
+        <div data-include="sections/03-market-analysis.html"></div>
+        
+        <!-- システム概要 -->
+        <div data-include="sections/04-system-overview.html"></div>
+        
+        <!-- 技術アーキテクチャ -->
+        <div data-include="sections/05-technical-architecture.html"></div>
+        
+        <!-- トークン構造 -->
+        <div data-include="sections/06-token-structure.html"></div>
+        
+        <!-- セキュア決済 -->
+        <div data-include="sections/07-secure-payment.html"></div>
+        
+        <!-- AIリスク分析 -->
+        <div data-include="sections/08-ai-risk-analysis.html"></div>
+        
+        <!-- ビジネスモデル -->
+        <div data-include="sections/09-business-model.html"></div>
+        
+        <!-- ロードマップ -->
+        <div data-include="sections/10-roadmap.html"></div>
+        
+        <!-- チーム・パートナー -->
+        <div data-include="sections/11-team-partners.html"></div>
+        
+        <!-- 法的免責事項 -->
+        <div data-include="sections/12-legal-disclaimer.html"></div>
+        
+        <!-- 結論 -->
+        <div data-include="sections/13-conclusion.html"></div>
+        
+        <!-- 付録 -->
+        <div data-include="sections/14-appendix.html"></div>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            window.print();
+        }
+        
+        // ページ読み込み時に全セクションを読み込み
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllSections();
+        });
+        
+        function loadAllSections() {
+            const sections = document.querySelectorAll('[data-include]');
+            sections.forEach(section => {
+                const file = section.getAttribute('data-include');
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => {
+                        section.innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('セクション読み込みエラー:', error);
+                        section.innerHTML = '<p>セクション読み込みエラー</p>';
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

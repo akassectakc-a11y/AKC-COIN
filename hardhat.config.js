@@ -37,8 +37,19 @@ module.exports = {
   etherscan: {
     apiKey: {
       bscTestnet: process.env.BSCSCAN_API_KEY || "",
-      bsc: process.env.BSCSCAN_API_KEY || ""
-    }
+      bsc: process.env.BSCSCAN_API_KEY || "",
+      bscMainnet: process.env.BSCSCAN_API_KEY || ""
+    },
+    customChains: [
+      {
+        network: "bscMainnet",
+        chainId: 56,
+        urls: {
+          apiURL: "https://api.bscscan.com/api",
+          browserURL: "https://bscscan.com"
+        }
+      }
+    ]
   },
   paths: {
     sources: "./contracts",

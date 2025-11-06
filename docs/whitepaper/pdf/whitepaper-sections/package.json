@@ -1,0 +1,73 @@
+{
+  "name": "akassect-whitepaper-pdf",
+  "version": "1.0.0",
+  "description": "AKASSECT Official Whitepaper PDF Generator",
+  "type": "module",
+  "main": "generate-pdf.js",
+  "scripts": {
+    "generate-pdf": "./generate.sh",
+    "export-ko-pdf": "./export-ko-pdf.sh",
+    "export-ko": "node export-to-ko-pdf.js",
+    "export-multilang": "node generate-multilang-pdf.js",
+    "save-pdf": "node save-to-pdf.js",
+    "capture-pdf": "node capture-based-pdf.js",
+    "to-pdf": "node to-pdf.js",
+    "chrome-pdf": "node chrome-pdf.js",
+    "perfect-pdf": "node make-perfect-pdf.js",
+    "screenshot-pdf": "node screenshot-to-pdf.js",
+    "photo-pdf": "node photo-to-pdf.js",
+    "single-page": "node single-page-pdf.js",
+    "one-page-only": "node one-page-only-pdf.js",
+    "full-bleed": "node full-bleed-pdf.js",
+    "clean-capture": "node clean-capture-pdf.js",
+    "simple-perfect": "node simple-perfect-pdf.js",
+    "perfect-screen": "node perfect-screen-pdf.js",
+    "dual-perfect": "node dual-perfect-pdf.js",
+    "screenshot-fixed": "node screenshot-to-pdf-fixed.js",
+    "full-page-perfect": "node full-page-pdf.js",
+    "final-perfect": "node final-perfect-pdf.js",
+    "web-identical": "node web-identical-pdf.js",
+    "simple-web": "node simple-web-pdf.js",
+    "premium-pdf": "npm run save-pdf && npm run capture-pdf",
+    "simple-pdf": "npm run to-pdf",
+    "native-pdf": "npm run chrome-pdf",
+    "ultimate-pdf": "npm run perfect-pdf",
+    "pixel-perfect": "npm run screenshot-pdf",
+    "identical-pdf": "npm run web-identical",
+    "install-capture": "npm install html-pdf-node",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "python3 -m http.server 8082",
+    "dev": "npm run serve & sleep 3 && npm run generate-pdf",
+    "install-deps": "npm install puppeteer",
+    "test-server": "curl -I http://localhost:8082/ko/index.html"
+  },
+  "keywords": [
+    "akassect",
+    "whitepaper",
+    "pdf",
+    "cryptocurrency",
+    "blockchain",
+    "capture-based",
+    "high-quality"
+  ],
+  "author": "AKASSECT Project Team",
+  "license": "MIT",
+  "dependencies": {
+    "html-pdf-node": "^1.0.8",
+    "puppeteer": "^21.11.0"
+  },
+  "devDependencies": {
+    "html-pdf-node": "^1.0.8"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/akassect/whitepaper"
+  },
+  "bugs": {
+    "url": "https://github.com/akassect/whitepaper/issues"
+  },
+  "homepage": "https://akassect.com"
+}

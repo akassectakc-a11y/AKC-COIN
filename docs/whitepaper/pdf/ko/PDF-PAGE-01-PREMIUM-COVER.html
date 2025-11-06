@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT 백서 - 페이지 1 (프리미엄 커버)</title>
+    <link rel="stylesheet" href="BUSINESS-PREMIUM-DESIGN-SYSTEM.css">
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        
+        /* 커버 페이지 전용 스타일 */
+        .cover-header {
+            text-align: center;
+            margin-bottom: 50px;
+            padding: 60px 40px;
+            background: linear-gradient(135deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+            color: var(--bg-white);
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cover-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 30%, rgba(201, 169, 110, 0.08) 50%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .cover-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 15%;
+            right: 15%;
+            height: 3px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 20%, var(--accent-gold-light) 50%, var(--accent-gold) 80%, transparent 100%);
+        }
+        
+        .company-logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px auto;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+            border: 3px solid var(--bg-white);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--bg-white);
+            font-size: 20px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.2);
+        }
+        
+        .cover-title {
+            font-size: 42px;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+            letter-spacing: -1px;
+        }
+        
+        .cover-subtitle {
+            font-size: 18px;
+            margin-bottom: 30px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 2;
+            line-height: 1.4;
+        }
+        
+        .document-badge {
+            background: rgba(255,255,255,0.15);
+            border: 1px solid rgba(255,255,255,0.2);
+            padding: 20px 30px;
+            border-radius: 8px;
+            margin: 30px auto 0 auto;
+            max-width: 400px;
+            position: relative;
+            z-index: 2;
+            backdrop-filter: blur(10px);
+        }
+        
+        .badge-title {
+            font-size: 14px;
+            margin-bottom: 8px;
+            color: var(--accent-gold-light);
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .badge-desc {
+            font-size: 13px;
+            line-height: 1.5;
+            opacity: 0.8;
+        }
+        
+        /* 프로젝트 정보 그리드 */
+        .info-section {
+            margin: 50px 0;
+        }
+        
+        .info-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin: 30px 0;
+        }
+        
+        .info-panel {
+            background: var(--bg-light);
+            border: 1px solid var(--bg-medium);
+            border-left: 4px solid var(--accent-gold);
+            padding: 30px;
+            border-radius: 8px;
+            position: relative;
+        }
+        
+        .info-panel::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, transparent 0%, var(--accent-gold) 100%);
+            opacity: 0.1;
+        }
+        
+        .panel-title {
+            font-size: 16px;
+            color: var(--text-primary);
+            margin-bottom: 20px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        
+        .info-table tr {
+            border-bottom: 1px solid var(--bg-border);
+        }
+        
+        .info-table tr:last-child {
+            border-bottom: none;
+        }
+        
+        .info-table td {
+            padding: 12px 0;
+            font-size: 14px;
+        }
+        
+        .info-table td:first-child {
+            color: var(--text-muted);
+            font-weight: 500;
+            width: 40%;
+        }
+        
+        .info-table td:last-child {
+            color: var(--text-primary);
+            font-weight: 600;
+        }
+        
+        .contract-address {
+            font-family: 'Courier New', monospace;
+            font-size: 11px;
+            background: var(--bg-medium);
+            padding: 8px 10px;
+            border-radius: 4px;
+            border: 1px solid var(--bg-border);
+        }
+        
+        /* 기술 스펙 섹션 */
+        .tech-specs {
+            background: var(--bg-white);
+            border: 1px solid var(--bg-medium);
+            border-radius: 8px;
+            padding: 35px;
+            margin: 40px 0;
+            position: relative;
+        }
+        
+        .tech-specs::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 25%;
+            right: 25%;
+            height: 2px;
+            background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 50%, transparent 100%);
+        }
+        
+        .specs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+            margin-top: 25px;
+        }
+        
+        .spec-item {
+            text-align: center;
+            padding: 20px;
+            background: var(--bg-light);
+            border-radius: 6px;
+            border: 1px solid var(--bg-border);
+        }
+        
+        .spec-icon {
+            font-size: 24px;
+            margin-bottom: 10px;
+            color: var(--accent-gold);
+        }
+        
+        .spec-title {
+            font-size: 14px;
+            font-weight: 600;
+            color: var(--text-primary);
+            margin-bottom: 8px;
+        }
+        
+        .spec-desc {
+            font-size: 12px;
+            color: var(--text-muted);
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body class="premium-typography">
+    <div class="premium-page">
+        <!-- 프리미엄 커버 헤더 -->
+        <div class="cover-header">
+            <div class="company-logo">AKASSECT</div>
+            <h1 class="cover-title">AKASSECT</h1>
+            <p class="cover-subtitle">AI 기반 차세대 P2P 결제 및 안전거래 시스템</p>
+            
+            <div class="document-badge">
+                <div class="badge-title">Technical Whitepaper</div>
+                <div class="badge-desc">
+                    블록체인 기술과 인공지능을 결합한<br/>
+                    혁신적인 디지털 결제 생태계 구축
+                </div>
+            </div>
+        </div>
+        
+        <!-- 프로젝트 정보 -->
+        <div class="info-section">
+            <h2 class="section-title">프로젝트 기본 정보</h2>
+            
+            <div class="info-grid">
+                <div class="info-panel">
+                    <div class="panel-title">토큰 정보</div>
+                    <table class="info-table">
+                        <tr>
+                            <td>토큰명</td>
+                            <td>AKASSECT</td>
+                        </tr>
+                        <tr>
+                            <td>심볼</td>
+                            <td>AKC</td>
+                        </tr>
+                        <tr>
+                            <td>표준</td>
+                            <td>BEP-20</td>
+                        </tr>
+                        <tr>
+                            <td>발행량</td>
+                            <td><strong>300,000,000 AKC</strong></td>
+                        </tr>
+                    </table>
+                </div>
+                
+                <div class="info-panel">
+                    <div class="panel-title">기술 정보</div>
+                    <table class="info-table">
+                        <tr>
+                            <td>네트워크</td>
+                            <td>Binance Smart Chain</td>
+                        </tr>
+                        <tr>
+                            <td>합의 알고리즘</td>
+                            <td>Proof of Staked Authority</td>
+                        </tr>
+                        <tr>
+                            <td>AI 엔진</td>
+                            <td>Machine Learning</td>
+                        </tr>
+                        <tr>
+                            <td>보안</td>
+                            <td>Multi-Signature</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            
+            <div style="margin-top: 25px;">
+                <div class="panel-title" style="margin-bottom: 15px;">컨트랙트 주소</div>
+                <div class="contract-address">0x02D8b729885290a3CA724F3Df5793b74Ff226A17</div>
+            </div>
+        </div>
+        
+        <!-- 기술 사양 -->
+        <div class="tech-specs">
+            <h2 class="section-title" style="text-align: center; border: none; margin-bottom: 25px;">핵심 기술 사양</h2>
+            
+            <div class="specs-grid">
+                <div class="spec-item">
+                    <div class="spec-icon">🧠</div>
+                    <div class="spec-title">AI 위험분석</div>
+                    <div class="spec-desc">실시간 머신러닝 기반<br/>사기 탐지 시스템</div>
+                </div>
+                
+                <div class="spec-item">
+                    <div class="spec-icon">🔗</div>
+                    <div class="spec-title">블록체인 보안</div>
+                    <div class="spec-desc">BEP-20 표준 기반<br/>투명한 거래 기록</div>
+                </div>
+                
+                <div class="spec-item">
+                    <div class="spec-icon">🛡️</div>
+                    <div class="spec-title">스마트 에스크로</div>
+                    <div class="spec-desc">자동화된 안전결제<br/>시스템 구현</div>
+                </div>
+                
+                <div class="spec-item">
+                    <div class="spec-icon">⚡</div>
+                    <div class="spec-title">고성능 처리</div>
+                    <div class="spec-desc">초당 수천 건의<br/>거래 처리 능력</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 문서 메타데이터 -->
+        <div class="premium-stats">
+            <h3 style="text-align: center; margin-bottom: 25px; color: var(--text-primary); font-size: 18px;">문서 정보</h3>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">v1.0</div>
+                    <div class="stat-label">버전</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">2025.11</div>
+                    <div class="stat-label">발행일</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">한국어</div>
+                    <div class="stat-label">언어</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">204</div>
+                    <div class="stat-label">총 페이지</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 프리미엄 푸터 -->
+        <div class="premium-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 1 / 204</span>
+                <span>Business Premium Edition</span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

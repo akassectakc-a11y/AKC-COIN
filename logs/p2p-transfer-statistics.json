@@ -1,77 +1,87 @@
 {
-  "total": 14,
-  "passed": 14,
+  "total": 16,
+  "passed": 16,
   "failed": 0,
   "tests": [
     {
       "test": "초기 잔액 분배",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.448Z"
+      "timestamp": "2025-11-05T06:55:11.840Z"
     },
     {
       "test": "Alice → Bob",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.456Z"
+      "timestamp": "2025-11-05T06:55:11.842Z"
     },
     {
       "test": "Bob → Charlie",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.458Z"
+      "timestamp": "2025-11-05T06:55:11.845Z"
     },
     {
       "test": "4단계 체인",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.463Z"
+      "timestamp": "2025-11-05T06:55:11.849Z"
     },
     {
       "test": "잔액 무결성",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.466Z"
+      "timestamp": "2025-11-05T06:55:11.851Z"
     },
     {
       "test": "원형 순환",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.473Z"
+      "timestamp": "2025-11-05T06:55:11.855Z"
     },
     {
       "test": "5명 순환",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.477Z"
+      "timestamp": "2025-11-05T06:55:11.859Z"
     },
     {
       "test": "동시 전송",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.482Z"
+      "timestamp": "2025-11-05T06:55:11.862Z"
     },
     {
       "test": "크로스 전송",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.485Z"
+      "timestamp": "2025-11-05T06:55:11.864Z"
     },
     {
       "test": "100회 P2P",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.542Z"
+      "timestamp": "2025-11-05T06:55:11.921Z"
     },
     {
       "test": "최종 검증",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.546Z"
+      "timestamp": "2025-11-05T06:55:11.924Z"
     },
     {
       "test": "거의 모든 잔액",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.548Z"
+      "timestamp": "2025-11-05T06:55:11.926Z"
     },
     {
       "test": "50회 소액",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.577Z"
+      "timestamp": "2025-11-05T06:55:11.954Z"
+    },
+    {
+      "test": "다대다",
+      "passed": true,
+      "timestamp": "2025-11-05T06:55:11.966Z"
+    },
+    {
+      "test": "이벤트 발생",
+      "passed": true,
+      "timestamp": "2025-11-05T06:55:11.969Z"
     },
     {
       "test": "가스 효율",
       "passed": true,
-      "timestamp": "2025-10-31T16:48:08.590Z"
+      "timestamp": "2025-11-05T06:55:11.971Z"
     }
   ]
 }

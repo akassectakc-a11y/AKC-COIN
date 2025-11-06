@@ -1,3 +1,64 @@
+# Environment variables (NEVER commit!)
 .env
+.env.local
+.env.*.local
+.env.mainnet
+.env.testnet
+*.env
+
+# Hardhat files
 artifacts/
 cache/
+node_modules
+
+# Private keys and sensitive data (NEVER commit!)
+*.key
+*.pem
+private/
+secrets/
+.secrets
+
+# Logs
+logs/
+*.log
+
+# PDF 생성 관련 파일들
+docs/whitepaper/pdf/whitepaper-sections/ko_pdf/
+docs/whitepaper/pdf/whitepaper-sections/node_modules/
+docs/whitepaper/pdf/whitepaper-sections/package-lock.json
+docs/whitepaper/pdf/whitepaper-sections/*.png
+docs/whitepaper/pdf/whitepaper-sections/*.pdf
+
+# 임시 파일들
+*.tmp
+*.temp
+temp_*
+screenshot_*
+AKASSECT_*
+
+# 백서 빌드 파일들
+docs/whitepaper/_site/
+docs/whitepaper/.jekyll-cache/
+docs/whitepaper/.sass-cache/
+docs/whitepaper/Gemfile.lock
+
+# IDE 관련 파일들
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS 관련 파일들
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# 백업 파일들
+*.bak
+*.backup
+*.old

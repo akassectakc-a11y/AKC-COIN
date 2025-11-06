@@ -1,0 +1,377 @@
+/* 
+==================================================
+AKASSECT 비즈니스 프리미엄 디자인 시스템
+거래소 표준 + 초고도 프리미엄 요소
+==================================================
+*/
+
+/* 색상 팔레트 - 비즈니스 프리미엄 */
+:root {
+    /* 메인 색상 - 다크 & 세련됨 */
+    --primary-dark: #1a1a1a;          /* 프리미엄 블랙 */
+    --primary-medium: #2c3e50;        /* 비즈니스 다크 */
+    --primary-light: #34495e;         /* 소프트 다크 */
+    
+    /* 보조 색상 - 중성적 */
+    --secondary-dark: #495057;        /* 미디엄 그레이 */
+    --secondary-medium: #6c757d;      /* 라이트 그레이 */
+    --secondary-light: #868e96;       /* 소프트 그레이 */
+    
+    /* 배경 색상 - 깔끔함 */
+    --bg-white: #ffffff;              /* 순백색 */
+    --bg-light: #f8f9fa;             /* 연한 회색 */
+    --bg-medium: #e9ecef;            /* 중간 회색 */
+    --bg-border: #dee2e6;            /* 테두리 */
+    
+    /* 프리미엄 액센트 - 골드 */
+    --accent-gold: #c9a96e;          /* 메인 골드 */
+    --accent-gold-light: #d4b574;    /* 라이트 골드 */
+    --accent-gold-dark: #b8956b;     /* 다크 골드 */
+    
+    /* 텍스트 색상 */
+    --text-primary: #1a1a1a;         /* 메인 텍스트 */
+    --text-secondary: #2c3e50;       /* 보조 텍스트 */
+    --text-muted: #6c757d;           /* 약한 텍스트 */
+    --text-light: #868e96;           /* 연한 텍스트 */
+}
+
+/* 기본 설정 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* 프리미엄 타이포그래피 */
+.premium-typography {
+    font-family: 'Times New Roman', 'Georgia', serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+}
+
+/* 페이지 레이아웃 - A4 최적화 */
+.premium-page {
+    width: 210mm;
+    min-height: 297mm;
+    margin: 0 auto;
+    padding: 20mm;
+    background: var(--bg-white);
+    position: relative;
+}
+
+/* 프리미엄 헤더 */
+.premium-header {
+    margin-bottom: 40px;
+    padding-bottom: 25px;
+    border-bottom: 2px solid var(--bg-border);
+    position: relative;
+}
+
+.premium-header::after {
+    content: '';
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 80px;
+    height: 2px;
+    background: linear-gradient(90deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+}
+
+.premium-header::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: 0;
+    width: 40px;
+    height: 1px;
+    background: var(--accent-gold);
+    opacity: 0.6;
+}
+
+/* 섹션 번호 */
+.section-number {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 8px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+/* 메인 제목 */
+.main-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    letter-spacing: -0.5px;
+}
+
+/* 서브 제목 */
+.subtitle {
+    font-size: 16px;
+    color: var(--text-secondary);
+    line-height: 1.4;
+    font-weight: 400;
+}
+
+/* 섹션 제목 */
+.section-title {
+    font-size: 22px;
+    color: var(--text-primary);
+    margin-bottom: 25px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid var(--bg-border);
+    font-weight: 600;
+    position: relative;
+}
+
+.section-title::after {
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 50px;
+    height: 1px;
+    background: var(--accent-gold);
+}
+
+/* 프리미엄 박스 */
+.premium-box {
+    background: var(--bg-light);
+    border: 1px solid var(--bg-medium);
+    border-left: 4px solid var(--accent-gold);
+    padding: 30px;
+    border-radius: 8px;
+    margin: 30px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-box::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(135deg, transparent 0%, var(--accent-gold) 100%);
+    opacity: 0.05;
+}
+
+/* 프리미엄 카드 그리드 */
+.premium-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+    margin: 35px 0;
+}
+
+.premium-card {
+    background: var(--bg-white);
+    border: 1px solid var(--bg-medium);
+    padding: 25px;
+    border-radius: 8px;
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    position: relative;
+    overflow: hidden;
+}
+
+.premium-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 50%, transparent 100%);
+    transform: scaleX(0);
+    transition: transform 0.4s ease;
+}
+
+.premium-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.08), 0 5px 20px rgba(201, 169, 110, 0.15);
+    border-color: var(--accent-gold);
+}
+
+.premium-card:hover::before {
+    transform: scaleX(1);
+}
+
+/* 프리미엄 아이콘 */
+.premium-icon {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 20px auto;
+    background: linear-gradient(135deg, var(--bg-light) 0%, var(--bg-white) 100%);
+    border: 2px solid var(--accent-gold);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    color: var(--accent-gold);
+    transition: all 0.3s ease;
+}
+
+.premium-card:hover .premium-icon {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--accent-gold-light) 100%);
+    color: var(--bg-white);
+    transform: scale(1.05);
+}
+
+/* 프리미엄 통계 */
+.premium-stats {
+    background: var(--bg-light);
+    border: 1px solid var(--bg-medium);
+    padding: 35px;
+    border-radius: 8px;
+    margin: 35px 0;
+    position: relative;
+}
+
+.premium-stats::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 20%;
+    right: 20%;
+    height: 2px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent-gold) 20%, var(--accent-gold-light) 50%, var(--accent-gold) 80%, transparent 100%);
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-top: 20px;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 25px 15px;
+    background: var(--bg-white);
+    border-radius: 6px;
+    border: 1px solid var(--bg-border);
+    transition: all 0.3s ease;
+}
+
+.stat-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.stat-number {
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    font-size: 11px;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* 프리미엄 리스트 */
+.premium-list {
+    background: var(--bg-white);
+    border: 1px solid var(--bg-medium);
+    padding: 30px;
+    border-radius: 8px;
+    margin: 25px 0;
+}
+
+.premium-list ul {
+    list-style: none;
+    padding: 0;
+}
+
+.premium-list li {
+    margin-bottom: 15px;
+    padding-left: 25px;
+    position: relative;
+    line-height: 1.6;
+}
+
+.premium-list li::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 8px;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-gold);
+    border-radius: 50%;
+}
+
+.premium-list li strong {
+    color: var(--text-primary);
+    font-weight: 600;
+}
+
+/* 프리미엄 푸터 */
+.premium-footer {
+    position: absolute;
+    bottom: 20mm;
+    left: 20mm;
+    right: 20mm;
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid var(--bg-border);
+    font-size: 11px;
+    color: var(--text-muted);
+}
+
+.premium-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--accent-gold);
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* 프린트 최적화 */
+@media print {
+    .premium-page {
+        margin: 0;
+        padding: 20mm;
+    }
+    
+    .premium-footer {
+        position: fixed;
+        bottom: 20mm;
+    }
+    
+    .premium-card,
+    .stat-item {
+        break-inside: avoid;
+    }
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .premium-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .main-title {
+        font-size: 28px;
+    }
+}

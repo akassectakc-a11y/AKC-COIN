@@ -8,7 +8,7 @@ async function main() {
   console.log('='.repeat(80) + '\n');
 
   // Treasury 주소
-  const TREASURY_ADDRESS = process.env.TREASURY_ADDRESS || "0x6CE8903FD7dA2ec919450544f305708BB8A19a1f";
+  const TREASURY_ADDRESS = process.env.TREASURY_ADDRESS || "0x6CE8903FD7advddAde2ec919450544f305708BB8A19a1f";
   
   console.log('📋 배포 정보:');
   console.log(`   Treasury: ${TREASURY_ADDRESS}`);

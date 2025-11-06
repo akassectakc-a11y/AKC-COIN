@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT Official Whitepaper - Professional Version (English - Release)</title>
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Professional whitepaper font system -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Merriweather:ital,wght@0,300;0,400;0,700;1,300;1,400&family=JetBrains+Mono:wght@400;500;600&family=Lora:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles/main.css">
+    <script src="assets/include.js"></script>
+</head>
+<body>
+    <!-- Web deployment banner -->
+    <div class="web-banner">
+        <div class="banner-left">
+            <span class="language-badge">English</span>
+            <span class="version-badge">Release</span>
+        </div>
+        <div class="banner-center">
+            AKASSECT Official Whitepaper - Technical Whitepaper v1.0
+        </div>
+        <div class="banner-right">
+            <button class="pdf-download-btn" onclick="downloadPDF()">
+                📄 Download PDF
+            </button>
+        </div>
+    </div>
+    
+    <!-- Dynamic section loading -->
+    <div id="whitepaper-content">
+        <!-- Cover page -->
+        <div data-include="sections/00-cover.html"></div>
+        
+        <!-- Table of contents -->
+        <div data-include="sections/01-table-of-contents.html"></div>
+        
+        <!-- Introduction -->
+        <div data-include="sections/02-introduction.html"></div>
+        
+        <!-- Market analysis -->
+        <div data-include="sections/03-market-analysis.html"></div>
+        
+        <!-- System overview -->
+        <div data-include="sections/04-system-overview.html"></div>
+        
+        <!-- Technical architecture -->
+        <div data-include="sections/05-technical-architecture.html"></div>
+        
+        <!-- Token structure -->
+        <div data-include="sections/06-token-structure.html"></div>
+        
+        <!-- Secure payment -->
+        <div data-include="sections/07-secure-payment.html"></div>
+        
+        <!-- AI risk analysis -->
+        <div data-include="sections/08-ai-risk-analysis.html"></div>
+        
+        <!-- Business model -->
+        <div data-include="sections/09-business-model.html"></div>
+        
+        <!-- Roadmap -->
+        <div data-include="sections/10-roadmap.html"></div>
+        
+        <!-- Team & Partners -->
+        <div data-include="sections/11-team-partners.html"></div>
+        
+        <!-- Legal disclaimer -->
+        <div data-include="sections/12-legal-disclaimer.html"></div>
+        
+        <!-- Conclusion -->
+        <div data-include="sections/13-conclusion.html"></div>
+        
+        <!-- Appendix -->
+        <div data-include="sections/14-appendix.html"></div>
+    </div>
+
+    <script>
+        function downloadPDF() {
+            window.print();
+        }
+        
+        // Load all sections on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            loadAllSections();
+        });
+        
+        function loadAllSections() {
+            const sections = document.querySelectorAll('[data-include]');
+            sections.forEach(section => {
+                const file = section.getAttribute('data-include');
+                fetch(file)
+                    .then(response => response.text())
+                    .then(data => {
+                        section.innerHTML = data;
+                    })
+                    .catch(error => {
+                        console.error('Error loading section:', error);
+                        section.innerHTML = '<p>Error loading section</p>';
+                    });
+            });
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,80 @@
+{
+  "contractDeployment": {
+    "bnbCost": 0.00486015,
+    "gas": 972030
+  },
+  "logoDeployment": {
+    "bnbCost": 0.004,
+    "breakdown": {
+      "ipfsUpload": 0.001,
+      "metadataUpdate": 0.002,
+      "verification": 0.001
+    }
+  },
+  "verification": {
+    "bnbCost": 0.0015,
+    "breakdown": {
+      "bscscanVerify": 0.001,
+      "additionalTx": 0.0005
+    }
+  },
+  "totalBaseCost": 0.01036015,
+  "scenarios": {
+    "minimum": 0.01036015,
+    "standard": 0.013468195,
+    "safe": 0.015540225000000001
+  },
+  "priceCalculations": {
+    "low": {
+      "bnbPrice": 500,
+      "minimum": {
+        "usd": 5.180075,
+        "krw": 6889.499750000001
+      },
+      "standard": {
+        "usd": 6.7340975,
+        "krw": 8956.349675
+      },
+      "safe": {
+        "usd": 7.770112500000001,
+        "krw": 10334.249625
+      }
+    },
+    "mid": {
+      "bnbPrice": 600,
+      "minimum": {
+        "usd": 6.21609,
+        "krw": 8267.3997
+      },
+      "standard": {
+        "usd": 8.080917,
+        "krw": 10747.61961
+      },
+      "safe": {
+        "usd": 9.324135,
+        "krw": 12401.09955
+      }
+    },
+    "high": {
+      "bnbPrice": 700,
+      "minimum": {
+        "usd": 7.252105,
+        "krw": 9645.29965
+      },
+      "standard": {
+        "usd": 9.4277365,
+        "krw": 12538.889545
+      },
+      "safe": {
+        "usd": 10.8781575,
+        "krw": 14467.949475000001
+      }
+    }
+  },
+  "logoFilesStatus": {
+    "total": 3,
+    "existing": 0,
+    "readiness": 0
+  },
+  "timestamp": "2025-11-05T07:20:36.171Z"
+}

@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT 백서 - 페이지 4 (서론)</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm;
+        }
+        
+        /* 페이지 헤더 */
+        .page-header {
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #dee2e6;
+            position: relative;
+        }
+        
+        .page-header::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: #c9a96e;
+        }
+        
+        .section-number {
+            font-size: 14px;
+            color: #6c757d;
+            margin-bottom: 8px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .main-title {
+            font-size: 28px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 15px;
+        }
+        
+        .subtitle {
+            font-size: 16px;
+            color: #495057;
+            line-height: 1.4;
+        }
+        
+        /* 프로젝트 개요 섹션 */
+        .overview-section {
+            margin: 40px 0;
+        }
+        
+        .section-title {
+            font-size: 20px;
+            color: #2c3e50;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #dee2e6;
+            font-weight: 600;
+        }
+        
+        .intro-box {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-left: 4px solid #c9a96e;
+            padding: 25px;
+            border-radius: 6px;
+            margin: 25px 0;
+        }
+        
+        .intro-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: #2c3e50;
+            margin-bottom: 20px;
+        }
+        
+        .highlight-text {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        /* 핵심 기능 그리드 */
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+            margin: 35px 0;
+        }
+        
+        .feature-card {
+            background: white;
+            border: 1px solid #e9ecef;
+            padding: 25px 20px;
+            border-radius: 6px;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card:hover {
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            transform: translateY(-2px);
+        }
+        
+        .feature-icon {
+            width: 50px;
+            height: 50px;
+            margin: 0 auto 15px auto;
+            background: #f8f9fa;
+            border: 2px solid #c9a96e;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #c9a96e;
+        }
+        
+        .feature-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 10px;
+        }
+        
+        .feature-desc {
+            font-size: 13px;
+            color: #6c757d;
+            line-height: 1.5;
+        }
+        
+        /* 통계 섹션 */
+        .stats-section {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 30px;
+            border-radius: 6px;
+            margin: 35px 0;
+        }
+        
+        .stats-title {
+            font-size: 18px;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            text-align: center;
+            font-weight: 600;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+        
+        .stat-item {
+            text-align: center;
+            padding: 20px 15px;
+            background: white;
+            border-radius: 4px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .stat-number {
+            font-size: 24px;
+            font-weight: bold;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            color: #6c757d;
+            text-transform: uppercase;
+        }
+        
+        /* 페이지 푸터 */
+        .page-footer {
+            position: absolute;
+            bottom: 20mm;
+            left: 20mm;
+            right: 20mm;
+            text-align: center;
+            padding-top: 15px;
+            border-top: 1px solid #dee2e6;
+            font-size: 11px;
+            color: #6c757d;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 20mm;
+            }
+            .page-footer {
+                position: fixed;
+                bottom: 20mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 페이지 헤더 -->
+    <div class="page-header">
+        <div class="section-number">Chapter 1</div>
+        <h1 class="main-title">서론 (Introduction)</h1>
+        <p class="subtitle">AI 기반 차세대 P2P 결제 및 안전거래 시스템</p>
+    </div>
+    
+    <!-- 프로젝트 개요 -->
+    <div class="overview-section">
+        <h2 class="section-title">1.1 프로젝트 개요</h2>
+        
+        <div class="intro-box">
+            <p class="intro-text">
+                <span class="highlight-text">AKASSECT (AKC)</span>는 인공지능 기술과 블록체인을 융합한 
+                <span class="highlight-text">혁신적인 P2P 결제 시스템</span>입니다. 
+                기존 결제 시스템의 한계를 극복하고, AI 기반 위험 분석을 통해 
+                안전하고 투명한 디지털 거래 생태계를 구축합니다.
+            </p>
+            <p class="intro-text">
+                본 프로젝트는 <span class="highlight-text">BEP-20 표준</span>을 기반으로 하며, 
+                스마트 컨트랙트와 머신러닝 알고리즘을 결합하여 
+                실시간 사기 탐지 및 자동화된 에스크로 서비스를 제공합니다.
+            </p>
+        </div>
+        
+        <!-- 핵심 기능 -->
+        <h3 style="font-size: 18px; color: #2c3e50; margin: 30px 0 20px 0; font-weight: 600;">핵심 기능</h3>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="feature-icon">🧠</div>
+                <div class="feature-title">AI-Powered Protocol</div>
+                <div class="feature-desc">
+                    실시간 위험 분석과 사기 탐지를 위한 
+                    고도화된 AI 시스템
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🔗</div>
+                <div class="feature-title">Blockchain Security</div>
+                <div class="feature-desc">
+                    BEP-20 기반 투명하고 안전한 
+                    거래 기록 관리
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <div class="feature-icon">🛡️</div>
+                <div class="feature-title">Smart Escrow</div>
+                <div class="feature-desc">
+                    자동화된 안전 결제 시스템으로 
+                    거래 위험 최소화
+                </div>
+            </div>
+        </div>
+        
+        <!-- 시장 혁신 지표 -->
+        <div class="stats-section">
+            <h3 class="stats-title">시장 혁신 지표</h3>
+            
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">99.9%</div>
+                    <div class="stat-label">사기 탐지 정확도</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">< 3초</div>
+                    <div class="stat-label">거래 처리 시간</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">0.1%</div>
+                    <div class="stat-label">거래 수수료</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">24/7</div>
+                    <div class="stat-label">무중단 서비스</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- 기술적 우위 -->
+        <h3 style="font-size: 18px; color: #2c3e50; margin: 30px 0 20px 0; font-weight: 600;">기술적 우위</h3>
+        
+        <div style="background: white; border: 1px solid #e9ecef; padding: 25px; border-radius: 6px;">
+            <ul style="list-style: none; padding: 0;">
+                <li style="margin-bottom: 12px; padding-left: 20px; position: relative;">
+                    <span style="position: absolute; left: 0; color: #c9a96e;">▪</span>
+                    <strong>머신러닝 기반 위험 평가:</strong> 실시간 거래 패턴 분석으로 사기 거래 사전 차단
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 20px; position: relative;">
+                    <span style="position: absolute; left: 0; color: #c9a96e;">▪</span>
+                    <strong>다중 서명 보안:</strong> 복수 당사자 승인 시스템으로 거래 안전성 극대화
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 20px; position: relative;">
+                    <span style="position: absolute; left: 0; color: #c9a96e;">▪</span>
+                    <strong>크로스체인 호환성:</strong> 다양한 블록체인 네트워크 간 원활한 연동
+                </li>
+                <li style="margin-bottom: 12px; padding-left: 20px; position: relative;">
+                    <span style="position: absolute; left: 0; color: #c9a96e;">▪</span>
+                    <strong>확장 가능한 아키텍처:</strong> 대용량 거래 처리를 위한 모듈형 설계
+                </li>
+            </ul>
+        </div>
+    </div>
+    
+    <!-- 페이지 푸터 -->
+    <div class="page-footer">
+        <div class="footer-content">
+            <span>© 2025 AKASSECT Project Team</span>
+            <span>페이지 4 / 204</span>
+            <span>Chapter 1: Introduction</span>
+        </div>
+    </div>
+</body>
+</html>

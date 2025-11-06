@@ -1,0 +1,46 @@
+# GitHub Pages 설정
+title: "AKASSECT 백서"
+description: "AI 기반 P2P 결제 및 안전거래 시스템"
+url: "https://akassectakc-a11y.github.io"
+baseurl: "/AKC-COIN/docs/whitepaper"
+
+# 테마 설정
+theme: minima
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# SEO 설정
+lang: ko
+author: "AKASSECT Team"
+twitter:
+  username: akassect
+social:
+  name: AKASSECT
+  links:
+    - https://twitter.com/akassect
+    - https://github.com/akassect
+    - https://t.me/akassect
+
+# 다국어 설정
+languages: ["ko", "en", "ja", "zh"]
+default_lang: "ko"
+
+# 제외할 파일
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - .sass-cache
+  - .jekyll-cache
+  - gemfiles
+  - package.json
+  - package-lock.json
+
+# 포함할 파일
+include:
+  - _pages
+  - assets

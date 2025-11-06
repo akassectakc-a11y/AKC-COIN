@@ -243,7 +243,7 @@ User 3:       251,000 AKC
 ### BSC Testnet 배포 준비 완료
 
 1. **Testnet BNB 확보**
-   - 주소: 0x6CE8903FD7dA2ec919450544f305708BB8A19a1f
+   - 주소: 0x6CE8903FD7advddAde2ec919450544f305708BB8A19a1f
    - 필요량: 0.1 BNB
 
 2. **Testnet 배포**

@@ -1,0 +1,411 @@
+/* 프로페셔널 거래소 표준 디자인 시스템 */
+
+:root {
+    /* 거래소 승인 색상 팔레트 */
+    --primary-dark: #1a1a1a;
+    --primary-medium: #2c3e50;
+    --primary-light: #495057;
+    --secondary-dark: #343a40;
+    --secondary-medium: #6c757d;
+    --secondary-light: #adb5bd;
+    
+    /* 배경 색상 */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-tertiary: #e9ecef;
+    --bg-quaternary: #dee2e6;
+    
+    /* 텍스트 색상 */
+    --text-primary: #1a1a1a;
+    --text-secondary: #2c3e50;
+    --text-tertiary: #495057;
+    --text-quaternary: #6c757d;
+    --text-muted: #868e96;
+    
+    /* 거래소 승인 액센트 (최소한 사용) */
+    --accent-primary: #8d7049;
+    --accent-secondary: #a0845c;
+    --accent-light: #b8956f;
+    
+    /* 그림자 및 효과 */
+    --shadow-light: 0 2px 4px rgba(0,0,0,0.05);
+    --shadow-medium: 0 4px 8px rgba(0,0,0,0.1);
+    --shadow-heavy: 0 8px 16px rgba(0,0,0,0.15);
+    
+    /* 타이포그래피 */
+    --font-primary: 'Times New Roman', 'Georgia', serif;
+    --font-secondary: 'Arial', 'Helvetica', sans-serif;
+    --font-mono: 'Courier New', monospace;
+}
+
+/* 기본 레이아웃 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-primary);
+    background: var(--bg-primary);
+    color: var(--text-primary);
+    line-height: 1.6;
+    font-size: 16px;
+}
+
+/* 프로페셔널 컨테이너 */
+.professional-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    background: var(--bg-primary);
+}
+
+/* 프로페셔널 헤더 */
+.professional-header {
+    background: linear-gradient(180deg, var(--primary-dark) 0%, var(--primary-medium) 100%);
+    color: var(--bg-primary);
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.professional-header::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(141, 112, 73, 0.05) 50%, transparent 70%);
+    pointer-events: none;
+}
+
+.professional-header::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 20%;
+    right: 20%;
+    height: 1px;
+    background: linear-gradient(90deg, transparent 0%, var(--accent-primary) 50%, transparent 100%);
+}
+
+.header-title {
+    font-size: 2.8em;
+    font-weight: 700;
+    margin-bottom: 20px;
+    letter-spacing: -0.02em;
+    position: relative;
+    z-index: 2;
+}
+
+.header-subtitle {
+    font-size: 1.2em;
+    color: var(--accent-light);
+    font-weight: 400;
+    margin-bottom: 30px;
+    position: relative;
+    z-index: 2;
+}
+
+.header-meta {
+    background: rgba(255,255,255,0.08);
+    padding: 25px 35px;
+    border-radius: 8px;
+    margin-top: 40px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+    position: relative;
+    z-index: 2;
+}
+
+/* 프로페셔널 네비게이션 */
+.professional-navigation {
+    padding: 50px 40px;
+    background: var(--bg-secondary);
+}
+
+.nav-header {
+    text-align: center;
+    margin-bottom: 50px;
+    padding: 40px;
+    background: var(--bg-primary);
+    border: 1px solid var(--bg-quaternary);
+    border-radius: 8px;
+    box-shadow: var(--shadow-light);
+}
+
+.nav-header-title {
+    font-size: 1.8em;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.nav-header-desc {
+    color: var(--text-tertiary);
+    font-size: 1.1em;
+    line-height: 1.5;
+}
+
+/* 프로페셔널 그리드 시스템 */
+.professional-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1px;
+    background: var(--bg-quaternary);
+    border: 1px solid var(--bg-quaternary);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.professional-card {
+    background: var(--bg-primary);
+    padding: 35px 30px;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    cursor: pointer;
+    position: relative;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+}
+
+.professional-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 3px;
+    height: 100%;
+    background: var(--accent-primary);
+    transform: scaleY(0);
+    transition: transform 0.3s ease;
+}
+
+.professional-card:hover {
+    background: var(--bg-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-medium);
+}
+
+.professional-card:hover::before {
+    transform: scaleY(1);
+}
+
+.card-number {
+    font-size: 0.9em;
+    color: var(--text-quaternary);
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.card-title {
+    font-size: 1.3em;
+    color: var(--text-primary);
+    margin-bottom: 12px;
+    font-weight: 600;
+    line-height: 1.3;
+}
+
+.card-description {
+    color: var(--text-tertiary);
+    line-height: 1.5;
+    margin-bottom: 20px;
+    flex-grow: 1;
+}
+
+.card-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto;
+    padding-top: 15px;
+    border-top: 1px solid var(--bg-tertiary);
+}
+
+.card-pages {
+    color: var(--text-quaternary);
+    font-size: 0.9em;
+    font-weight: 500;
+}
+
+.card-status {
+    background: var(--secondary-dark);
+    color: var(--bg-primary);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-size: 0.8em;
+    font-weight: 500;
+}
+
+/* 프로페셔널 버튼 */
+.professional-btn {
+    background: var(--primary-medium);
+    color: var(--bg-primary);
+    border: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    font-size: 0.95em;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+}
+
+.professional-btn:hover {
+    background: var(--primary-dark);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-medium);
+}
+
+.professional-btn.primary {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+}
+
+.professional-btn.primary:hover {
+    background: var(--accent-secondary);
+}
+
+.professional-btn.secondary {
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+}
+
+.professional-btn.secondary:hover {
+    background: var(--bg-quaternary);
+}
+
+/* 프로페셔널 다운로드 섹션 */
+.download-section {
+    background: var(--bg-primary);
+    border: 1px solid var(--bg-quaternary);
+    padding: 40px;
+    border-radius: 8px;
+    margin-bottom: 40px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+}
+
+.download-title {
+    font-size: 1.4em;
+    color: var(--text-primary);
+    margin-bottom: 15px;
+    font-weight: 600;
+}
+
+.download-description {
+    color: var(--text-tertiary);
+    margin-bottom: 25px;
+    line-height: 1.5;
+}
+
+.download-btn {
+    background: var(--accent-primary);
+    color: var(--bg-primary);
+    padding: 15px 40px;
+    font-size: 1.1em;
+    font-weight: 600;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: var(--shadow-medium);
+}
+
+.download-btn:hover {
+    background: var(--accent-secondary);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-heavy);
+}
+
+.download-features {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    margin-top: 20px;
+    font-size: 0.9em;
+    color: var(--text-quaternary);
+}
+
+/* 프로페셔널 통계 */
+.professional-stats {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 30px;
+    margin-top: 50px;
+}
+
+.stat-item {
+    background: var(--bg-primary);
+    border: 1px solid var(--bg-quaternary);
+    padding: 30px 20px;
+    border-radius: 8px;
+    text-align: center;
+    box-shadow: var(--shadow-light);
+}
+
+.stat-value {
+    font-size: 2.2em;
+    font-weight: 700;
+    color: var(--text-primary);
+    margin-bottom: 8px;
+}
+
+.stat-label {
+    color: var(--text-tertiary);
+    font-size: 0.95em;
+    font-weight: 500;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 768px) {
+    .professional-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .professional-stats {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .download-features {
+        flex-direction: column;
+        gap: 10px;
+    }
+    
+    .professional-header {
+        padding: 40px 20px;
+    }
+    
+    .header-title {
+        font-size: 2.2em;
+    }
+}
+
+/* 인쇄 최적화 */
+@media print {
+    .professional-container {
+        max-width: none;
+        padding: 0;
+    }
+    
+    .professional-header,
+    .professional-navigation {
+        page-break-inside: avoid;
+    }
+    
+    .professional-card {
+        page-break-inside: avoid;
+        box-shadow: none;
+    }
+}

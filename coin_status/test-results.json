@@ -1,0 +1,49 @@
+{
+  "contractAddress": "0x6CE8903FD7advddAde2ec919450544f305708BB8A19a1f",
+  "isSwapContract": false,
+  "confidence": 0,
+  "findings": [
+    {
+      "test": "Contract Existence",
+      "status": "PASS",
+      "message": "컨트랙트 코드 확인됨",
+      "details": {
+        "bytecodeLength": 48
+      }
+    },
+    {
+      "test": "Swap Function Detection",
+      "status": "FAIL",
+      "message": "알려진 스왑 함수가 발견되지 않음"
+    },
+    {
+      "test": "Swap Event Detection",
+      "status": "FAIL",
+      "message": "알려진 스왑 이벤트가 발견되지 않음"
+    },
+    {
+      "test": "Interface Detection",
+      "status": "INFO",
+      "message": "ERC165 인터페이스 미지원 또는 알려진 인터페이스 없음"
+    },
+    {
+      "test": "Transaction Activity",
+      "status": "ERROR",
+      "message": "missing response for request (value=[ { \"error\": { \"code\": -32005, \"message\": \"method eth_getLogs in batch triggered rate limit\" }, \"id\": null, \"jsonrpc\": \"2.0\" } ], info={ \"payload\": { \"id\": 15, \"jsonrpc\": \"2.0\", \"method\": \"eth_getLogs\", \"params\": [ { \"address\": \"0x6CE8903FD7advddAde2ec919450544f305708BB8A19a1f\", \"fromBlock\": \"0x3fc240a\", \"toBlock\": \"latest\" } ] } }, code=BAD_DATA, version=6.15.0)"
+    },
+    {
+      "test": "Bytecode Pattern Analysis",
+      "status": "INFO",
+      "message": "관련 패턴 없음"
+    }
+  ],
+  "detectedProtocols": [],
+  "detectedFunctions": [],
+  "detectedEvents": [],
+  "bytecodeAnalysis": {
+    "bytecode": "0xef01003ae1f70cf6da80955936f5599d103fcf62162d10",
+    "bytecodeLength": 48
+  },
+  "transactionAnalysis": {},
+  "timestamp": "2025-11-03T04:20:42.309Z"
+}

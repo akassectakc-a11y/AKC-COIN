@@ -1,0 +1,542 @@
+:root {
+    --primary: #667eea;
+    --secondary: #764ba2;
+    --success: #38ef7d;
+    --danger: #f45c43;
+    --dark: #1a202c;
+    --light: #f7fafc;
+    --white: #ffffff;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+    line-height: 1.6;
+    color: var(--dark);
+    overflow-x: hidden;
+}
+
+/* 모달 스타일 */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.95);
+    align-items: center;
+    justify-content: center;
+}
+
+.modal.active {
+    display: flex;
+}
+
+.modal-content {
+    background: white;
+    border-radius: 20px;
+    max-width: 800px;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+}
+
+.modal-header {
+    background: linear-gradient(135deg, var(--danger), #ff6b6b);
+    color: white;
+    padding: 30px;
+    border-radius: 20px 20px 0 0;
+}
+
+.modal-header h2 {
+    font-size: 2em;
+}
+
+.modal-body {
+    padding: 40px;
+}
+
+.disclaimer-content h3 {
+    color: var(--danger);
+    margin-bottom: 20px;
+    font-size: 1.3em;
+}
+
+.disclaimer-section {
+    margin: 25px 0;
+    padding: 20px;
+    background: #fff3e0;
+    border-left: 4px solid #ff9800;
+    border-radius: 8px;
+}
+
+.disclaimer-section h4 {
+    color: #e65100;
+    margin-bottom: 10px;
+}
+
+.disclaimer-section ul {
+    margin-left: 20px;
+}
+
+.disclaimer-section li {
+    margin: 8px 0;
+}
+
+.disclaimer-checkbox {
+    margin: 30px 0;
+    padding: 20px;
+    background: #e3f2fd;
+    border-radius: 10px;
+}
+
+.disclaimer-checkbox label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+}
+
+.disclaimer-checkbox input[type="checkbox"] {
+    margin-right: 15px;
+    margin-top: 5px;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+}
+
+.modal-footer {
+    padding: 30px 40px;
+    border-top: 1px solid #eee;
+    display: flex;
+    gap: 15px;
+    justify-content: flex-end;
+}
+
+.btn-primary, .btn-secondary {
+    padding: 15px 40px;
+    border: none;
+    border-radius: 10px;
+    font-size: 1em;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+}
+
+.btn-primary:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.btn-secondary {
+    background: #e0e0e0;
+    color: var(--dark);
+}
+
+.btn-primary:hover:not(:disabled), .btn-secondary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+}
+
+/* 커버 페이지 */
+.cover-section {
+    min-height: 100vh;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    color: white;
+    text-align: center;
+}
+
+.cover-overlay {
+    position: absolute;
+    inset: 0;
+    background: url('data:image/svg+xml,<svg width="100" height="100" xmlns="http://www.w3.org/2000/svg"><rect width="100" height="100" fill="none"/><circle cx="50" cy="50" r="40" fill="rgba(255,255,255,0.05)"/></svg>');
+    opacity: 0.1;
+}
+
+.cover-content {
+    position: relative;
+    z-index: 1;
+    padding: 40px;
+}
+
+.logo-circle {
+    width: 120px;
+    height: 120px;
+    background: rgba(255,255,255,0.2);
+    border: 4px solid white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-size: 2.5em;
+    font-weight: bold;
+}
+
+.cover-title {
+    font-size: 5em;
+    margin-bottom: 20px;
+    letter-spacing: 5px;
+}
+
+.cover-subtitle {
+    font-size: 2em;
+    margin-bottom: 30px;
+    opacity: 0.95;
+}
+
+.cover-divider {
+    width: 100px;
+    height: 4px;
+    background: white;
+    margin: 30px auto;
+}
+
+.cover-tagline {
+    font-size: 1.5em;
+    margin-bottom: 40px;
+}
+
+.cover-meta {
+    font-size: 1.2em;
+    opacity: 0.9;
+}
+
+.separator {
+    margin: 0 15px;
+}
+
+.scroll-indicator {
+    background: rgba(255,255,255,0.2);
+    border: 2px solid white;
+    color: white;
+    padding: 15px 30px;
+    border-radius: 50px;
+    cursor: pointer;
+    margin-top: 50px;
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s;
+}
+
+.scroll-indicator:hover {
+    background: white;
+    color: var(--primary);
+}
+
+/* 섹션 스타일 */
+.section {
+    padding: 100px 0;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.section.fade-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+.section-number {
+    font-size: 4em;
+    font-weight: 900;
+    color: rgba(102, 126, 234, 0.1);
+    margin-bottom: 20px;
+}
+
+.section-title {
+    font-size: 3em;
+    margin-bottom: 40px;
+    color: var(--dark);
+}
+
+.text-white {
+    color: white !important;
+}
+
+.bg-gradient {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--secondary) 100%);
+    color: white;
+}
+
+.bg-dark {
+    background: var(--dark);
+    color: white;
+}
+
+.bg-light {
+    background: var(--light);
+}
+
+/* 목차 */
+.toc-section {
+    background: var(--light);
+}
+
+.toc-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.toc-item {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    text-decoration: none;
+    color: var(--dark);
+    transition: all 0.3s;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.toc-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+.toc-number {
+    font-size: 2em;
+    font-weight: 900;
+    color: var(--primary);
+}
+
+.toc-title {
+    font-size: 1.2em;
+    font-weight: 600;
+}
+
+/* 통계 쇼케이스 */
+.stats-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 30px;
+    margin: 50px 0;
+}
+
+.stat-box {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 40px;
+    border-radius: 20px;
+    text-align: center;
+}
+
+.stat-value {
+    font-size: 3em;
+    font-weight: 900;
+    margin-bottom: 15px;
+}
+
+.stat-label {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.stat-comparison {
+    font-size: 0.9em;
+    opacity: 0.9;
+}
+
+/* 팀 그리드 */
+.team-category {
+    margin: 60px 0;
+}
+
+.team-category-title {
+    font-size: 2em;
+    margin-bottom: 30px;
+    color: var(--primary);
+    border-bottom: 3px solid var(--primary);
+    padding-bottom: 15px;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.team-member {
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    transition: all 0.3s;
+}
+
+.team-member:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+}
+
+.member-avatar {
+    font-size: 5em;
+    margin-bottom: 20px;
+}
+
+.team-member h4 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: var(--dark);
+}
+
+.member-role {
+    color: var(--primary);
+    font-weight: 600;
+    margin-bottom: 15px;
+    font-size: 1.1em;
+}
+
+.member-bio {
+    text-align: left;
+    line-height: 1.8;
+    color: #666;
+}
+
+/* 테이블 */
+.competitive-table {
+    margin: 50px 0;
+}
+
+.competitive-table h3 {
+    margin-bottom: 20px;
+    font-size: 1.8em;
+}
+
+.competitive-table table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.competitive-table th {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    padding: 20px;
+    text-align: left;
+    font-weight: 600;
+}
+
+.competitive-table td {
+    padding: 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.competitive-table tr.highlight-row {
+    background: rgba(56, 239, 125, 0.1);
+    font-weight: 600;
+}
+
+/* 타임라인 */
+.timeline {
+    position: relative;
+    padding-left: 50px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 20px;
+    top: 0;
+    bottom: 0;
+    width: 4px;
+    background: linear-gradient(to bottom, var(--primary), var(--secondary));
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 50px;
+}
+
+.timeline-marker {
+    position: absolute;
+    left: -38px;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: var(--primary);
+    border: 4px solid white;
+    box-shadow: 0 0 0 4px var(--primary);
+}
+
+.timeline-content {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+
+.timeline-content h4 {
+    color: var(--primary);
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.timeline-content ul {
+    list-style: none;
+}
+
+.timeline-content li {
+    padding: 8px 0;
+    padding-left: 25px;
+    position: relative;
+}
+
+.timeline-content li::before {
+    content: '✓';
+    position: absolute;
+    left: 0;
+    color: var(--success);
+    font-weight: bold;
+}
+
+/* 반응형 */
+@media (max-width: 768px) {
+    .cover-title {
+        font-size: 3em;
+    }
+    
+    .cover-subtitle {
+        font-size: 1.3em;
+    }
+    
+    .section-title {
+        font-size: 2em;
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .container {
+        padding: 0 20px;
+    }
+}

@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT 백서 - A4 한 페이지 버전</title>
+    <link rel="icon" type="image/svg+xml" href="assets/logos/AKC-Icon.svg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            font-size: 10px;
+            line-height: 1.2;
+            color: #1a1a1a;
+            background: white;
+            padding: 3mm;
+            width: 210mm;
+            min-height: 297mm;
+            max-height: 297mm;
+            overflow: hidden;
+        }
+        
+        .header {
+            text-align: center;
+            margin-bottom: 8px;
+            border-bottom: 2px solid #667eea;
+            padding-bottom: 6px;
+        }
+        
+        .logo {
+            width: 40px;
+            height: 40px;
+            margin: 0 auto 4px;
+        }
+        
+        .title {
+            font-size: 16px;
+            font-weight: 800;
+            color: #667eea;
+            margin-bottom: 2px;
+        }
+        
+        .subtitle {
+            font-size: 10px;
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            height: calc(100% - 50px);
+        }
+        
+        .section {
+            background: #f8fafc;
+            border-radius: 2px;
+            padding: 4px;
+            border-left: 2px solid #667eea;
+            margin-bottom: 2px;
+        }
+        
+        .section h3 {
+            font-size: 11px;
+            font-weight: 700;
+            color: #667eea;
+            margin-bottom: 4px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section h3::before {
+            content: "▶";
+            margin-right: 4px;
+            font-size: 8px;
+        }
+        
+        .section p {
+            font-size: 8px;
+            line-height: 1.4;
+            margin-bottom: 3px;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4px;
+            border-radius: 3px;
+            text-align: center;
+            margin: 3px 0;
+        }
+        
+        .stats {
+            display: flex;
+            justify-content: space-between;
+            margin: 4px 0;
+        }
+        
+        .stat {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .stat-number {
+            font-size: 12px;
+            font-weight: 700;
+            color: #667eea;
+        }
+        
+        .stat-label {
+            font-size: 7px;
+            color: #666;
+        }
+        
+        .footer {
+            position: absolute;
+            bottom: 8mm;
+            left: 8mm;
+            right: 8mm;
+            text-align: center;
+            font-size: 7px;
+            color: #666;
+            border-top: 1px solid #eee;
+            padding-top: 4px;
+        }
+        
+        .qr-section {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+            margin-top: 4px;
+        }
+        
+        .qr-placeholder {
+            width: 30px;
+            height: 30px;
+            background: #f0f0f0;
+            border: 1px solid #ddd;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 6px;
+            color: #666;
+        }
+        
+        @media print {
+            body {
+                padding: 5mm;
+            }
+            
+            .section {
+                break-inside: avoid;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <div class="header">
+        <img src="assets/logos/AKC-Logo.svg" alt="AKC Logo" class="logo">
+        <div class="title">AKASSECT (AKC)</div>
+        <div class="subtitle">AI 기반 P2P 결제 및 안전거래 시스템 - 기술 백서 요약</div>
+    </div>
+    
+    <!-- 메인 콘텐츠 -->
+    <div class="content">
+        <!-- 왼쪽 컬럼 -->
+        <div class="left-column">
+            <!-- 프로젝트 개요 -->
+            <div class="section">
+                <h3>프로젝트 개요</h3>
+                <p><strong>AKASSECT</strong>는 AI 기반 가상 P2P 결제 및 안전거래 시스템입니다.</p>
+                <p>• <strong>블록체인:</strong> BSC (BEP-20)</p>
+                <p>• <strong>총 발행량:</strong> 300,000,000 AKC</p>
+                <p>• <strong>컨트랙트:</strong> 0x02D8b729885290a3CA724F3Df5793b74Ff226A17</p>
+                <div class="highlight">
+                    <strong>AI 위험분석으로 99.4% 정확도의 안전거래 실현</strong>
+                </div>
+            </div>
+            
+            <!-- 핵심 기술 -->
+            <div class="section">
+                <h3>핵심 기술</h3>
+                <p><strong>1. AI 위험분석 시스템</strong></p>
+                <p>• 150개 이상 거래 파라미터 실시간 분석</p>
+                <p>• 머신러닝 기반 사기 탐지 (95% 사기 감소)</p>
+                
+                <p><strong>2. 자동 에스크로</strong></p>
+                <p>• 스마트 컨트랙트 기반 자동 거래 보호</p>
+                <p>• 3초 이내 거래 완료</p>
+                
+                <p><strong>3. 분산 네트워크</strong></p>
+                <p>• 24/7 무중단 서비스</p>
+                <p>• 글로벌 노드 네트워크</p>
+            </div>
+            
+            <!-- 토큰 분배 -->
+            <div class="section">
+                <h3>토큰 분배</h3>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">40%</div>
+                        <div class="stat-label">생태계</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">25%</div>
+                        <div class="stat-label">개발팀</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">20%</div>
+                        <div class="stat-label">마케팅</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15%</div>
+                        <div class="stat-label">예비금</div>
+                    </div>
+                </div>
+                <p>• <strong>락업 기간:</strong> 팀 토큰 24개월</p>
+                <p>• <strong>베스팅:</strong> 선형 해제 방식</p>
+            </div>
+        </div>
+        
+        <!-- 오른쪽 컬럼 -->
+        <div class="right-column">
+            <!-- 시장 기회 -->
+            <div class="section">
+                <h3>시장 기회</h3>
+                <div class="stats">
+                    <div class="stat">
+                        <div class="stat-number">$2.8T</div>
+                        <div class="stat-label">글로벌 결제시장</div>
+                    </div>
+                    <div class="stat">
+                        <div class="stat-number">15%</div>
+                        <div class="stat-label">연평균 성장률</div>
+                    </div>
+                </div>
+                <p><strong>문제점:</strong></p>
+                <p>• 높은 거래 수수료 (3-5%)</p>
+                <p>• 사기 거래 증가 (연간 $32B 손실)</p>
+                <p>• 느린 정산 시간 (2-7일)</p>
+                
+                <p><strong>AKASSECT 해결책:</strong></p>
+                <p>• 0.1% 저렴한 수수료</p>
+                <p>• AI 기반 사기 방지</p>
+                <p>• 즉시 정산 (3초 이내)</p>
+            </div>
+            
+            <!-- 로드맵 -->
+            <div class="section">
+                <h3>로드맵</h3>
+                <p><strong>2024 Q4:</strong> 메인넷 런칭</p>
+                <p><strong>2025 Q1:</strong> AI 엔진 v2.0</p>
+                <p><strong>2025 Q2:</strong> 글로벌 파트너십</p>
+                <p><strong>2025 Q3:</strong> 모바일 앱 출시</p>
+                <p><strong>2025 Q4:</strong> DeFi 통합</p>
+                
+                <div class="highlight">
+                    <strong>목표: 2025년 말 100만 사용자 달성</strong>
+                </div>
+            </div>
+            
+            <!-- 팀 & 파트너 -->
+            <div class="section">
+                <h3>팀 & 파트너</h3>
+                <p><strong>핵심 팀:</strong></p>
+                <p>• AI/ML 전문가 5명</p>
+                <p>• 블록체인 개발자 8명</p>
+                <p>• 금융 전문가 3명</p>
+                
+                <p><strong>전략적 파트너:</strong></p>
+                <p>• 주요 거래소 3곳</p>
+                <p>• 결제 서비스 제공업체</p>
+                <p>• 보안 감사 기관</p>
+            </div>
+            
+            <!-- 연락처 -->
+            <div class="section">
+                <h3>연락처</h3>
+                <div class="qr-section">
+                    <div class="qr-placeholder">QR</div>
+                    <div>
+                        <p><strong>웹사이트:</strong> akassect.com</p>
+                        <p><strong>이메일:</strong> info@akassect.com</p>
+                        <p><strong>텔레그램:</strong> @akassect</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 푸터 -->
+    <div class="footer">
+        © 2024 AKASSECT Project Team. All rights reserved. | 
+        이 문서는 투자 권유가 아닌 기술 정보 제공 목적입니다. | 
+        BSC 메인넷: 0x02D8b729885290a3CA724F3Df5793b74Ff226A17
+    </div>
+</body>
+</html>

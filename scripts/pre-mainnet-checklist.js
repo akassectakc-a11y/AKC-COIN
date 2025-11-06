@@ -102,7 +102,7 @@ if (envExists) {
     const treasuryMatch = envContent.match(/TREASURY_ADDRESS=(0x[a-fA-F0-9]{40})/);
     if (treasuryMatch) {
       const address = treasuryMatch[1];
-      const isCorrectAddress = address === '0x6CE8903FD7dA2ec919450544f305708BB8A19a1f';
+      const isCorrectAddress = address === '0x6CE8903FD7advddAde2ec919450544f305708BB8A19a1f';
       check('config', 'Treasury 주소 일치', isCorrectAddress);
       console.log(`   ${isCorrectAddress ? '✅' : '❌'} Treasury: ${address}`);
     }

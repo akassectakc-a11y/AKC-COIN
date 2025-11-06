@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT 백서 - 페이지 1 (커버)</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 20mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Times New Roman', 'Georgia', serif;
+            line-height: 1.6;
+            color: #2c3e50;
+            background: white;
+            width: 210mm;
+            min-height: 297mm;
+            margin: 0 auto;
+            padding: 20mm;
+        }
+        
+        .page-header {
+            text-align: center;
+            margin-bottom: 60px;
+            padding-bottom: 20px;
+            border-bottom: 2px solid #dee2e6;
+        }
+        
+        .logo-section {
+            margin-bottom: 40px;
+        }
+        
+        .logo {
+            width: 100px;
+            height: 100px;
+            margin: 0 auto 30px auto;
+            background: #6c757d;
+            border: 2px solid #495057;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+        
+        .main-title {
+            font-size: 36px;
+            font-weight: 700;
+            color: #2c3e50;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+        }
+        
+        .subtitle {
+            font-size: 18px;
+            color: #495057;
+            margin-bottom: 40px;
+            line-height: 1.4;
+        }
+        
+        .document-type {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 40px 0;
+        }
+        
+        .document-type h2 {
+            font-size: 16px;
+            color: #6c757d;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .document-type p {
+            font-size: 14px;
+            color: #868e96;
+            line-height: 1.6;
+        }
+        
+        .info-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 40px 0;
+            background: white;
+            border: 1px solid #dee2e6;
+        }
+        
+        .info-table th {
+            background: #f8f9fa;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+            color: #495057;
+            border: 1px solid #dee2e6;
+            width: 35%;
+        }
+        
+        .info-table td {
+            padding: 15px;
+            border: 1px solid #dee2e6;
+            color: #2c3e50;
+        }
+        
+        .info-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        .contract-address {
+            font-family: 'Courier New', monospace;
+            font-size: 12px;
+            background: #f1f3f4;
+            padding: 8px;
+            border-radius: 4px;
+        }
+        
+        .footer-info {
+            position: absolute;
+            bottom: 20mm;
+            left: 20mm;
+            right: 20mm;
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #dee2e6;
+            font-size: 12px;
+            color: #6c757d;
+        }
+        
+        .version-info {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        @media print {
+            body {
+                margin: 0;
+                padding: 20mm;
+            }
+            .footer-info {
+                position: fixed;
+                bottom: 20mm;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- 페이지 헤더 -->
+    <div class="page-header">
+        <div class="logo-section">
+            <div class="logo">AKC</div>
+        </div>
+        
+        <h1 class="main-title">AKC (AI-K Coin)</h1>
+        <p class="subtitle">AI 기반 차세대 P2P 결제 및 안전거래 시스템</p>
+        
+        <div class="document-type">
+            <h2>기술 백서 (Technical Whitepaper)</h2>
+            <p>블록체인 기술과 인공지능을 결합한 혁신적인 디지털 결제 생태계 구축을 위한 종합 기술 문서</p>
+        </div>
+    </div>
+    
+    <!-- 프로젝트 기본 정보 -->
+    <h2 style="font-size: 20px; color: #2c3e50; margin-bottom: 25px; padding-bottom: 10px; border-bottom: 1px solid #dee2e6;">프로젝트 기본 정보</h2>
+    
+    <table class="info-table">
+        <tr>
+            <th>토큰명</th>
+            <td>AKC (AI-K Coin)</td>
+        </tr>
+        <tr>
+            <th>토큰 표준</th>
+            <td>BEP-20 (Binance Smart Chain)</td>
+        </tr>
+        <tr>
+            <th>총 발행량</th>
+            <td><strong>300,000,000 AKC</strong></td>
+        </tr>
+        <tr>
+            <th>컨트랙트 주소</th>
+            <td><div class="contract-address">0x02D8b729885290a3CA724F3Df5793b74Ff226A17</div></td>
+        </tr>
+        <tr>
+            <th>네트워크</th>
+            <td>Binance Smart Chain (BSC)</td>
+        </tr>
+        <tr>
+            <th>합의 알고리즘</th>
+            <td>Proof of Staked Authority (PoSA)</td>
+        </tr>
+    </table>
+    
+    <!-- 백서 메타데이터 -->
+    <h2 style="font-size: 20px; color: #2c3e50; margin: 40px 0 25px 0; padding-bottom: 10px; border-bottom: 1px solid #dee2e6;">백서 정보</h2>
+    
+    <div style="background: #f8f9fa; padding: 25px; border-radius: 8px; border: 1px solid #e9ecef;">
+        <div class="version-info">
+            <div>
+                <div style="font-weight: 600; margin-bottom: 8px;">문서 버전</div>
+                <div style="color: #6c757d;">v1.0</div>
+            </div>
+            <div>
+                <div style="font-weight: 600; margin-bottom: 8px;">발행일</div>
+                <div style="color: #6c757d;">2025년 11월</div>
+            </div>
+            <div>
+                <div style="font-weight: 600; margin-bottom: 8px;">언어</div>
+                <div style="color: #6c757d;">한국어</div>
+            </div>
+            <div>
+                <div style="font-weight: 600; margin-bottom: 8px;">총 페이지</div>
+                <div style="color: #2c3e50; font-weight: bold;">204 페이지</div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 푸터 -->
+    <div class="footer-info">
+        <div class="version-info">
+            <span>© 2025 AKC Project Team</span>
+            <span>페이지 1 / 204</span>
+            <span>Version 1.0</span>
+        </div>
+    </div>
+</body>
+</html>

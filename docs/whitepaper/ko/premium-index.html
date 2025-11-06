@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT (AKC) 백서 | AI 기반 블록체인 결제 인프라</title>
+    <link rel="stylesheet" href="premium-styles.css">
+</head>
+<body>
+    <!-- 면책조항 모달 -->
+    <div id="disclaimerModal" class="modal active">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>⚠️ 중요 법적 고지사항</h2>
+            </div>
+            <div class="modal-body">
+                <div class="disclaimer-content">
+                    <h3>본 백서를 읽기 전에 다음 사항을 반드시 확인하십시오</h3>
+                    
+                    <div class="disclaimer-section">
+                        <h4>1. 일반 고지사항</h4>
+                        <p>본 백서는 정보 제공 목적으로만 작성되었습니다.</p>
+                    </div>
+
+                    <div class="disclaimer-checkbox">
+                        <label>
+                            <input type="checkbox" id="acceptDisclaimer">
+                            <span>위 내용을 모두 이해했으며 동의합니다.</span>
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button id="acceptBtn" class="btn-primary" disabled>동의하고 계속</button>
+                <button id="declineBtn" class="btn-secondary">거부</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div id="mainContent"></div>
+
+    <script src="premium-content.js"></script>
+    <script src="premium-script.js"></script>
+</body>
+</html>

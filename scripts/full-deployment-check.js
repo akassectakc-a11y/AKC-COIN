@@ -96,7 +96,7 @@ async function main() {
   const treasury = treasuryMatch[1];
   success(`TREASURY_ADDRESS: ${treasury}`);
   
-  if (treasury !== '0x6CE8903FD7dA2ec919450544f305708BB8A19a1f') {
+  if (treasury !== '0x6CE8903FD7advddAde2ec919450544f305708BB8A19a1f') {
     warning('Treasury 주소가 예상과 다릅니다!');
   }
   
@@ -296,7 +296,7 @@ async function main() {
   
   console.log(`\n  BNB: ${bnb}`);
   console.log(`  Gas: ${gas} Gwei`);
-  console.log(`  Treasury: 0x6CE8903FD7dA2ec919450544f305708BB8A19a1f\n`);
+  console.log(`  Treasury: 0x6CE8903FD7advddAde2ec919450544f305708BB8A19a1f\n`);
   
   const check2 = await question('2차 확인 완료했습니까? (yes/no): ');
   if (check2.toLowerCase() !== 'yes' && check2.toLowerCase() !== 'y') {
@@ -349,7 +349,7 @@ async function main() {
     testnetAddress: testnetAddress,
     bnbBalance: bnb,
     gasPrice: gas,
-    treasury: '0x6CE8903FD7dA2ec919450544f305708BB8A19a1f',
+    treasury: '0x6CE8903FD7advddAde2ec919450544f305708BB8A19a1f',
     checks: {
       step1: 'passed',
       step2: 'passed',

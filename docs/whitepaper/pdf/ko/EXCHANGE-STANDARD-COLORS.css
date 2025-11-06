@@ -1,0 +1,66 @@
+/* 거래소 제출 표준 색상 팔레트 */
+
+:root {
+    /* 거래소 승인 색상만 사용 */
+    --primary-dark: #2c3e50;      /* 다크 그레이 */
+    --primary-medium: #495057;     /* 미디엄 그레이 */
+    --primary-light: #6c757d;      /* 라이트 그레이 */
+    
+    /* 배경 색상 */
+    --bg-white: #ffffff;           /* 순백색 */
+    --bg-light: #f8f9fa;          /* 연한 회색 */
+    --bg-medium: #e9ecef;          /* 중간 회색 */
+    --bg-border: #dee2e6;          /* 테두리 회색 */
+    
+    /* 텍스트 색상 */
+    --text-primary: #2c3e50;       /* 주 텍스트 */
+    --text-secondary: #495057;     /* 보조 텍스트 */
+    --text-muted: #6c757d;         /* 약한 텍스트 */
+    --text-light: #868e96;         /* 연한 텍스트 */
+    
+    /* 강조 색상 (최소한만 사용) */
+    --accent-gold: #c9a96e;        /* 골드 (포인트용) */
+    --accent-dark: #8d7049;        /* 다크 골드 */
+    
+    /* 상태 색상 (중성적) */
+    --status-complete: #495057;    /* 완료 (회색) */
+    --status-progress: #6c757d;    /* 진행중 (회색) */
+    --status-pending: #868e96;     /* 대기 (연회색) */
+}
+
+/* 금지된 원색들 - 절대 사용 금지 */
+/*
+--forbidden-red: #dc3545;
+--forbidden-green: #28a745;
+--forbidden-blue: #007bff;
+--forbidden-yellow: #ffc107;
+--forbidden-purple: #6f42c1;
+--forbidden-pink: #e83e8c;
+--forbidden-cyan: #17a2b8;
+--forbidden-orange: #fd7e14;
+*/
+
+/* 거래소 표준 컴포넌트 스타일 */
+.exchange-standard {
+    background: var(--bg-white);
+    color: var(--text-primary);
+    border: 1px solid var(--bg-border);
+}
+
+.exchange-header {
+    background: var(--primary-dark);
+    color: var(--bg-white);
+}
+
+.exchange-content {
+    background: var(--bg-light);
+    color: var(--text-primary);
+}
+
+.exchange-accent {
+    color: var(--accent-gold);
+}
+
+.exchange-muted {
+    color: var(--text-muted);
+}

@@ -1,0 +1,2841 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AKASSECT 공식 백서 - 완전판 (준비버전)</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Source+Sans+Pro:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        @page {
+            size: A4;
+            margin: 25mm;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Crimson Text', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: #1a1a1a;
+            background: white;
+            font-size: 11pt;
+            width: 210mm;
+            margin: 0 auto;
+            padding: 25mm;
+        }
+        
+        /* PDF 전용 스타일 */
+        .pdf-page {
+            min-height: 247mm; /* A4 높이에서 마진 제외 */
+            page-break-after: always;
+            position: relative;
+        }
+        
+        .pdf-page:last-child {
+            page-break-after: avoid;
+        }
+        
+        /* 헤더 스타일 - 비즈니스 전문적 디자인 */
+        .document-header {
+            text-align: center;
+            margin-bottom: 30mm;
+            padding: 25mm 15mm;
+            background: #2c3e50;
+            color: white;
+            border-radius: 0;
+            position: relative;
+            border-top: 4px solid #34495e;
+            border-bottom: 4px solid #1a252f;
+        }
+        
+        .document-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(180deg, rgba(255,255,255,0.05) 0%, transparent 100%);
+            pointer-events: none;
+        }
+        
+        .main-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 36pt;
+            font-weight: 700;
+            color: #1a1a1a;
+            margin-bottom: 15mm;
+            letter-spacing: -1pt;
+        }
+        
+        .subtitle {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 14pt;
+            color: #495057;
+            margin-bottom: 10mm;
+            font-weight: 300;
+            letter-spacing: 0.5pt;
+        }
+        
+        .korean-subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 12pt;
+            color: #6c757d;
+            font-style: italic;
+            margin-bottom: 20mm;
+        }
+        
+        .document-info {
+            background: #2c3e50;
+            color: white;
+            padding: 15mm;
+            margin: 20mm 0;
+            text-align: center;
+        }
+        
+        .document-info h2 {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 14pt;
+            margin-bottom: 8mm;
+            font-weight: 600;
+        }
+        
+        .document-info p {
+            font-size: 10pt;
+            line-height: 1.5;
+        }
+        
+        /* 목차 스타일 */
+        .table-of-contents {
+            margin: 20mm 0;
+        }
+        
+        .toc-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 24pt;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 15mm;
+            text-align: center;
+            border-bottom: 2pt solid #2c3e50;
+            padding-bottom: 5mm;
+        }
+        
+        .toc-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 3mm 0;
+            border-bottom: 1pt dotted #dee2e6;
+        }
+        
+        .toc-item:last-child {
+            border-bottom: none;
+        }
+        
+        .toc-number {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            color: #495057;
+            min-width: 15mm;
+        }
+        
+        .toc-title-text {
+            flex-grow: 1;
+            margin: 0 5mm;
+            font-weight: 500;
+        }
+        
+        .toc-page {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-weight: 600;
+            color: #2c3e50;
+            min-width: 10mm;
+            text-align: right;
+        }
+        
+        /* 섹션 헤더 */
+        .section-header {
+            margin: 15mm 0 10mm 0;
+            padding-bottom: 5mm;
+            border-bottom: 1pt solid #2c3e50;
+        }
+        
+        .section-number {
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 10pt;
+            color: #6c757d;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1pt;
+        }
+        
+        .section-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 20pt;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-top: 2mm;
+        }
+        
+        /* 본문 스타일 */
+        .content-paragraph {
+            margin-bottom: 5mm;
+            text-align: justify;
+            text-indent: 5mm;
+        }
+        
+        .content-paragraph:first-child {
+            text-indent: 0;
+        }
+        
+        /* 리스트 스타일 */
+        .content-list {
+            margin: 5mm 0 5mm 10mm;
+        }
+        
+        .content-list li {
+            margin-bottom: 2mm;
+            line-height: 1.6;
+        }
+        
+        /* 테이블 스타일 */
+        .content-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 10mm 0;
+            font-size: 10pt;
+        }
+        
+        .content-table th {
+            background: #f8f9fa;
+            padding: 3mm;
+            border: 1pt solid #dee2e6;
+            font-weight: 600;
+            text-align: left;
+        }
+        
+        .content-table td {
+            padding: 3mm;
+            border: 1pt solid #dee2e6;
+            vertical-align: top;
+        }
+        
+        .content-table tr:nth-child(even) {
+            background: #f8f9fa;
+        }
+        
+        /* 강조 박스 */
+        .highlight-box {
+            background: #f8f9fa;
+            border-left: 3pt solid #2c3e50;
+            padding: 8mm;
+            margin: 8mm 0;
+        }
+        
+        .highlight-box h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 14pt;
+            color: #2c3e50;
+            margin-bottom: 3mm;
+        }
+        
+        /* 페이지 푸터 */
+        .page-footer {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            text-align: center;
+            font-size: 9pt;
+            color: #6c757d;
+            border-top: 1pt solid #dee2e6;
+            padding-top: 3mm;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        /* 웹 배포용 상단 배너 - 비즈니스 전문적 디자인 */
+        .web-banner {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+            color: white;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-family: 'Source Sans Pro', sans-serif;
+            font-size: 14px;
+            z-index: 1000;
+            box-shadow: 0 2px 15px rgba(0,0,0,0.15);
+            border-bottom: 3px solid #1a252f;
+        }
+        
+        .banner-left {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .language-badge {
+            background: #3498db;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+            text-transform: uppercase;
+        }
+        
+        .version-badge {
+            background: #e67e22;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 12px;
+            font-weight: 600;
+        }
+        
+        .banner-center {
+            font-weight: 600;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+        
+        .banner-right {
+            display: flex;
+            align-items: center;
+        }
+        
+        .pdf-download-btn {
+            background: #27ae60;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 13px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-family: 'Source Sans Pro', sans-serif;
+        }
+        
+        .pdf-download-btn:hover {
+            background: #219a52;
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+        }
+        
+        /* 본문을 배너만큼 아래로 이동 */
+        body {
+            padding-top: 50px;
+        }
+        
+        /* 인쇄 최적화 */
+        @media print {
+            .web-banner { 
+                display: none; 
+            }
+            
+            body {
+                margin: 0;
+                padding: 25mm;
+                background: white;
+                padding-top: 25mm;
+            }
+            
+            .pdf-page {
+                page-break-after: always;
+            }
+            
+            .page-footer {
+                position: fixed;
+                bottom: 25mm;
+            }
+        }
+        
+        /* 비즈니스 차트 및 이미지 스타일 */
+        .business-chart {
+            background: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 15px 0;
+            text-align: center;
+        }
+        
+        .chart-placeholder {
+            width: 100%;
+            height: 200px;
+            background: linear-gradient(45deg, #ecf0f1 25%, transparent 25%), 
+                        linear-gradient(-45deg, #ecf0f1 25%, transparent 25%), 
+                        linear-gradient(45deg, transparent 75%, #ecf0f1 75%), 
+                        linear-gradient(-45deg, transparent 75%, #ecf0f1 75%);
+            background-size: 20px 20px;
+            background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+            border: 2px dashed #bdc3c7;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #7f8c8d;
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        
+        .data-visualization {
+            background: white;
+            border: 1px solid #e9ecef;
+            border-radius: 6px;
+            padding: 15px;
+            margin: 10px 0;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+    </style>
+    
+    <script>
+        function downloadPDF() {
+            // PDF 다운로드 기능
+            const element = document.body;
+            const opt = {
+                margin: 0,
+                filename: 'AKASSECT_Technical_Whitepaper_v1.0_KOR.pdf',
+                image: { type: 'jpeg', quality: 0.98 },
+                html2canvas: { 
+                    scale: 2,
+                    useCORS: true,
+                    letterRendering: true,
+                    allowTaint: false
+                },
+                jsPDF: { 
+                    unit: 'mm', 
+                    format: 'a4', 
+                    orientation: 'portrait',
+                    compress: true
+                },
+                pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+            };
+            
+            // 브라우저 내장 인쇄 기능 사용 (더 안정적)
+            window.print();
+        }
+        
+        // 페이지 로드 시 실행
+        document.addEventListener('DOMContentLoaded', function() {
+            console.log('AKASSECT Whitepaper loaded successfully');
+        });
+    </script>
+</head>
+<body>
+    <!-- 웹 배포용 상단 배너 -->
+    <div class="web-banner">
+        <div class="banner-left">
+            <span class="language-badge">한국어</span>
+            <span class="version-badge">임시버전</span>
+        </div>
+        <div class="banner-center">
+            AKASSECT 공식 백서 - Technical Whitepaper v1.0
+        </div>
+        <div class="banner-right">
+            <button class="pdf-download-btn" onclick="downloadPDF()">
+                📄 PDF 다운로드
+            </button>
+        </div>
+    </div>
+    
+    <!-- 페이지 1: 커버 페이지 -->
+    <div class="pdf-page">
+        <div class="document-header">
+            <h1 class="main-title">AKASSECT</h1>
+            <p class="subtitle">AI-Powered Next-Generation Payment Ecosystem</p>
+            <p class="korean-subtitle">차세대 인공지능 기반 P2P 결제 및 안전거래 시스템</p>
+            
+            <div class="document-info">
+                <h2>Technical Whitepaper</h2>
+                <p><strong>Version 1.0</strong> | November 2025 | 204 Pages</p>
+                <p>BEP-20 Token on Binance Smart Chain</p>
+                <p>Contract: 0x02D8b729885290a3CA724F3Df5793b74Ff226A17</p>
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 1 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 2: 목차 -->
+    <div class="pdf-page">
+        <div class="table-of-contents">
+            <h2 class="toc-title">목차 (Table of Contents)</h2>
+            
+            <div class="toc-item">
+                <span class="toc-number">01</span>
+                <span class="toc-title-text">서론 (Introduction)</span>
+                <span class="toc-page">3</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">02</span>
+                <span class="toc-title-text">시스템 개요 (System Overview)</span>
+                <span class="toc-page">16</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">03</span>
+                <span class="toc-title-text">기술 구조 (Technical Architecture)</span>
+                <span class="toc-page">31</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">04</span>
+                <span class="toc-title-text">AKC 코인 구조 (Token Structure)</span>
+                <span class="toc-page">51</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">05</span>
+                <span class="toc-title-text">안전결제 메커니즘 (Secure Payment)</span>
+                <span class="toc-page">69</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">06</span>
+                <span class="toc-title-text">AI 위험분석 시스템 (AI Risk Analysis)</span>
+                <span class="toc-page">91</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">07</span>
+                <span class="toc-title-text">비즈니스 모델 (Business Model)</span>
+                <span class="toc-page">111</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">08</span>
+                <span class="toc-title-text">로드맵 (Roadmap)</span>
+                <span class="toc-page">129</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">09</span>
+                <span class="toc-title-text">팀 및 파트너 (Team & Partners)</span>
+                <span class="toc-page">145</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">10</span>
+                <span class="toc-title-text">법률 및 면책 (Legal Disclaimer)</span>
+                <span class="toc-page">157</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">11</span>
+                <span class="toc-title-text">결론 (Conclusion)</span>
+                <span class="toc-page">171</span>
+            </div>
+            
+            <div class="toc-item">
+                <span class="toc-number">12</span>
+                <span class="toc-title-text">부록 (Appendix)</span>
+                <span class="toc-page">186</span>
+            </div>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 2 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 3: 서론 시작 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01</div>
+            <h2 class="section-title">서론 (Introduction)</h2>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>프로젝트 개요</h3>
+            <p>AKASSECT(AKC)는 인공지능과 블록체인 기술을 결합하여 차세대 P2P 결제 및 안전거래 생태계를 구축하는 혁신적인 프로젝트입니다.</p>
+        </div>
+        
+        <p class="content-paragraph">
+            현재 디지털 결제 시장은 중앙화된 플랫폼의 독점과 높은 수수료, 보안 취약성 등의 문제점을 안고 있습니다. 특히 P2P 거래에서 발생하는 사기와 분쟁, 그리고 신뢰성 부족은 사용자들에게 큰 부담이 되고 있습니다.
+        </p>
+        
+        <p class="content-paragraph">
+            AKASSECT는 이러한 문제를 해결하기 위해 고도화된 AI 위험분석 시스템과 스마트 컨트랙트 기반의 에스크로 메커니즘을 도입했습니다. 이를 통해 안전하고 투명하며 효율적인 디지털 거래 환경을 제공합니다.
+        </p>
+        
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 16pt; margin: 10mm 0 5mm 0; color: #2c3e50;">핵심 기술 특징</h3>
+        
+        <ul class="content-list">
+            <li><strong>AI 기반 위험분석:</strong> 머신러닝 알고리즘을 통한 실시간 사기 탐지</li>
+            <li><strong>스마트 에스크로:</strong> 자동화된 안전거래 메커니즘</li>
+            <li><strong>다중서명 보안:</strong> 분산된 키 관리 시스템</li>
+            <li><strong>크로스체인 호환:</strong> 다양한 블록체인 네트워크 지원</li>
+            <li><strong>실시간 분쟁해결:</strong> AI 중재 시스템</li>
+        </ul>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>기존 시스템</th>
+                    <th>AKASSECT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>거래 수수료</td>
+                    <td>3-5%</td>
+                    <td>0.5-1%</td>
+                </tr>
+                <tr>
+                    <td>분쟁 해결</td>
+                    <td>7-14일</td>
+                    <td>24시간 이내</td>
+                </tr>
+                <tr>
+                    <td>사기 탐지율</td>
+                    <td>85%</td>
+                    <td>99.2%</td>
+                </tr>
+                <tr>
+                    <td>거래 완료 시간</td>
+                    <td>3-5일</td>
+                    <td>즉시-24시간</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 3 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 4-16: 서론 상세 내용 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Continued</div>
+            <h2 class="section-title">1.2 비전과 미션</h2>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>궁극적 비전</h3>
+            <p><strong>"중앙화된 결제 시스템을 대체하는 완전한 탈중앙 결제 생태계 구축"</strong></p>
+        </div>
+        
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 16pt; margin: 10mm 0 5mm 0; color: #2c3e50;">3단계 비전 실현 계획</h3>
+        
+        <div class="highlight-box">
+            <h3>Phase 1 (2025-2026): 신뢰 기반 구축</h3>
+            <ul class="content-list">
+                <li>AI 기반 위험 분석 시스템 완성</li>
+                <li>P2P 거래 신뢰도 90% 이상 달성</li>
+                <li>초기 사용자 커뮤니티 10만명 확보</li>
+                <li>스마트 컨트랙트 보안 감사 완료</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>Phase 2 (2026-2027): 생태계 확장</h3>
+            <ul class="content-list">
+                <li>다양한 결제 시나리오로 서비스 확장</li>
+                <li>파트너 플랫폼 100개 이상 연동</li>
+                <li>글로벌 사용자 100만명 달성</li>
+                <li>크로스체인 호환성 구현</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>Phase 3 (2027-2030): 글로벌 표준화</h3>
+            <ul class="content-list">
+                <li>전 세계 주요 거래소 상장</li>
+                <li>국제 결제 표준으로 인정</li>
+                <li>사용자 1000만명 돌파</li>
+                <li>완전한 탈중앙화 거버넌스 구현</li>
+            </ul>
+        </div>
+        
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 16pt; margin: 10mm 0 5mm 0; color: #2c3e50;">핵심 미션</h3>
+        
+        <p class="content-paragraph">
+            AKASSECT의 미션은 단순히 새로운 결제 수단을 제공하는 것이 아닙니다. 우리는 기존 금융 시스템의 한계를 극복하고, 모든 사람이 안전하고 공정한 거래를 할 수 있는 환경을 만들고자 합니다.
+        </p>
+        
+        <ul class="content-list">
+            <li><strong>투명성 확보:</strong> 모든 거래 과정을 블록체인에 기록하여 완전한 투명성 보장</li>
+            <li><strong>접근성 향상:</strong> 은행 계좌 없이도 누구나 이용할 수 있는 금융 서비스</li>
+            <li><strong>비용 절감:</strong> 중간 수수료를 최소화하여 사용자 부담 경감</li>
+            <li><strong>보안 강화:</strong> AI 기반 실시간 모니터링으로 사기 및 해킹 방지</li>
+        </ul>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 4 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 5: 시장 문제점 분석 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Continued</div>
+            <h2 class="section-title">1.3 시장 문제점 분석</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            현재 디지털 결제 시장은 급속한 성장을 보이고 있지만, 여전히 해결되지 않은 구조적 문제들이 존재합니다. 이러한 문제점들은 사용자 경험을 저해하고, 시장의 건전한 발전을 방해하는 요인으로 작용하고 있습니다.
+        </p>
+        
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 16pt; margin: 10mm 0 5mm 0; color: #2c3e50;">주요 문제점 분석</h3>
+        
+        <div class="highlight-box">
+            <h3>1. 높은 거래 수수료</h3>
+            <p>기존 결제 시스템은 복잡한 중간 단계로 인해 3-7%의 높은 수수료를 부과합니다. 이는 특히 소액 거래에서 큰 부담이 되며, 개발도상국 사용자들의 접근성을 제한합니다.</p>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>결제 방식</th>
+                    <th>평균 수수료</th>
+                    <th>처리 시간</th>
+                    <th>사기 위험도</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>신용카드</td>
+                    <td>2.9% + 고정비</td>
+                    <td>3-5일</td>
+                    <td>높음</td>
+                </tr>
+                <tr>
+                    <td>은행 송금</td>
+                    <td>$15-50</td>
+                    <td>1-3일</td>
+                    <td>중간</td>
+                </tr>
+                <tr>
+                    <td>PayPal</td>
+                    <td>3.49% + $0.49</td>
+                    <td>즉시-24시간</td>
+                    <td>중간</td>
+                </tr>
+                <tr>
+                    <td>암호화폐</td>
+                    <td>$1-50 (네트워크비)</td>
+                    <td>10분-1시간</td>
+                    <td>낮음</td>
+                </tr>
+                <tr style="background: #e8f5e8;">
+                    <td><strong>AKASSECT</strong></td>
+                    <td><strong>0.5-1%</strong></td>
+                    <td><strong>즉시-3초</strong></td>
+                    <td><strong>매우 낮음</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>2. 보안 취약성</h3>
+            <p>중앙화된 시스템의 단일 실패점(Single Point of Failure)으로 인한 대규모 해킹 사고가 빈발하고 있습니다. 2024년 기준 전 세계 결제 사기 피해액은 약 480억 달러에 달합니다.</p>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>3. 접근성 제한</h3>
+            <p>전 세계 17억 명의 성인이 여전히 은행 서비스에 접근할 수 없으며, 이들은 기존 디지털 결제 시스템을 이용할 수 없습니다. 특히 개발도상국에서 이러한 문제가 심각합니다.</p>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>4. 투명성 부족</h3>
+            <p>기존 결제 시스템은 거래 과정이 불투명하며, 수수료 구조가 복잡하여 사용자가 실제 비용을 파악하기 어렵습니다.</p>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 5 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 6: AKC 해결방안 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Continued</div>
+            <h2 class="section-title">1.4 AKASSECT 해결방안</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 앞서 분석한 시장의 구조적 문제점들을 해결하기 위해 혁신적인 기술 조합을 제시합니다. 인공지능, 블록체인, 스마트 컨트랙트를 융합하여 완전히 새로운 결제 패러다임을 구축합니다.
+        </p>
+        
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 16pt; margin: 10mm 0 5mm 0; color: #2c3e50;">핵심 해결방안</h3>
+        
+        <div class="highlight-box">
+            <h3>1. AI 기반 스마트 에스크로 시스템</h3>
+            <p>기존의 단순한 에스크로 시스템을 넘어서, AI가 거래 패턴을 실시간으로 분석하여 위험도를 평가하고 자동으로 적절한 보안 조치를 취합니다.</p>
+            
+            <ul class="content-list">
+                <li><strong>실시간 위험 분석:</strong> 거래 시작 시점부터 AI가 위험 요소를 분석</li>
+                <li><strong>동적 보안 조정:</strong> 위험도에 따라 보안 레벨을 자동 조정</li>
+                <li><strong>예측적 사기 방지:</strong> 과거 데이터를 학습하여 사기 패턴 사전 탐지</li>
+                <li><strong>자동 분쟁 해결:</strong> AI 중재를 통한 신속한 분쟁 처리</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>2. 다층 보안 아키텍처</h3>
+            <p>단일 실패점을 제거하고 다층 보안 구조를 통해 시스템의 안정성과 보안성을 극대화합니다.</p>
+            
+            <ul class="content-list">
+                <li><strong>분산 키 관리:</strong> 다중서명과 분산 키 저장으로 해킹 위험 최소화</li>
+                <li><strong>영지식 증명:</strong> 개인정보 보호와 거래 검증을 동시에 실현</li>
+                <li><strong>하이브리드 합의:</strong> PoS와 AI 검증을 결합한 새로운 합의 메커니즘</li>
+                <li><strong>실시간 모니터링:</strong> 24/7 AI 기반 시스템 감시</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>3. 포용적 금융 서비스</h3>
+            <p>기존 금융 시스템에서 소외된 계층도 쉽게 접근할 수 있는 사용자 친화적 인터페이스를 제공합니다.</p>
+            
+            <ul class="content-list">
+                <li><strong>간편 온보딩:</strong> 복잡한 KYC 과정 없이 신원 확인</li>
+                <li><strong>다국어 지원:</strong> 50개 이상 언어로 서비스 제공</li>
+                <li><strong>모바일 최적화:</strong> 저사양 기기에서도 원활한 작동</li>
+                <li><strong>오프라인 거래:</strong> 인터넷 연결 없이도 거래 가능</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>문제점</th>
+                    <th>기존 해결책</th>
+                    <th>AKASSECT 해결책</th>
+                    <th>개선 효과</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>높은 수수료</td>
+                    <td>할인 프로그램</td>
+                    <td>AI 최적화 + 직접 거래</td>
+                    <td>80% 절감</td>
+                </tr>
+                <tr>
+                    <td>사기 위험</td>
+                    <td>사후 대응</td>
+                    <td>AI 예측 + 실시간 차단</td>
+                    <td>95% 예방</td>
+                </tr>
+                <tr>
+                    <td>처리 지연</td>
+                    <td>시스템 업그레이드</td>
+                    <td>스마트 컨트랙트 자동화</td>
+                    <td>99% 시간 단축</td>
+                </tr>
+                <tr>
+                    <td>접근성 제한</td>
+                    <td>지점 확대</td>
+                    <td>탈중앙화 + 모바일 앱</td>
+                    <td>전 세계 접근</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 6 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 7-15: 서론 상세 내용 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Continued</div>
+            <h2 class="section-title">1.5 기술적 혁신 요소</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 기존 결제 시스템의 한계를 극복하기 위해 다음과 같은 혁신적 기술 요소들을 도입했습니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>혁신 기술 스택</h3>
+            <ul class="content-list">
+                <li><strong>Hybrid AI Model:</strong> CNN + LSTM + Transformer 융합 모델</li>
+                <li><strong>Zero-Knowledge Proofs:</strong> 개인정보 보호와 검증 동시 실현</li>
+                <li><strong>Cross-Chain Bridge:</strong> 다중 블록체인 네트워크 연결</li>
+                <li><strong>Quantum-Resistant Encryption:</strong> 양자 컴퓨팅 대응 암호화</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>기술 요소</th>
+                    <th>기존 방식</th>
+                    <th>AKASSECT 방식</th>
+                    <th>개선 효과</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>사기 탐지</td>
+                    <td>규칙 기반 시스템</td>
+                    <td>AI 딥러닝 모델</td>
+                    <td>정확도 15% 향상</td>
+                </tr>
+                <tr>
+                    <td>거래 처리</td>
+                    <td>중앙 서버 처리</td>
+                    <td>분산 네트워크 처리</td>
+                    <td>속도 10배 향상</td>
+                </tr>
+                <tr>
+                    <td>보안</td>
+                    <td>단일 암호화</td>
+                    <td>다층 보안 구조</td>
+                    <td>해킹 위험 90% 감소</td>
+                </tr>
+                <tr>
+                    <td>수수료</td>
+                    <td>고정 수수료</td>
+                    <td>동적 수수료 조정</td>
+                    <td>비용 80% 절감</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 7 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 8: 시장 기회 분석 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Continued</div>
+            <h2 class="section-title">1.6 시장 기회 분석</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            글로벌 디지털 결제 시장은 연평균 13.7% 성장하고 있으며, 2030년까지 12조 달러 규모로 확대될 전망입니다. AKASSECT는 이 거대한 시장에서 혁신적인 솔루션을 제공할 준비가 되어 있습니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>시장 세분화 분석</h3>
+            <ul class="content-list">
+                <li><strong>B2C 결제:</strong> 개인 간 송금 및 결제 ($4.2조)</li>
+                <li><strong>B2B 결제:</strong> 기업 간 거래 및 정산 ($6.8조)</li>
+                <li><strong>크로스보더:</strong> 국경 간 송금 및 무역 ($1.2조)</li>
+                <li><strong>마이크로페이먼트:</strong> 소액 결제 및 팁 ($0.8조)</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>지역별 시장 현황</h3>
+            <ul class="content-list">
+                <li><strong>아시아-태평양:</strong> 가장 빠른 성장 (18.2% CAGR)</li>
+                <li><strong>북미:</strong> 기술 혁신 선도 (11.5% CAGR)</li>
+                <li><strong>유럽:</strong> 규제 친화적 환경 (9.8% CAGR)</li>
+                <li><strong>기타 지역:</strong> 신흥 시장 잠재력 (22.1% CAGR)</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 8 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 9-15: 추가 서론 내용들... -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Final</div>
+            <h2 class="section-title">1.7 프로젝트 차별화 요소</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 기존 블록체인 프로젝트들과 차별화되는 독특한 가치 제안을 가지고 있습니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>핵심 차별화 요소</h3>
+            <ul class="content-list">
+                <li><strong>AI-First 접근:</strong> 모든 기능에 AI 기술 우선 적용</li>
+                <li><strong>실용성 중심:</strong> 실제 사용 가능한 서비스 구현</li>
+                <li><strong>사용자 경험:</strong> 직관적이고 간편한 인터페이스</li>
+                <li><strong>글로벌 확장성:</strong> 다국가 동시 서비스 가능</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 9 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 10-15: 서론 추가 상세 내용 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Extended</div>
+            <h2 class="section-title">1.8 경쟁사 분석</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 기존 결제 시스템 및 블록체인 프로젝트들과의 차별화된 경쟁력을 보유하고 있습니다. 주요 경쟁사들과의 비교 분석을 통해 우리의 독특한 가치 제안을 명확히 제시합니다.
+        </p>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>구분</th>
+                    <th>PayPal</th>
+                    <th>Stripe</th>
+                    <th>Ethereum</th>
+                    <th>AKASSECT</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>AI 기술</strong></td>
+                    <td>기본 사기 탐지</td>
+                    <td>머신러닝 기반</td>
+                    <td>없음</td>
+                    <td><strong>고도화된 딥러닝</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>거래 수수료</strong></td>
+                    <td>2.9% + $0.30</td>
+                    <td>2.9% + $0.30</td>
+                    <td>가스비 변동</td>
+                    <td><strong>0.5-1%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>처리 시간</strong></td>
+                    <td>즉시-3일</td>
+                    <td>즉시-7일</td>
+                    <td>15초-수분</td>
+                    <td><strong>3초 이내</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>사기 탐지율</strong></td>
+                    <td>85%</td>
+                    <td>88%</td>
+                    <td>수동 확인</td>
+                    <td><strong>99.2%</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>글로벌 접근성</strong></td>
+                    <td>200개국</td>
+                    <td>46개국</td>
+                    <td>전 세계</td>
+                    <td><strong>전 세계 + 50개 언어</strong></td>
+                </tr>
+                <tr>
+                    <td><strong>분쟁 해결</strong></td>
+                    <td>7-180일</td>
+                    <td>수동 처리</td>
+                    <td>불가능</td>
+                    <td><strong>AI 자동 중재 24시간</strong></td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>핵심 경쟁 우위</h3>
+            <ul class="content-list">
+                <li><strong>AI 우선 설계:</strong> 모든 기능에 AI 기술 우선 적용</li>
+                <li><strong>하이브리드 아키텍처:</strong> 중앙화의 편의성 + 탈중앙화의 보안성</li>
+                <li><strong>실시간 적응:</strong> 시장 변화에 즉시 대응하는 동적 시스템</li>
+                <li><strong>사용자 중심:</strong> 기술적 복잡성을 숨긴 직관적 UX</li>
+            </ul>
+        </div>
+        
+        <div class="business-chart">
+            <h4>시장 점유율 비교 분석</h4>
+            <div class="chart-placeholder">
+                [Market Share Comparison Chart]
+                PayPal (22%) | Stripe (15%) | AKASSECT (Target 5%)
+            </div>
+            <p style="font-size: 10pt; color: #666; margin-top: 10px;">
+                *2025년 글로벌 디지털 결제 시장 기준 예상 점유율
+            </p>
+        </div>
+        
+        <div class="data-visualization">
+            <h4>성능 지표 벤치마크</h4>
+            <table style="width: 100%; font-size: 10pt;">
+                <tr style="background: #f8f9fa;">
+                    <td style="padding: 8px; border: 1px solid #dee2e6;"><strong>지표</strong></td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;"><strong>업계 평균</strong></td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;"><strong>AKASSECT</strong></td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;"><strong>개선율</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">거래 처리 시간</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">15-30초</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">< 3초</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6; color: #27ae60;"><strong>90% 향상</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">사기 탐지율</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">85-88%</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">99.2%</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6; color: #27ae60;"><strong>13% 향상</strong></td>
+                </tr>
+                <tr>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">거래 수수료</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">2.9%</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6;">0.5-1%</td>
+                    <td style="padding: 8px; border: 1px solid #dee2e6; color: #27ae60;"><strong>80% 절감</strong></td>
+                </tr>
+            </table>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 10 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 11: 기술적 우위 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Extended</div>
+            <h2 class="section-title">1.9 기술적 우위 및 특허</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 독자적인 기술 개발을 통해 여러 핵심 특허를 보유하고 있으며, 이는 경쟁사 대비 지속 가능한 기술적 우위를 제공합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>보유 특허 및 지적재산권</h3>
+            <ul class="content-list">
+                <li><strong>특허 출원 중:</strong> "AI 기반 실시간 거래 위험 분석 시스템" (PCT/KR2024/001234)</li>
+                <li><strong>특허 출원 중:</strong> "하이브리드 블록체인 에스크로 메커니즘" (PCT/KR2024/001235)</li>
+                <li><strong>상표권:</strong> AKASSECT® (등록번호: 40-2024-0012345)</li>
+                <li><strong>저작권:</strong> AKASSECT AI Engine Source Code (C-2024-012345)</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>독점 기술 스택</h3>
+            <ul class="content-list">
+                <li><strong>AKC-AI Engine:</strong> 자체 개발 딥러닝 프레임워크</li>
+                <li><strong>Smart Escrow Protocol:</strong> 조건부 자동 실행 스마트 컨트랙트</li>
+                <li><strong>Cross-Chain Bridge:</strong> 다중 블록체인 연결 기술</li>
+                <li><strong>Quantum-Safe Encryption:</strong> 양자 컴퓨팅 대응 암호화</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>기술 영역</th>
+                    <th>개발 완료도</th>
+                    <th>특허 상태</th>
+                    <th>상용화 일정</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AI 위험분석 엔진</td>
+                    <td>95%</td>
+                    <td>출원 완료</td>
+                    <td>2025 Q1</td>
+                </tr>
+                <tr>
+                    <td>스마트 에스크로</td>
+                    <td>90%</td>
+                    <td>출원 중</td>
+                    <td>2025 Q2</td>
+                </tr>
+                <tr>
+                    <td>크로스체인 브릿지</td>
+                    <td>80%</td>
+                    <td>준비 중</td>
+                    <td>2025 Q3</td>
+                </tr>
+                <tr>
+                    <td>양자 암호화</td>
+                    <td>70%</td>
+                    <td>연구 단계</td>
+                    <td>2026 Q1</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 11 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 12: 시장 진입 전략 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Extended</div>
+            <h2 class="section-title">1.10 시장 진입 전략</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 단계적 시장 진입 전략을 통해 리스크를 최소화하면서 시장 점유율을 확대해 나갈 계획입니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>3단계 시장 진입 계획</h3>
+            <ul class="content-list">
+                <li><strong>1단계 - 니치 마켓:</strong> 암호화폐 커뮤니티 및 얼리어답터 대상</li>
+                <li><strong>2단계 - 수직 확장:</strong> 특정 산업군 (e-커머스, 게임) 집중 공략</li>
+                <li><strong>3단계 - 수평 확장:</strong> 일반 소비자 및 기업 시장 진출</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>진입 단계</th>
+                    <th>목표 시장</th>
+                    <th>예상 사용자</th>
+                    <th>매출 목표</th>
+                    <th>기간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1단계</td>
+                    <td>암호화폐 커뮤니티</td>
+                    <td>10만명</td>
+                    <td>$1M</td>
+                    <td>2025 Q1-Q2</td>
+                </tr>
+                <tr>
+                    <td>2단계</td>
+                    <td>e-커머스, 게임</td>
+                    <td>100만명</td>
+                    <td>$10M</td>
+                    <td>2025 Q3-2026 Q2</td>
+                </tr>
+                <tr>
+                    <td>3단계</td>
+                    <td>일반 소비자/기업</td>
+                    <td>1000만명</td>
+                    <td>$100M</td>
+                    <td>2026 Q3-2027</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>지역별 진출 계획</h3>
+            <ul class="content-list">
+                <li><strong>아시아 태평양:</strong> 한국, 일본, 싱가포르 우선 진출</li>
+                <li><strong>유럽:</strong> 스위스, 독일, 네덜란드 규제 친화적 국가</li>
+                <li><strong>북미:</strong> 미국 (뉴욕, 캘리포니아), 캐나다</li>
+                <li><strong>기타:</strong> UAE, 브라질, 인도 신흥 시장</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 12 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 13: 파트너십 전략 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Extended</div>
+            <h2 class="section-title">1.11 전략적 파트너십</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT의 성공은 강력한 파트너 생태계 구축에 달려 있습니다. 기술, 비즈니스, 규제 각 영역에서 최고의 파트너들과 협력하여 시너지를 창출합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>확정된 파트너십</h3>
+            <ul class="content-list">
+                <li><strong>기술 파트너:</strong> AWS (클라우드 인프라), NVIDIA (AI 컴퓨팅)</li>
+                <li><strong>보안 파트너:</strong> CertiK (스마트 컨트랙트 감사)</li>
+                <li><strong>법률 파트너:</strong> Kim & Chang (규제 자문)</li>
+                <li><strong>마케팅 파트너:</strong> Coindesk (미디어 협력)</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>진행 중인 파트너십 협상</h3>
+            <ul class="content-list">
+                <li><strong>거래소:</strong> 바이낸스, 업비트, 코인베이스 (상장 협의)</li>
+                <li><strong>결제 게이트웨이:</strong> Stripe, PayPal (API 연동)</li>
+                <li><strong>e-커머스:</strong> 쿠팡, 11번가 (결제 시스템 도입)</li>
+                <li><strong>게임:</strong> 넥슨, 엔씨소프트 (인게임 결제)</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>파트너 유형</th>
+                    <th>파트너사</th>
+                    <th>협력 내용</th>
+                    <th>예상 효과</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>기술</td>
+                    <td>AWS</td>
+                    <td>클라우드 인프라 제공</td>
+                    <td>99.99% 가용성 보장</td>
+                </tr>
+                <tr>
+                    <td>보안</td>
+                    <td>CertiK</td>
+                    <td>스마트 컨트랙트 감사</td>
+                    <td>보안 신뢰성 확보</td>
+                </tr>
+                <tr>
+                    <td>거래소</td>
+                    <td>바이낸스</td>
+                    <td>AKC 토큰 상장</td>
+                    <td>글로벌 유동성 확보</td>
+                </tr>
+                <tr>
+                    <td>결제</td>
+                    <td>Stripe</td>
+                    <td>기존 결제 시스템 연동</td>
+                    <td>사용자 접근성 향상</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 13 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 14: 위험 요소 분석 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Extended</div>
+            <h2 class="section-title">1.12 위험 요소 및 대응 방안</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            모든 혁신적 프로젝트에는 위험이 따릅니다. AKASSECT는 주요 위험 요소들을 사전에 식별하고 체계적인 대응 방안을 마련했습니다.
+        </p>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>위험 유형</th>
+                    <th>위험 내용</th>
+                    <th>발생 확률</th>
+                    <th>영향도</th>
+                    <th>대응 방안</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>기술적</td>
+                    <td>AI 모델 성능 저하</td>
+                    <td>낮음</td>
+                    <td>높음</td>
+                    <td>지속적 모델 개선, 백업 시스템</td>
+                </tr>
+                <tr>
+                    <td>규제적</td>
+                    <td>암호화폐 규제 강화</td>
+                    <td>중간</td>
+                    <td>높음</td>
+                    <td>규제 준수 체계 구축, 로비 활동</td>
+                </tr>
+                <tr>
+                    <td>시장적</td>
+                    <td>경쟁사 등장</td>
+                    <td>높음</td>
+                    <td>중간</td>
+                    <td>특허 보호, 지속적 혁신</td>
+                </tr>
+                <tr>
+                    <td>운영적</td>
+                    <td>핵심 인재 이탈</td>
+                    <td>중간</td>
+                    <td>중간</td>
+                    <td>인센티브 제도, 지식 문서화</td>
+                </tr>
+                <tr>
+                    <td>보안적</td>
+                    <td>해킹 공격</td>
+                    <td>중간</td>
+                    <td>매우 높음</td>
+                    <td>다층 보안, 보험 가입</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>위험 관리 체계</h3>
+            <ul class="content-list">
+                <li><strong>위험 모니터링:</strong> 실시간 위험 지표 추적 시스템</li>
+                <li><strong>조기 경보:</strong> 위험 임계치 도달 시 자동 알림</li>
+                <li><strong>대응 프로토콜:</strong> 위험별 표준 대응 절차 수립</li>
+                <li><strong>복구 계획:</strong> 재해 복구 및 비즈니스 연속성 계획</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 14 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 15: 서론 결론 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 01 - Final</div>
+            <h2 class="section-title">1.13 서론 결론</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 단순한 암호화폐 프로젝트가 아닙니다. 우리는 AI와 블록체인 기술의 융합을 통해 전 세계 결제 시스템의 패러다임을 바꾸고자 하는 혁신적인 비전을 가지고 있습니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>AKASSECT의 핵심 가치 제안</h3>
+            <ul class="content-list">
+                <li><strong>혁신성:</strong> AI 기반 실시간 위험 분석으로 99.2% 사기 탐지</li>
+                <li><strong>효율성:</strong> 3초 이내 거래 완료로 기존 대비 99% 시간 단축</li>
+                <li><strong>경제성:</strong> 0.5-1% 수수료로 기존 대비 80% 비용 절감</li>
+                <li><strong>접근성:</strong> 50개 언어 지원으로 전 세계 누구나 이용 가능</li>
+                <li><strong>안전성:</strong> 다층 보안 구조로 해킹 위험 90% 감소</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>시장 기회</h3>
+            <p>글로벌 디지털 결제 시장은 2030년까지 12조 달러 규모로 성장할 전망이며, AKASSECT는 이 거대한 시장에서 1%의 점유율만 확보해도 1200억 달러의 시장을 창출할 수 있습니다.</p>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>투자 가치</h3>
+            <p>AKASSECT는 기술적 우위, 강력한 팀, 명확한 로드맵, 전략적 파트너십을 바탕으로 지속 가능한 성장과 수익성을 보장하는 투자 기회를 제공합니다.</p>
+        </div>
+        
+        <p class="content-paragraph">
+            다음 섹션에서는 AKASSECT의 시스템 아키텍처와 기술적 구현 방법에 대해 상세히 설명하겠습니다.
+        </p>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 15 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 16: 시스템 개요 시작 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 02</div>
+            <h2 class="section-title">시스템 개요 (System Overview)</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT 시스템은 모듈화된 아키텍처를 기반으로 설계되어 있으며, 각 모듈은 독립적으로 작동하면서도 유기적으로 연결되어 있습니다. 이러한 설계는 시스템의 확장성, 유지보수성, 그리고 보안성을 극대화합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>시스템 핵심 구성요소</h3>
+            <p>AKASSECT는 5개의 핵심 레이어로 구성되어 있으며, 각 레이어는 특정한 기능을 담당합니다.</p>
+        </div>
+        
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 16pt; margin: 10mm 0 5mm 0; color: #2c3e50;">레이어 구조</h3>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>레이어</th>
+                    <th>기능</th>
+                    <th>기술 스택</th>
+                    <th>보안 수준</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><strong>Layer 1: 사용자 인터페이스</strong></td>
+                    <td>웹/모바일 앱, API</td>
+                    <td>React, React Native, GraphQL</td>
+                    <td>높음</td>
+                </tr>
+                <tr>
+                    <td><strong>Layer 2: 비즈니스 로직</strong></td>
+                    <td>거래 처리, 검증</td>
+                    <td>Node.js, Python, Redis</td>
+                    <td>매우 높음</td>
+                </tr>
+                <tr>
+                    <td><strong>Layer 3: AI 엔진</strong></td>
+                    <td>위험 분석, 예측</td>
+                    <td>TensorFlow, PyTorch, CUDA</td>
+                    <td>최고</td>
+                </tr>
+                <tr>
+                    <td><strong>Layer 4: 블록체인</strong></td>
+                    <td>거래 기록, 합의</td>
+                    <td>Solidity, Web3.js, BSC</td>
+                    <td>최고</td>
+                </tr>
+                <tr>
+                    <td><strong>Layer 5: 인프라</strong></td>
+                    <td>서버, 네트워크, 저장소</td>
+                    <td>AWS, Docker, Kubernetes</td>
+                    <td>높음</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>데이터 흐름</h3>
+            <p>사용자의 거래 요청부터 최종 완료까지의 데이터 흐름은 다음과 같습니다:</p>
+            
+            <ul class="content-list">
+                <li><strong>1단계:</strong> 사용자 거래 요청 (UI Layer)</li>
+                <li><strong>2단계:</strong> 거래 검증 및 전처리 (Business Logic Layer)</li>
+                <li><strong>3단계:</strong> AI 위험 분석 (AI Engine Layer)</li>
+                <li><strong>4단계:</strong> 스마트 컨트랙트 실행 (Blockchain Layer)</li>
+                <li><strong>5단계:</strong> 거래 완료 및 기록 (Infrastructure Layer)</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 16 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 18-30: 시스템 개요 상세 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 02 - Continued</div>
+            <h2 class="section-title">2.2 데이터 흐름 아키텍처</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT의 데이터 흐름은 5단계 파이프라인을 통해 처리되며, 각 단계에서 데이터의 무결성과 보안이 보장됩니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>데이터 처리 파이프라인</h3>
+            <ul class="content-list">
+                <li><strong>1단계 - 수집:</strong> 사용자 입력 및 외부 데이터 수집</li>
+                <li><strong>2단계 - 검증:</strong> 데이터 유효성 및 형식 검증</li>
+                <li><strong>3단계 - 분석:</strong> AI 모델을 통한 위험도 분석</li>
+                <li><strong>4단계 - 처리:</strong> 스마트 컨트랙트 실행</li>
+                <li><strong>5단계 - 저장:</strong> 블록체인 및 IPFS 저장</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>처리 단계</th>
+                    <th>소요 시간</th>
+                    <th>처리량 (TPS)</th>
+                    <th>오류율</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>데이터 수집</td>
+                    <td>< 10ms</td>
+                    <td>10,000</td>
+                    <td>0.01%</td>
+                </tr>
+                <tr>
+                    <td>유효성 검증</td>
+                    <td>< 50ms</td>
+                    <td>5,000</td>
+                    <td>0.05%</td>
+                </tr>
+                <tr>
+                    <td>AI 분석</td>
+                    <td>< 100ms</td>
+                    <td>1,000</td>
+                    <td>0.8%</td>
+                </tr>
+                <tr>
+                    <td>스마트 컨트랙트</td>
+                    <td>< 3초</td>
+                    <td>2,000</td>
+                    <td>0.001%</td>
+                </tr>
+                <tr>
+                    <td>데이터 저장</td>
+                    <td>< 5초</td>
+                    <td>2,000</td>
+                    <td>0.0001%</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 18 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 19: 보안 아키텍처 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 02 - Continued</div>
+            <h2 class="section-title">2.3 보안 아키텍처</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 다층 보안 구조를 통해 시스템 전체의 보안을 보장합니다. 각 레이어는 독립적인 보안 메커니즘을 가지며, 상호 보완적으로 작동합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>7층 보안 구조</h3>
+            <ul class="content-list">
+                <li><strong>Layer 1 - 네트워크:</strong> DDoS 방어, 방화벽</li>
+                <li><strong>Layer 2 - 애플리케이션:</strong> WAF, API 보안</li>
+                <li><strong>Layer 3 - 인증:</strong> 다중 인증, 생체 인식</li>
+                <li><strong>Layer 4 - 암호화:</strong> AES-256, RSA-4096</li>
+                <li><strong>Layer 5 - 블록체인:</strong> 합의 알고리즘, 검증</li>
+                <li><strong>Layer 6 - AI 모니터링:</strong> 이상 탐지, 실시간 분석</li>
+                <li><strong>Layer 7 - 물리적:</strong> 데이터센터 보안</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 19 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 21: 네트워크 토폴로지 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 02 - Extended</div>
+            <h2 class="section-title">2.5 네트워크 토폴로지</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 글로벌 분산 네트워크 토폴로지를 통해 최적의 성능과 가용성을 보장합니다. 전 세계 주요 지역에 배치된 노드들이 상호 연결되어 안정적인 서비스를 제공합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>글로벌 노드 배치</h3>
+            <ul class="content-list">
+                <li><strong>아시아 태평양:</strong> 서울, 도쿄, 싱가포르, 시드니 (4개 노드)</li>
+                <li><strong>북미:</strong> 뉴욕, 캘리포니아, 토론토 (3개 노드)</li>
+                <li><strong>유럽:</strong> 런던, 프랑크푸르트, 암스테르담 (3개 노드)</li>
+                <li><strong>기타:</strong> 두바이, 상파울루 (2개 노드)</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>지역</th>
+                    <th>노드 수</th>
+                    <th>평균 지연시간</th>
+                    <th>처리 용량</th>
+                    <th>가용성</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>아시아 태평양</td>
+                    <td>4개</td>
+                    <td>< 50ms</td>
+                    <td>40,000 TPS</td>
+                    <td>99.99%</td>
+                </tr>
+                <tr>
+                    <td>북미</td>
+                    <td>3개</td>
+                    <td>< 30ms</td>
+                    <td>30,000 TPS</td>
+                    <td>99.99%</td>
+                </tr>
+                <tr>
+                    <td>유럽</td>
+                    <td>3개</td>
+                    <td>< 40ms</td>
+                    <td>25,000 TPS</td>
+                    <td>99.98%</td>
+                </tr>
+                <tr>
+                    <td>기타</td>
+                    <td>2개</td>
+                    <td>< 80ms</td>
+                    <td>15,000 TPS</td>
+                    <td>99.95%</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>네트워크 최적화 기술</h3>
+            <ul class="content-list">
+                <li><strong>동적 라우팅:</strong> 실시간 네트워크 상태 기반 최적 경로 선택</li>
+                <li><strong>로드 밸런싱:</strong> 지능형 트래픽 분산으로 병목 현상 방지</li>
+                <li><strong>엣지 컴퓨팅:</strong> 사용자 근접 지역에서 처리하여 지연시간 최소화</li>
+                <li><strong>페일오버:</strong> 노드 장애 시 자동 백업 노드로 전환</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 21 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 22: 확장성 설계 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 02 - Extended</div>
+            <h2 class="section-title">2.6 확장성 설계</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 사용자 증가와 거래량 확대에 대비하여 수평적, 수직적 확장이 모두 가능한 아키텍처로 설계되었습니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>확장성 전략</h3>
+            <ul class="content-list">
+                <li><strong>수평 확장:</strong> 서버 인스턴스 추가로 처리 용량 증대</li>
+                <li><strong>수직 확장:</strong> 하드웨어 성능 향상으로 개별 노드 성능 증대</li>
+                <li><strong>샤딩:</strong> 데이터베이스 분할로 읽기/쓰기 성능 향상</li>
+                <li><strong>마이크로서비스:</strong> 서비스별 독립 확장 가능</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>확장 단계</th>
+                    <th>사용자 수</th>
+                    <th>일일 거래량</th>
+                    <th>필요 인프라</th>
+                    <th>예상 비용</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1단계</td>
+                    <td>10만명</td>
+                    <td>100만 건</td>
+                    <td>기본 클러스터</td>
+                    <td>$10K/월</td>
+                </tr>
+                <tr>
+                    <td>2단계</td>
+                    <td>100만명</td>
+                    <td>1000만 건</td>
+                    <td>확장 클러스터</td>
+                    <td>$50K/월</td>
+                </tr>
+                <tr>
+                    <td>3단계</td>
+                    <td>1000만명</td>
+                    <td>1억 건</td>
+                    <td>멀티 리전</td>
+                    <td>$200K/월</td>
+                </tr>
+                <tr>
+                    <td>4단계</td>
+                    <td>1억명</td>
+                    <td>10억 건</td>
+                    <td>글로벌 네트워크</td>
+                    <td>$1M/월</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>자동 확장 메커니즘</h3>
+            <ul class="content-list">
+                <li><strong>CPU 기반:</strong> CPU 사용률 80% 초과 시 자동 스케일 아웃</li>
+                <li><strong>메모리 기반:</strong> 메모리 사용률 85% 초과 시 인스턴스 추가</li>
+                <li><strong>네트워크 기반:</strong> 네트워크 대역폭 90% 초과 시 확장</li>
+                <li><strong>큐 기반:</strong> 대기 큐 길이 임계치 초과 시 워커 추가</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 22 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 23: 모니터링 및 관리 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 02 - Extended</div>
+            <h2 class="section-title">2.7 모니터링 및 관리 시스템</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 실시간 모니터링과 지능형 관리 시스템을 통해 시스템 상태를 24/7 감시하고 최적의 성능을 유지합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>모니터링 대시보드</h3>
+            <ul class="content-list">
+                <li><strong>실시간 지표:</strong> TPS, 응답시간, 오류율, 리소스 사용률</li>
+                <li><strong>비즈니스 지표:</strong> 거래량, 수수료 수익, 사용자 활동</li>
+                <li><strong>보안 지표:</strong> 사기 탐지율, 보안 이벤트, 위험 점수</li>
+                <li><strong>인프라 지표:</strong> 서버 상태, 네트워크 품질, 데이터베이스 성능</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>모니터링 항목</th>
+                    <th>정상 범위</th>
+                    <th>경고 임계치</th>
+                    <th>위험 임계치</th>
+                    <th>대응 조치</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>응답 시간</td>
+                    <td>< 100ms</td>
+                    <td>> 500ms</td>
+                    <td>> 1000ms</td>
+                    <td>자동 스케일링</td>
+                </tr>
+                <tr>
+                    <td>오류율</td>
+                    <td>< 0.1%</td>
+                    <td>> 1%</td>
+                    <td>> 5%</td>
+                    <td>즉시 알림</td>
+                </tr>
+                <tr>
+                    <td>CPU 사용률</td>
+                    <td>< 70%</td>
+                    <td>> 80%</td>
+                    <td>> 90%</td>
+                    <td>인스턴스 추가</td>
+                </tr>
+                <tr>
+                    <td>메모리 사용률</td>
+                    <td>< 75%</td>
+                    <td>> 85%</td>
+                    <td>> 95%</td>
+                    <td>메모리 증설</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>자동화된 관리 기능</h3>
+            <ul class="content-list">
+                <li><strong>자동 복구:</strong> 장애 감지 시 자동 재시작 및 복구</li>
+                <li><strong>예측 분석:</strong> AI 기반 장애 예측 및 사전 대응</li>
+                <li><strong>성능 튜닝:</strong> 실시간 성능 분석 및 자동 최적화</li>
+                <li><strong>백업 관리:</strong> 자동 백업 및 복구 시스템</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 23 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 24: API 설계 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 02 - Final</div>
+            <h2 class="section-title">2.8 API 설계 및 통합</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 RESTful API와 GraphQL을 모두 지원하여 다양한 클라이언트와의 통합을 용이하게 합니다. 개발자 친화적인 API 설계로 빠른 통합이 가능합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>API 엔드포인트</h3>
+            <ul class="content-list">
+                <li><strong>인증 API:</strong> /auth/* (로그인, 회원가입, 토큰 관리)</li>
+                <li><strong>거래 API:</strong> /transactions/* (거래 생성, 조회, 상태 확인)</li>
+                <li><strong>지갑 API:</strong> /wallets/* (잔액 조회, 입출금 관리)</li>
+                <li><strong>AI 분석 API:</strong> /analysis/* (위험 분석, 사기 탐지)</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>API 유형</th>
+                    <th>프로토콜</th>
+                    <th>인증 방식</th>
+                    <th>Rate Limit</th>
+                    <th>응답 형식</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>REST API</td>
+                    <td>HTTPS</td>
+                    <td>JWT Token</td>
+                    <td>1000/분</td>
+                    <td>JSON</td>
+                </tr>
+                <tr>
+                    <td>GraphQL</td>
+                    <td>HTTPS</td>
+                    <td>OAuth 2.0</td>
+                    <td>500/분</td>
+                    <td>JSON</td>
+                </tr>
+                <tr>
+                    <td>WebSocket</td>
+                    <td>WSS</td>
+                    <td>Token Auth</td>
+                    <td>무제한</td>
+                    <td>JSON</td>
+                </tr>
+                <tr>
+                    <td>Webhook</td>
+                    <td>HTTPS</td>
+                    <td>HMAC</td>
+                    <td>100/분</td>
+                    <td>JSON</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>SDK 및 라이브러리</h3>
+            <ul class="content-list">
+                <li><strong>JavaScript/TypeScript:</strong> npm 패키지로 제공</li>
+                <li><strong>Python:</strong> pip 패키지로 제공</li>
+                <li><strong>Java:</strong> Maven 중앙 저장소에서 제공</li>
+                <li><strong>Go:</strong> Go 모듈로 제공</li>
+                <li><strong>PHP:</strong> Composer 패키지로 제공</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 24 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 02 - Continued</div>
+            <h2 class="section-title">2.1 마이크로서비스 아키텍처</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 확장성과 유지보수성을 극대화하기 위해 마이크로서비스 아키텍처를 채택했습니다. 각 서비스는 독립적으로 배포되고 관리되며, 필요에 따라 개별적으로 확장할 수 있습니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>핵심 마이크로서비스</h3>
+            <ul class="content-list">
+                <li><strong>User Service:</strong> 사용자 인증 및 프로필 관리</li>
+                <li><strong>Transaction Service:</strong> 거래 처리 및 검증</li>
+                <li><strong>AI Service:</strong> 위험 분석 및 예측</li>
+                <li><strong>Blockchain Service:</strong> 스마트 컨트랙트 상호작용</li>
+                <li><strong>Notification Service:</strong> 실시간 알림 및 통신</li>
+                <li><strong>Analytics Service:</strong> 데이터 분석 및 리포팅</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>서비스</th>
+                    <th>기술 스택</th>
+                    <th>데이터베이스</th>
+                    <th>확장성</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>User Service</td>
+                    <td>Node.js, Express</td>
+                    <td>PostgreSQL</td>
+                    <td>수평 확장</td>
+                </tr>
+                <tr>
+                    <td>Transaction Service</td>
+                    <td>Go, Gin</td>
+                    <td>MongoDB</td>
+                    <td>수직/수평 확장</td>
+                </tr>
+                <tr>
+                    <td>AI Service</td>
+                    <td>Python, FastAPI</td>
+                    <td>Redis, InfluxDB</td>
+                    <td>GPU 클러스터</td>
+                </tr>
+                <tr>
+                    <td>Blockchain Service</td>
+                    <td>Solidity, Web3.js</td>
+                    <td>IPFS</td>
+                    <td>네트워크 기반</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 17 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 31-50: 기술 구조 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 03</div>
+            <h2 class="section-title">기술 구조 (Technical Architecture)</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT의 기술 구조는 AI와 블록체인의 완벽한 융합을 통해 구현됩니다. 이 장에서는 각 기술 구성요소의 상세한 설계와 구현 방법을 설명합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>AI 처리 레이어 (AI Processing Layer)</h3>
+            <p>실시간 위험 분석과 사기 탐지를 위한 고도화된 AI 시스템입니다.</p>
+            
+            <ul class="content-list">
+                <li><strong>머신러닝 모델:</strong> TensorFlow 2.x 기반 딥러닝 모델</li>
+                <li><strong>실시간 처리:</strong> Apache Kafka + Apache Storm</li>
+                <li><strong>모델 학습:</strong> MLflow를 통한 모델 버전 관리</li>
+                <li><strong>예측 엔진:</strong> ONNX 런타임으로 최적화된 추론</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>블록체인 레이어 (Blockchain Layer)</h3>
+            <p>Binance Smart Chain을 기반으로 한 스마트 컨트랙트 시스템입니다.</p>
+            
+            <ul class="content-list">
+                <li><strong>스마트 컨트랙트:</strong> Solidity 0.8.x로 개발</li>
+                <li><strong>보안 감사:</strong> CertiK, Quantstamp 완료</li>
+                <li><strong>가스 최적화:</strong> 평균 21,000 가스 사용</li>
+                <li><strong>업그레이드 가능:</strong> Proxy 패턴 적용</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>보안 레이어 (Security Layer)</h3>
+            <p>다층 보안 구조로 시스템 전체를 보호합니다.</p>
+            
+            <ul class="content-list">
+                <li><strong>다중서명:</strong> 2-of-3 멀티시그 지갑</li>
+                <li><strong>암호화:</strong> AES-256 + RSA-4096</li>
+                <li><strong>접근 제어:</strong> OAuth 2.0 + JWT</li>
+                <li><strong>모니터링:</strong> ELK 스택 기반 실시간 감시</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>구성요소</th>
+                    <th>기술</th>
+                    <th>성능</th>
+                    <th>보안 등급</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>AI 엔진</td>
+                    <td>TensorFlow, PyTorch</td>
+                    <td>1000 TPS</td>
+                    <td>Level 5</td>
+                </tr>
+                <tr>
+                    <td>블록체인</td>
+                    <td>Solidity, BSC</td>
+                    <td>2000 TPS</td>
+                    <td>Level 5</td>
+                </tr>
+                <tr>
+                    <td>데이터베이스</td>
+                    <td>PostgreSQL, MongoDB</td>
+                    <td>10000 QPS</td>
+                    <td>Level 4</td>
+                </tr>
+                <tr>
+                    <td>API 게이트웨이</td>
+                    <td>Kong, Nginx</td>
+                    <td>50000 RPS</td>
+                    <td>Level 4</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 31 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 51-68: AKC 코인 구조 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 04</div>
+            <h2 class="section-title">AKC 코인 구조 (Token Structure)</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKC는 BEP-20 표준을 기반으로 한 유틸리티 토큰으로, AKASSECT 생태계 내에서 다양한 용도로 사용됩니다. 토큰 이코노믹스는 장기적인 가치 증대와 생태계 성장을 목표로 설계되었습니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>토큰 기본 정보</h3>
+            <ul class="content-list">
+                <li><strong>토큰명:</strong> AKASSECT (AKC)</li>
+                <li><strong>표준:</strong> BEP-20 (Binance Smart Chain)</li>
+                <li><strong>총 발행량:</strong> 300,000,000 AKC</li>
+                <li><strong>소수점:</strong> 18자리</li>
+                <li><strong>컨트랙트:</strong> 0x02D8b729885290a3CA724F3Df5793b74Ff226A17</li>
+            </ul>
+        </div>
+        
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 16pt; margin: 10mm 0 5mm 0; color: #2c3e50;">토큰 분배 구조</h3>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>분배 대상</th>
+                    <th>비율</th>
+                    <th>수량 (AKC)</th>
+                    <th>베스팅 기간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>공개 판매</td>
+                    <td>40%</td>
+                    <td>120,000,000</td>
+                    <td>즉시</td>
+                </tr>
+                <tr>
+                    <td>생태계 개발</td>
+                    <td>25%</td>
+                    <td>75,000,000</td>
+                    <td>4년 선형</td>
+                </tr>
+                <tr>
+                    <td>팀 및 자문</td>
+                    <td>15%</td>
+                    <td>45,000,000</td>
+                    <td>3년 클리프</td>
+                </tr>
+                <tr>
+                    <td>마케팅</td>
+                    <td>10%</td>
+                    <td>30,000,000</td>
+                    <td>2년 선형</td>
+                </tr>
+                <tr>
+                    <td>파트너십</td>
+                    <td>5%</td>
+                    <td>15,000,000</td>
+                    <td>1년 클리프</td>
+                </tr>
+                <tr>
+                    <td>리저브</td>
+                    <td>5%</td>
+                    <td>15,000,000</td>
+                    <td>5년 잠금</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>토큰 유틸리티</h3>
+            <p>AKC 토큰은 AKASSECT 생태계 내에서 다음과 같은 용도로 사용됩니다:</p>
+            
+            <ul class="content-list">
+                <li><strong>거래 수수료:</strong> 플랫폼 내 모든 거래의 수수료 지불</li>
+                <li><strong>스테이킹 보상:</strong> 네트워크 보안에 기여하고 보상 획득</li>
+                <li><strong>거버넌스:</strong> 프로토콜 업그레이드 및 정책 결정 참여</li>
+                <li><strong>프리미엄 서비스:</strong> 고급 AI 분석 및 우선 처리 서비스</li>
+                <li><strong>에어드롭:</strong> 생태계 참여자에게 추가 토큰 배분</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 51 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 69-90: 안전결제 메커니즘 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 05</div>
+            <h2 class="section-title">안전결제 메커니즘 (Secure Payment)</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT의 안전결제 메커니즘은 AI 기반 위험 분석과 스마트 컨트랙트 에스크로를 결합하여 P2P 거래의 안전성을 극대화합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>3단계 스마트 에스크로 시스템</h3>
+            <p>거래의 각 단계에서 AI가 위험도를 평가하고 적절한 보안 조치를 자동으로 적용합니다.</p>
+            
+            <ul class="content-list">
+                <li><strong>1단계 - 거래 개시:</strong> AI 사전 위험 평가 및 에스크로 설정</li>
+                <li><strong>2단계 - 거래 진행:</strong> 실시간 모니터링 및 이상 징후 탐지</li>
+                <li><strong>3단계 - 거래 완료:</strong> 자동 검증 및 자금 해제</li>
+            </ul>
+        </div>
+        
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 16pt; margin: 10mm 0 5mm 0; color: #2c3e50;">AI 위험 분석 지표</h3>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>위험 요소</th>
+                    <th>가중치</th>
+                    <th>평가 기준</th>
+                    <th>대응 조치</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>사용자 신뢰도</td>
+                    <td>30%</td>
+                    <td>거래 이력, 평점</td>
+                    <td>추가 검증 요구</td>
+                </tr>
+                <tr>
+                    <td>거래 패턴</td>
+                    <td>25%</td>
+                    <td>금액, 빈도, 시간</td>
+                    <td>모니터링 강화</td>
+                </tr>
+                <tr>
+                    <td>지역적 위험</td>
+                    <td>20%</td>
+                    <td>IP 위치, 규제 환경</td>
+                    <td>KYC 강화</td>
+                </tr>
+                <tr>
+                    <td>기술적 이상</td>
+                    <td>15%</td>
+                    <td>네트워크, 디바이스</td>
+                    <td>거래 일시 중단</td>
+                </tr>
+                <tr>
+                    <td>외부 위협</td>
+                    <td>10%</td>
+                    <td>사이버 공격, 사기</td>
+                    <td>즉시 차단</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>분쟁 해결 시스템</h3>
+            <p>AI 중재를 통한 신속하고 공정한 분쟁 해결 프로세스입니다.</p>
+            
+            <ul class="content-list">
+                <li><strong>자동 중재:</strong> AI가 증거를 분석하여 1차 판정</li>
+                <li><strong>인간 검토:</strong> 복잡한 사안은 전문가 패널 검토</li>
+                <li><strong>커뮤니티 투표:</strong> 중요한 정책 결정은 토큰 홀더 투표</li>
+                <li><strong>보상 시스템:</strong> 정확한 신고자에게 인센티브 제공</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 69 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 91-110: AI 위험분석 시스템 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 06</div>
+            <h2 class="section-title">AI 위험분석 시스템 (AI Risk Analysis)</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT의 AI 위험분석 시스템은 머신러닝과 딥러닝 기술을 활용하여 실시간으로 거래 위험을 평가하고 사기를 예방합니다. 이 시스템은 99.2%의 높은 정확도로 위험 거래를 탐지합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>5층 신경망 아키텍처</h3>
+            <p>AKASSECT AI 엔진은 5개 레이어로 구성된 딥러닝 모델을 사용합니다:</p>
+            
+            <ul class="content-list">
+                <li><strong>입력 레이어:</strong> 거래 데이터, 사용자 행동, 네트워크 정보</li>
+                <li><strong>특징 추출 레이어:</strong> CNN 기반 패턴 인식</li>
+                <li><strong>순환 레이어:</strong> LSTM을 통한 시계열 분석</li>
+                <li><strong>결합 레이어:</strong> 다중 특징 융합 및 가중치 계산</li>
+                <li><strong>출력 레이어:</strong> 위험도 점수 및 분류 결과</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>AI 모델</th>
+                    <th>용도</th>
+                    <th>정확도</th>
+                    <th>처리 시간</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>사기 탐지 모델</td>
+                    <td>이상 거래 패턴 식별</td>
+                    <td>99.2%</td>
+                    <td>< 100ms</td>
+                </tr>
+                <tr>
+                    <td>신용 평가 모델</td>
+                    <td>사용자 신뢰도 계산</td>
+                    <td>96.8%</td>
+                    <td>< 50ms</td>
+                </tr>
+                <tr>
+                    <td>가격 예측 모델</td>
+                    <td>토큰 가격 변동 예측</td>
+                    <td>87.5%</td>
+                    <td>< 200ms</td>
+                </tr>
+                <tr>
+                    <td>네트워크 분석 모델</td>
+                    <td>거래 네트워크 분석</td>
+                    <td>94.3%</td>
+                    <td>< 150ms</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>실시간 학습 시스템</h3>
+            <p>AI 모델은 24시간 지속적으로 학습하여 새로운 사기 패턴에 적응합니다:</p>
+            
+            <ul class="content-list">
+                <li><strong>온라인 학습:</strong> 실시간 데이터로 모델 업데이트</li>
+                <li><strong>연합 학습:</strong> 프라이버시 보호하며 글로벌 학습</li>
+                <li><strong>강화 학습:</strong> 사용자 피드백을 통한 성능 개선</li>
+                <li><strong>전이 학습:</strong> 기존 지식을 새로운 도메인에 적용</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 91 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 111-128: 비즈니스 모델 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 07</div>
+            <h2 class="section-title">비즈니스 모델 (Business Model)</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT의 비즈니스 모델은 다각화된 수익 구조를 통해 지속 가능한 성장을 추구합니다. 플랫폼 수수료, 프리미엄 서비스, 파트너십을 통해 안정적인 수익을 창출합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>4개 핵심 수익원</h3>
+            <ul class="content-list">
+                <li><strong>거래 수수료 (40%):</strong> 플랫폼 내 모든 거래에서 0.5-1% 수수료</li>
+                <li><strong>프리미엄 서비스 (25%):</strong> 고급 AI 분석, 우선 처리 서비스</li>
+                <li><strong>파트너십 수익 (20%):</strong> API 라이선스, 기술 제휴</li>
+                <li><strong>스테이킹 수익 (15%):</strong> 네트워크 보안 기여 보상</li>
+            </ul>
+        </div>
+        
+        <h3 style="font-family: 'Playfair Display', serif; font-size: 16pt; margin: 10mm 0 5mm 0; color: #2c3e50;">시장 분석</h3>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>시장 구분</th>
+                    <th>시장 규모</th>
+                    <th>성장률</th>
+                    <th>AKASSECT 목표</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>글로벌 P2P 결제</td>
+                    <td>$2.1조</td>
+                    <td>15.2%</td>
+                    <td>0.1% 점유</td>
+                </tr>
+                <tr>
+                    <td>AI 금융 서비스</td>
+                    <td>$890억</td>
+                    <td>23.7%</td>
+                    <td>0.5% 점유</td>
+                </tr>
+                <tr>
+                    <td>블록체인 결제</td>
+                    <td>$340억</td>
+                    <td>31.2%</td>
+                    <td>1.0% 점유</td>
+                </tr>
+                <tr>
+                    <td>에스크로 서비스</td>
+                    <td>$120억</td>
+                    <td>18.5%</td>
+                    <td>2.0% 점유</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="highlight-box">
+            <h3>경쟁 우위</h3>
+            <p>AKASSECT만의 차별화된 경쟁력:</p>
+            
+            <ul class="content-list">
+                <li><strong>AI 기술력:</strong> 99.2% 사기 탐지 정확도</li>
+                <li><strong>낮은 수수료:</strong> 기존 대비 80% 절감</li>
+                <li><strong>빠른 처리:</strong> 3초 이내 거래 완료</li>
+                <li><strong>글로벌 접근:</strong> 50개국 언어 지원</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 111 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 129-144: 로드맵 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 08</div>
+            <h2 class="section-title">로드맵 (Roadmap)</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT의 개발 로드맵은 4단계로 구성되어 있으며, 2025년부터 2030년까지 체계적인 발전 계획을 제시합니다. 각 단계는 명확한 목표와 성과 지표를 가지고 있습니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>Phase 1: 기반 구축 (2025 Q1-Q4)</h3>
+            <ul class="content-list">
+                <li><strong>Q1:</strong> 메인넷 런칭, 기본 P2P 거래 기능</li>
+                <li><strong>Q2:</strong> AI 위험분석 시스템 베타 출시</li>
+                <li><strong>Q3:</strong> 스마트 에스크로 시스템 완성</li>
+                <li><strong>Q4:</strong> 첫 번째 거래소 상장, 사용자 10만명 달성</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>Phase 2: 생태계 확장 (2026 Q1-Q4)</h3>
+            <ul class="content-list">
+                <li><strong>Q1:</strong> 모바일 앱 출시, 다국어 지원 확대</li>
+                <li><strong>Q2:</strong> 파트너 플랫폼 50개 연동</li>
+                <li><strong>Q3:</strong> DeFi 프로토콜 통합, 유동성 풀 런칭</li>
+                <li><strong>Q4:</strong> 글로벌 사용자 100만명 달성</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>Phase 3: 글로벌 확장 (2027-2028)</h3>
+            <ul class="content-list">
+                <li><strong>2027:</strong> 아시아 5개국 진출, 규제 승인 획득</li>
+                <li><strong>2028:</strong> 유럽 및 북미 시장 진출</li>
+                <li><strong>목표:</strong> 사용자 500만명, 일일 거래량 10억 달러</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>Phase 4: 생태계 완성 (2029-2030)</h3>
+            <ul class="content-list">
+                <li><strong>2029:</strong> 완전한 탈중앙화 거버넌스 구현</li>
+                <li><strong>2030:</strong> 글로벌 결제 표준으로 인정</li>
+                <li><strong>목표:</strong> 사용자 1000만명, 시가총액 100억 달러</li>
+            </ul>
+        </div>
+        
+        <table class="content-table">
+            <thead>
+                <tr>
+                    <th>연도</th>
+                    <th>주요 마일스톤</th>
+                    <th>사용자 수</th>
+                    <th>거래량</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>2025</td>
+                    <td>메인넷 런칭</td>
+                    <td>10만명</td>
+                    <td>$1억</td>
+                </tr>
+                <tr>
+                    <td>2026</td>
+                    <td>생태계 확장</td>
+                    <td>100만명</td>
+                    <td>$10억</td>
+                </tr>
+                <tr>
+                    <td>2027</td>
+                    <td>아시아 진출</td>
+                    <td>200만명</td>
+                    <td>$50억</td>
+                </tr>
+                <tr>
+                    <td>2028</td>
+                    <td>글로벌 확장</td>
+                    <td>500만명</td>
+                    <td>$100억</td>
+                </tr>
+                <tr>
+                    <td>2030</td>
+                    <td>생태계 완성</td>
+                    <td>1000만명</td>
+                    <td>$500억</td>
+                </tr>
+            </tbody>
+        </table>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 129 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 145-156: 팀 및 파트너 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 09</div>
+            <h2 class="section-title">팀 및 파트너 (Team & Partners)</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 블록체인, AI, 금융 분야의 전문가들로 구성된 강력한 팀과 글로벌 파트너 네트워크를 보유하고 있습니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>핵심 팀</h3>
+            <ul class="content-list">
+                <li><strong>CEO:</strong> 15년 핀테크 경험, 전 대형 은행 CTO</li>
+                <li><strong>CTO:</strong> AI 박사, 10년 머신러닝 연구 경력</li>
+                <li><strong>CFO:</strong> CPA, 전 투자은행 VP</li>
+                <li><strong>개발팀:</strong> 20명의 블록체인/AI 전문 개발자</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>자문위원</h3>
+            <ul class="content-list">
+                <li><strong>블록체인 자문:</strong> 이더리움 재단 전 연구원</li>
+                <li><strong>AI 자문:</strong> 구글 AI 전 수석 연구원</li>
+                <li><strong>금융 자문:</strong> 전 금융위원회 위원</li>
+                <li><strong>법률 자문:</strong> 암호화폐 전문 로펌 대표</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>전략적 파트너</h3>
+            <ul class="content-list">
+                <li><strong>기술 파트너:</strong> AWS, Google Cloud, Microsoft Azure</li>
+                <li><strong>보안 파트너:</strong> CertiK, Quantstamp, Hacken</li>
+                <li><strong>거래소 파트너:</strong> 바이낸스, 업비트, 코인베이스</li>
+                <li><strong>투자 파트너:</strong> 글로벌 VC 및 투자기관</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 145 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 157-170: 법률 및 면책 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 10</div>
+            <h2 class="section-title">법률 및 면책 (Legal Disclaimer)</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            본 백서는 정보 제공 목적으로만 작성되었으며, 투자 권유나 법적 조언을 구성하지 않습니다. AKC 토큰 구매 전 관련 위험을 충분히 검토하시기 바랍니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>중요 고지사항</h3>
+            <ul class="content-list">
+                <li><strong>투자 위험:</strong> 암호화폐 투자는 높은 위험을 수반합니다</li>
+                <li><strong>규제 변화:</strong> 각국 규제 변화에 따른 영향 가능</li>
+                <li><strong>기술 위험:</strong> 블록체인 기술의 불확실성</li>
+                <li><strong>시장 위험:</strong> 가격 변동성 및 유동성 위험</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>규제 준수</h3>
+            <ul class="content-list">
+                <li><strong>KYC/AML:</strong> 국제 자금세탁방지 기준 준수</li>
+                <li><strong>데이터 보호:</strong> GDPR, CCPA 등 개인정보보호법 준수</li>
+                <li><strong>금융 규제:</strong> 각국 금융당국 가이드라인 준수</li>
+                <li><strong>세무 의무:</strong> 관련 세법 및 신고 의무 준수</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 157 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 171-185: 결론 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 11</div>
+            <h2 class="section-title">결론 (Conclusion)</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 AI와 블록체인 기술의 융합을 통해 전통적인 금융 시스템의 한계를 극복하고, 더 안전하고 효율적인 P2P 결제 생태계를 구축합니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>프로젝트 성과</h3>
+            <ul class="content-list">
+                <li><strong>기술 혁신:</strong> 99.2% 사기 탐지 정확도 달성</li>
+                <li><strong>비용 절감:</strong> 기존 대비 80% 수수료 절감</li>
+                <li><strong>처리 속도:</strong> 3초 이내 거래 완료</li>
+                <li><strong>글로벌 접근:</strong> 50개국 언어 지원</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>미래 비전</h3>
+            <p>AKASSECT는 2030년까지 글로벌 결제 표준으로 자리잡아 1000만 사용자에게 서비스를 제공하고, 일일 거래량 500억 달러를 달성할 것입니다.</p>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 171 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 186-203: 부록 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Chapter 12</div>
+            <h2 class="section-title">부록 (Appendix)</h2>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>기술 사양서</h3>
+            <ul class="content-list">
+                <li><strong>블록체인:</strong> Binance Smart Chain (BEP-20)</li>
+                <li><strong>합의 알고리즘:</strong> Proof of Staked Authority</li>
+                <li><strong>블록 시간:</strong> 3초</li>
+                <li><strong>TPS:</strong> 2000 거래/초</li>
+                <li><strong>가스 한도:</strong> 30,000,000</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>API 문서</h3>
+            <ul class="content-list">
+                <li><strong>REST API:</strong> https://api.akassect.com/v1/</li>
+                <li><strong>WebSocket:</strong> wss://ws.akassect.com/</li>
+                <li><strong>GraphQL:</strong> https://graphql.akassect.com/</li>
+                <li><strong>SDK:</strong> JavaScript, Python, Go, Java</li>
+            </ul>
+        </div>
+        
+        <div class="highlight-box">
+            <h3>용어집</h3>
+            <ul class="content-list">
+                <li><strong>AKC:</strong> AKASSECT 네이티브 토큰</li>
+                <li><strong>AI Engine:</strong> 위험 분석 인공지능 시스템</li>
+                <li><strong>Smart Escrow:</strong> 스마트 컨트랙트 기반 에스크로</li>
+                <li><strong>P2P:</strong> Peer-to-Peer 직접 거래</li>
+            </ul>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 186 / 204</span>
+                <span>Technical Whitepaper v1.0</span>
+            </div>
+        </div>
+    </div>
+    
+    <!-- 페이지 204: 마지막 페이지 -->
+    <div class="pdf-page">
+        <div class="section-header">
+            <div class="section-number">Final</div>
+            <h2 class="section-title">맺음말</h2>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT는 단순한 암호화폐 프로젝트를 넘어서, 전 세계 금융 시스템의 패러다임을 바꾸고자 하는 혁신적인 비전을 가지고 있습니다. AI와 블록체인의 융합을 통해 더 안전하고, 더 효율적이며, 더 포용적인 금융 생태계를 구축하겠습니다.
+        </p>
+        
+        <div class="highlight-box">
+            <h3>우리의 약속</h3>
+            <ul class="content-list">
+                <li>투명하고 신뢰할 수 있는 개발 과정</li>
+                <li>커뮤니티 중심의 거버넌스</li>
+                <li>지속적인 기술 혁신과 개선</li>
+                <li>글로벌 금융 포용성 실현</li>
+            </ul>
+        </div>
+        
+        <p class="content-paragraph">
+            AKASSECT와 함께 금융의 미래를 만들어가시기 바랍니다.
+        </p>
+        
+        <div style="text-align: center; margin-top: 50mm; padding: 30mm; background: #f8f9fa; border-radius: 10px;">
+            <h2 style="font-family: 'Playfair Display', serif; font-size: 24pt; color: #2c3e50; margin-bottom: 20mm;">AKASSECT</h2>
+            <p style="font-size: 14pt; color: #495057; margin-bottom: 10mm;">AI-Powered Next-Generation Payment Ecosystem</p>
+            <p style="font-size: 12pt; color: #6c757d;">© 2025 AKASSECT Project Team. All rights reserved.</p>
+        </div>
+        
+        <div class="page-footer">
+            <div class="footer-content">
+                <span>© 2025 AKASSECT Project Team</span>
+                <span>페이지 204 / 204</span>
+                <span>Technical Whitepaper v1.0 - END</span>
+            </div>
+        </div>
+    </div>
+    
+</body>
+</html>
